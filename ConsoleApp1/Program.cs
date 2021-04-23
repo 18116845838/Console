@@ -8,6 +8,7 @@ namespace ConsoleApp1
 		{
 			int num = 55;
 			short sam = 15;
+			sam = 88;
 
 
 			Console.WriteLine("Hello World!");

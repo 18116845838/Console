@@ -7,46 +7,47 @@ namespace ConsoleApp1
 		static void Main(string[] args)
 		{
 
-		
-			/*			输出两个整数 / 小数的和 / 差 / 积 / 商
-			电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
-			想一想以下语句输出的结果：
-				int i = 15;
-						Console.WriteLine(i++);  15
-						i -= 5;
-						Console.WriteLine(i);   11
-						Console.WriteLine(i >= 10);   ture
+			/*	观察一起帮登录页面，用if...else ...完成以下功能。
 
-						Console.WriteLine("i值的最终结果为：" + i);
+	用户依次由控制台输入：验证码、用户名和密码：
 
-						int j = 20;
-						Console.WriteLine($"{i}+{j}={i + j}");  11+20=31
-						想一想如下代码的结果是什么，并说明原因：
-				int a = 10;
-						Console.WriteLine(a > 9 && (!(a < 11) || a > 10));  false
-						当a为何值时，结果为true？  当a>11时，结果为true
-			bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;  true
-			*/
-			/*整数之间的和，……
-			 * int num = 4;
-			int sam = 2;
-			int number = num / sam;
-			Console.WriteLine(number);*/
+	如果验证码输入错误，直接输出：“*验证码错误”；
+	如果用户名不存在，直接输出：“*用户名不存在”；
+	如果用户名或密码错误，输出：“*用户名或密码错误”
+	以上全部正确无误，输出：“恭喜！登录成功！”
+	PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。*/
 
+			Console.WriteLine("请输入验证码qwer");
+			string num = Convert.ToString(Console.ReadLine());
+			if (num != "qwer")
+			{
+				Console.WriteLine("*验证码错误");
+			}
+			else
+			{
+				Console.WriteLine("请输入用户名羊生");
+				string sam = Convert.ToString(Console.ReadLine());
+				if (sam != "羊生")
+				{
+					Console.WriteLine("用户名不存在");
 
-			/*小数之间的和……
-			 * float num = 3.5f;
-			float sam = 1.9f;
-			float number =num * sam;
-			Console.WriteLine(number);*/
+				}
+				else
+				{
 
-			/*float sam= ((23 + 7)*12 - 8)/6;
-			Console.WriteLine(sam);*/
+					Console.WriteLine("请输入密码123456");
+					string number = Convert.ToString(Console.ReadLine());
+					if (number != "123456")
+					{
+						Console.WriteLine("用户名或者密码错误");
+					}
+					else
+					{
+						Console.WriteLine("恭喜你登录成功！");
+					}
+				}
 
-
-			/*int a = 10;
-			bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;
-			Console.WriteLine(result);*/
+			}
 		}
 	}
 }

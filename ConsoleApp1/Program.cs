@@ -7,55 +7,41 @@ namespace ConsoleApp1
 		static void Main(string[] args)
 		{
 			/*作业：
+			让电脑计算并输出：99+97+95+93+...+1的值*/
 
-			
-			/*分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9*/
-			/*for (int i = 1; i < 6; i++)
+			int num=0;
+			for (int i = 99; i > 0; i-=2)
 			{
-				Console.WriteLine(i);
+				num+=i;
 			}
-			int i = 1;
-			while (i<=9)
+			Console.WriteLine(num);
+
+
+
+
+
+			/*将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分*/
+			double[] grade = { 77.7, 79.8, 87.8, 99.5, 79.6,99.9 };
+			double max = grade[0];
+			for (int i = 1; i < grade.Length; i++)
 			{
-				
-				Console.WriteLine(i);
-				i += 2;
-			}*/
-			/*用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
-			String[] name ={ "夏康平 \n昵称\n2020.2",
-/*				"陈国栋\n昵称\n2020.2",
-				"姜鹏\n昵称\n2020.2",
-				"刘伟\n昵称\n2020.2",
-				"胡涛\n昵称\n2020.2" };
-			
-						for (int i = 0; i < name.Length; i++)
-						{
-
-
-							Console.WriteLine(name[i]);
-
-						}*/
-
-
-			//二维数组
-/*			string[,] seat = new string[2, 3];
-
-			seat[0, 0] = name[0];
-			seat[0, 1] = name[1];
-			seat[1, 0] = name[2];
-			seat[1, 1] = name[3];
-			seat[1, 2] = name[4];
-
-			for (int i = 0; i < 2; i++)
-			{
-				for (int j = 0; j < 3; j++)
+				if (max<grade[i])
 				{
-
-					Console.WriteLine(seat[i, j]);
+					max = grade[i];
 				}
-			}*/
+			}
+			Console.WriteLine(max);
+			//最小值
 			
-
+			double min =grade[0];
+			for (int i = 1; i < grade.Length; i++)
+			{
+				if (min > grade[i])
+				{
+					min = grade[i];
+				}
+			}
+			Console.WriteLine(min);
 
 
 		}

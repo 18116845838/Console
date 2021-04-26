@@ -6,44 +6,232 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
+			/*			输出两个整数 / 小数的和 / 差 / 积 / 商
+		电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
+		想一想以下语句输出的结果：
+			int i = 15;
+					Console.WriteLine(i++);  15
+					i -= 5;
+					Console.WriteLine(i);   11
+					Console.WriteLine(i >= 10);   ture
+
+					Console.WriteLine("i值的最终结果为：" + i);
+
+					int j = 20;
+					Console.WriteLine($"{i}+{j}={i + j}");  11+20=31
+					想一想如下代码的结果是什么，并说明原因：
+			int a = 10;
+					Console.WriteLine(a > 9 && (!(a < 11) || a > 10));  false
+					当a为何值时，结果为true？  当a>11时，结果为true
+		bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;  true
+		*/
+			/*整数之间的和，……
+			 * int num = 4;
+			int sam = 2;
+			int number = num / sam;
+			Console.WriteLine(number);*/
+
+
+			/*小数之间的和……
+			 * float num = 3.5f;
+			float sam = 1.9f;
+			float number =num * sam;
+			Console.WriteLine(number);*/
+
+			/*float sam= ((23 + 7)*12 - 8)/6;
+			Console.WriteLine(sam);*/
+
+
+			/*int a = 10;
+			bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;
+			Console.WriteLine(result);*/
+			/*	观察一起帮登录页面，用if...else ...完成以下功能。
+
+	用户依次由控制台输入：验证码、用户名和密码：
+
+	如果验证码输入错误，直接输出：“*验证码错误”；
+	如果用户名不存在，直接输出：“*用户名不存在”；
+	如果用户名或密码错误，输出：“*用户名或密码错误”
+	以上全部正确无误，输出：“恭喜！登录成功！”
+	PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。*/
+
+			/*	Console.WriteLine("请输入验证码qwer");
+				string num = Convert.ToString(Console.ReadLine());
+				if (num != "qwer")
+				{
+					Console.WriteLine("*验证码错误");
+				}
+				else
+				{
+					Console.WriteLine("请输入用户名羊生");
+					string sam = Convert.ToString(Console.ReadLine());
+					if (sam != "羊生")
+					{
+						Console.WriteLine("用户名不存在");
+
+					}
+					else
+					{
+
+						Console.WriteLine("请输入密码123456");
+						string number = Convert.ToString(Console.ReadLine());
+						if (number != "123456")
+						{
+							Console.WriteLine("用户名或者密码错误");
+						}
+						else
+						{
+							Console.WriteLine("恭喜你登录成功！");
+						}
+					}
+
+				}*/
+
+			/*
+						作业：
+
+			将源栈同学姓名 / 昵称分别：
+			按进栈时间装入一维数组，
+			按座位装入二维数组，
+			并输出共有多少名同学。*/
+
+			/*			string[] name = { "夏康平 \n昵称\n2020.2",
+							"周丁浩\n昵称\n2020.2",
+							"姜鹏\n昵称\n2020.2",
+							"刘伟\n昵称\n2020.2",
+							"胡涛\n昵称\n2020.2" };
+
+						Console.WriteLine(name[0]);
+						string[,] seat = new string[2, 3];
+						seat[0, 0] = name[0];
+						seat[0, 1] = name[1];
+						seat[1, 0] = name[2];
+						seat[1, 1] = name[3];
+						seat[1, 2] = name[4];
+						Console.WriteLine(seat[1, 2]);*/
+			//输出共有多少名学生
+			//Console.WriteLine("共有" + name.Length + "名学生");
+
+
 			/*作业：
-			让电脑计算并输出：99+97+95+93+...+1的值*/
 
-			int num=0;
-			for (int i = 99; i > 0; i-=2)
-			{
-				num+=i;
-			}
-			Console.WriteLine(num);
-
-
-
-
-
-			/*将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分*/
-			double[] grade = { 77.7, 79.8, 87.8, 99.5, 79.6,99.9 };
-			double max = grade[0];
-			for (int i = 1; i < grade.Length; i++)
-			{
-				if (max<grade[i])
-				{
-					max = grade[i];
-				}
-			}
-			Console.WriteLine(max);
-			//最小值
 			
-			double min =grade[0];
-			for (int i = 1; i < grade.Length; i++)
+			/*分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9*/
+			/*for (int i = 1; i < 6; i++)
 			{
-				if (min > grade[i])
-				{
-					min = grade[i];
-				}
+				Console.WriteLine(i);
 			}
-			Console.WriteLine(min);
+			int i = 1;
+			while (i<=9)
+			{
+				
+				Console.WriteLine(i);
+				i += 2;
+			}*/
+			/*用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
+			String[] name ={ "夏康平 \n昵称\n2020.2",
+/*				"周丁浩\n昵称\n2020.2",
+				"姜鹏\n昵称\n2020.2",
+				"刘伟\n昵称\n2020.2",
+				"胡涛\n昵称\n2020.2" };
+			
+						for (int i = 0; i < name.Length; i++)
+						{
+							Console.WriteLine(name[i]);
+						}*/
 
 
+			//二维数组
+			/*			string[,] seat = new string[2, 3];
+
+						seat[0, 0] = name[0];
+						seat[0, 1] = name[1];
+						seat[1, 0] = name[2];
+						seat[1, 1] = name[3];
+						seat[1, 2] = name[4];
+
+						for (int i = 0; i < 2; i++)
+						{
+							for (int j = 0; j < 3; j++)
+							{
+
+								Console.WriteLine(seat[i, j]);
+							}
+						}*/
+
+			/*找到100以内的所有质数（只能被1和它自己整除的数）*/
+			//遍历一到一百之间的数字
+			/*			for (int i = 2; i <= 100; i++)
+						{
+							bool b = true;//定义一个bool值
+							for (int j = 2; j < i; j++)
+							{
+								if (i % j == 0)
+								{
+									b = false;
+									break;
+								}//else continue;
+							}
+							if (b == true)
+							{
+								Console.WriteLine(i);
+							}//else continue;
+						}
+			*/
+
+
+
+
+
+			/*生成一个元素（值随机）从小到大排列的数组*/
+			/*int[] number = { 1,3,6,2,8,6,9,13,24,5,14,55};
+			
+			for (int i = 0; i <number.Length; i++)
+			{
+				for (int j = 0; j < number.Length-1; j++)
+				{
+					if (number[j] > number[j + 1])
+					{
+						 int sam = number[j];
+						number[j] = number[j + 1];
+						number[j + 1] = sam;
+						
+					}//else continue
+					
+				}
+				
+			}
+			for (int i = 0; i < number.Length; i++)
+			{
+				Console.WriteLine(number[i]);
+			}*/
+
+
+			//设立并显示一个多维数组的值，元素值等于下标之和。Console.Write()
+
+			//创建一个二维数组
+
+			/*	int[,] number=new int[2,3];
+				number[0, 0] = 0; number[0, 1] = 1; number[0, 2] = 1;
+				number[1, 0] = 2; number[1, 1] = 2; number[1, 2] = 3;
+				int sam;
+
+				for (int i = 0; i < 2; i++)
+				{
+					for (int j = 0; j < 3; j++)
+					{
+						sam = number[i, j];
+						Console.Write(sam);
+						Console.Write("\t");
+					}
+					Console.Write("\n");
+				}*/
+
+			/*			Console.WriteLine(Math.Round(19.55,1,MidpointRounding.AwayFromZero));
+						Console.WriteLine(new Random().Next(100 ,1000));
+						int sam = new Random().Next(100, 1000);*/
+			/*			Console.WriteLine(sam);*/
+			
 		}
 	}
 }

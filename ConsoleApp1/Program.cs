@@ -6,6 +6,10 @@ namespace ConsoleApp1
 	{
 		static void Main(string[] args)
 		{
+
+
+
+
 			/*			输出两个整数 / 小数的和 / 差 / 积 / 商
 		电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
 		想一想以下语句输出的结果：
@@ -227,11 +231,167 @@ namespace ConsoleApp1
 					Console.Write("\n");
 				}*/
 
+			//二分查找
+			/*int[] sam =new int[1000];
+			for (int j = 0; j < sam.Length; j++)
+			{
+				sam[j] = j;
+			}
+			int num = new Random().Next(1, 1000);
+			int left = 0;
+			int right = sam.Length;
+			int mid = (left + sam.Length) / 2;
+			int i = 0;
+			while ( i <sam.Length-1)
+			{
+				i++;
+				mid = (left + right) / 2;
+				if (num>mid)
+				{
+					left = mid;
+				}
+				else if (num<mid)
+				{
+					right = mid;
+				}
+				//else
+				if(num==mid)
+				{
+					Console.WriteLine($"数字是{num}查找用了{i+1}次");
+					break;
+				}//else continue
+			}*/
+
+
+
 			/*			Console.WriteLine(Math.Round(19.55,1,MidpointRounding.AwayFromZero));
 						Console.WriteLine(new Random().Next(100 ,1000));
 						int sam = new Random().Next(100, 1000);*/
 			/*			Console.WriteLine(sam);*/
-			
+
+			//调用函数，用户猜数字
+			/*int sam = new Random().Next(1, 1000);
+			Console.WriteLine("请输入一个一到一千之间的整数");
+			//Console.WriteLine(GuessMe(sam,0,15));
+
+				GuessMe(sam, 14);*/
+
+
 		}
+
+
+		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+完成“猜数字”游戏，方法名GuessMe()：*/
+		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
+		float num=0;
+		GetAverage(sam, num);*/
+
+		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+		//完成“猜数字”游戏，方法名GuessMe()：*/
+
+		/// <summary>
+		/// 源栈同学成绩
+		/// </summary>
+		/// <param name="a">一个包含源栈同学成绩的数组</param>
+		/// <param name="b">用来装总成绩</param>
+		/// <returns></returns>
+		/*static int GetAverage(int[] a, float b)
+		{
+
+			for (int i = 0; i < a.Length - 1; i++)
+			{
+				b = a[i] + b;
+
+			}
+
+			Console.WriteLine(Math.Round(b / a.Length, 2));
+			return -1;
+		}*/
+
+
+		/*随机生成一个大于0小于1000的整数
+		用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
+		没猜中可以继续猜，但最多不能超过10次
+			如果5次之内猜中，输出：你真牛逼！
+			如果8次之内猜中，输出：不错嘛！
+			10次还没猜中，输出：(～￣(OO)￣)ブ*/
+		/// <summary>
+		/// 用户可以自定义查找的次数
+		/// </summary>
+		/// <param name="sam">取值范围</param>
+		/// <param name="a">定义输入次数</param>
+		/// <returns>返回</returns>
+		/*static int GuessMe(int sam, int a)
+		{
+			for (int i = 0; i < a; i++)
+			{
+				
+				int num =int.Parse(Console.ReadLine());
+				if (num == sam && i < a)
+				{
+					if (i < a - 1 && i > 5)
+					{
+						Console.WriteLine("不错嘛！");
+
+						if (i <= 5)
+						{
+							Console.WriteLine("你真牛逼！");
+							break;
+						}
+						break;
+					}
+					//else 
+				}
+				else if (i == a - 1)
+				{
+					Console.WriteLine("(～￣(OO)￣)ブ");
+				}
+				else if (num >= sam)
+				{
+					Console.WriteLine($"大了,还剩{a - 1 - i}次");
+				}
+				else if (num <= sam)
+				{
+					Console.WriteLine($"小了,还剩{a - 1 - i}次");
+				}
+			}
+			return -1;
+		}*/
+		//平均数
+		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
+		int num = 0;
+		for (int i = 0; i < sam.Length - 1; i++)
+		{
+			num = sam[i] + num;
+		}
+		Console.WriteLine(num / sam.Length);*/
+
+		//递归
+		/*static void getFibonacci(int a,int b) 
+		{
+			int sam = a + b;
+			Console.WriteLine(b);
+			getFibonacci(b, sam);
+
+		}*/
+		///
+		//快速排序
+		/*static void quickSort(int[] array)
+		{
+			int left = array[0];
+			int right = array.Length - 1;
+			while (array[right] > left)
+			{
+				right--;
+
+				swep(left, array[right], array[left]);
+			}
+		}
+
+		private static void swep(int left, int v1, int v2)
+		{
+			throw new NotImplementedException();
+		}*/
 	}
 }
+

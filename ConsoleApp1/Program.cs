@@ -276,12 +276,29 @@ namespace ConsoleApp1
 
 				GuessMe(sam, 14);*/
 
+			/*利用ref调用Swap()方法交换两个同学的床位号*/
+			/*int liu = 2,zhang= 3;
+			berth(ref liu, ref zhang );
+			Console.WriteLine(liu);*/
+
+
+			//调用一个方法显示登录信息，比显示登录失败的原因
+			Console.WriteLine("请输入用户名");
+			string name = Console.ReadLine();
+			Console.WriteLine("请输入密码");
+			int psw = Convert.ToInt32(Console.ReadLine());
+			string msg;
+			bool b = logOn(name,psw,out msg);
+			Console.WriteLine(msg+b);
+			
+
+
 
 		}
 
 
 		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-完成“猜数字”游戏，方法名GuessMe()：*/
+	完成“猜数字”游戏，方法名GuessMe()：*/
 		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
 		float num=0;
 		GetAverage(sam, num);*/
@@ -325,7 +342,7 @@ namespace ConsoleApp1
 		{
 			for (int i = 0; i < a; i++)
 			{
-				
+
 				int num =int.Parse(Console.ReadLine());
 				if (num == sam && i < a)
 				{
@@ -392,6 +409,61 @@ namespace ConsoleApp1
 		{
 			throw new NotImplementedException();
 		}*/
+
+
+
+		/*利用ref调用Swap()方法交换两个同学的床位号*/
+
+		static void berth(ref int a, ref int b)
+		{
+			int tepm = 0;
+			swap(ref a , ref b,ref tepm);
+		}
+
+		private static void swap(ref int a, ref int b, ref int tepm)
+		{
+			tepm = a;
+			a = b;
+			b = tepm;
+		}
+
+
+		/*将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+true/false，表示登陆是否成功
+string，表示登陆失败的原因*/
+		/// <summary>
+		/// 判断是否登录成功
+		/// </summary>
+		/// <param name="name">用户名</param>
+		/// <param name="psw">密码</param>
+		/// <param name="msg">返回的信息</param>
+		/// <returns></returns>
+		static bool logOn(string name, int psw,out string msg)
+		{
+			if (name == "qwer" && psw == 123456)
+			{
+				msg = "登录成功";
+				return true;
+
+			}
+			else if (name=="qwer")
+			{
+				msg = "密码错误";
+				return false;
+			}
+			else if (psw==123456)
+			{
+				msg = "用户名错误";
+				return false;
+			}
+			else 
+			{
+				msg = "未知错误";
+				return false;
+			}
+
+		}
 	}
 }
+
 

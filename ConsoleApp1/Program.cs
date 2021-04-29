@@ -283,18 +283,23 @@ namespace ConsoleApp1
 
 
 			//调用一个方法显示登录信息，比显示登录失败的原因
-			Console.WriteLine("请输入用户名");
+			/*Console.WriteLine("请输入用户名");
 			string name = Console.ReadLine();
 			Console.WriteLine("请输入密码");
 			int psw = Convert.ToInt32(Console.ReadLine());
 			string msg;
-			bool b = logOn(name,psw,out msg);
-			Console.WriteLine(msg+b);
+			bool b = logOn(name, psw, out msg);
+			Console.WriteLine(msg + b);*/
+
+		/*	int[] tttt = { 1, 5, 8, 654, 898, 58, 456, 456, 6, 565, 4875, 965874, 554, 77, 33, 888, 789 };
+			QuickSort(tttt, tttt[0], tttt.Length);
+			for (int i = 0; i <tttt.Length-1; i++)
+			{
+				Console.WriteLine(tttt[i]);
+			}*/
 			
 
-
-
-		}
+		
 
 
 		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
@@ -393,28 +398,68 @@ namespace ConsoleApp1
 		}*/
 		///
 		//快速排序
-		/*static void quickSort(int[] array)
+		/*static void QuickSort(int[] nums,int left,int right)
+			{
+				if (left < right)
+				{
+					int i = left;
+					int j = right - 1;
+					int middle = nums[(left + right) / 2];
+					while (true)
+					{
+						while (i < right && nums[i] < middle)
+						{
+							i++;
+						}
+						while (j > 0 && nums[j] > middle)
+						{
+							j--;
+						}
+						if (i==j)
+						{
+							break;
+						}
+						nums[i] = nums[i] + nums[j];
+						nums[j] = nums[i] - nums[j];
+						nums[i] = nums[i] - nums[j];
+					}
+
+				}
+			}*/
+
+
+
+		}
+
+/*
+		static void quickSort(int[] array)
 		{
 			int left = array[0];
 			int right = array.Length - 1;
 			while (array[right] > left)
 			{
 				right--;
-
-				swep(left, array[right], array[left]);
+				while (right <right-1||right==array.Length/2)
+				{
+					swep(left, array[right], array[left]);
+				}
+				
 			}
 		}
 
-		private static void swep(int left, int v1, int v2)
+		private static void swep(int left, int right, int typm)
 		{
-			throw new NotImplementedException();
+			typm = right - 1;
+			right= left-1;
+			left = right;
+
 		}*/
 
 
 
 		/*利用ref调用Swap()方法交换两个同学的床位号*/
 
-		static void berth(ref int a, ref int b)
+		/*static void berth(ref int a, ref int b)
 		{
 			int tepm = 0;
 			swap(ref a , ref b,ref tepm);
@@ -425,7 +470,7 @@ namespace ConsoleApp1
 			tepm = a;
 			a = b;
 			b = tepm;
-		}
+		}*/
 
 
 		/*将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
@@ -438,7 +483,7 @@ string，表示登陆失败的原因*/
 		/// <param name="psw">密码</param>
 		/// <param name="msg">返回的信息</param>
 		/// <returns></returns>
-		static bool logOn(string name, int psw,out string msg)
+		/*static bool logOn(string name, int psw,out string msg)
 		{
 			if (name == "qwer" && psw == 123456)
 			{
@@ -462,8 +507,6 @@ string，表示登陆失败的原因*/
 				return false;
 			}
 
-		}
+		}*/
 	}
 }
-
-

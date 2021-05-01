@@ -1,17 +1,22 @@
 ﻿using System;
-
 namespace ConsoleApp1
 {
 	class Program
 	{
+
+	
+
 		static void Main(string[] args)
 		{
 
+		
 
 
 
 
 
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			/*			输出两个整数 / 小数的和 / 差 / 积 / 商
 		电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
 		想一想以下语句输出的结果：
@@ -53,13 +58,13 @@ namespace ConsoleApp1
 			Console.WriteLine(result);*/
 			/*	观察一起帮登录页面，用if...else ...完成以下功能。
 
-	用户依次由控制台输入：验证码、用户名和密码：
+			用户依次由控制台输入：验证码、用户名和密码：
 
-	如果验证码输入错误，直接输出：“*验证码错误”；
-	如果用户名不存在，直接输出：“*用户名不存在”；
-	如果用户名或密码错误，输出：“*用户名或密码错误”
-	以上全部正确无误，输出：“恭喜！登录成功！”
-	PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。*/
+			如果验证码输入错误，直接输出：“*验证码错误”；
+			如果用户名不存在，直接输出：“*用户名不存在”；
+			如果用户名或密码错误，输出：“*用户名或密码错误”
+			以上全部正确无误，输出：“恭喜！登录成功！”
+			PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。*/
 
 			/*	Console.WriteLine("请输入验证码qwer");
 				string num = Convert.ToString(Console.ReadLine());
@@ -94,7 +99,6 @@ namespace ConsoleApp1
 				}*/
 
 			/*
-						作业：
 
 			将源栈同学姓名 / 昵称分别：
 			按进栈时间装入一维数组，
@@ -293,183 +297,158 @@ namespace ConsoleApp1
 			bool b = logOn(name, psw, out msg);
 			Console.WriteLine(msg + b);*/
 
-			/*	int[] tttt = { 1, 5, 8, 654, 898, 58, 456, 456, 6, 565, 4875, 965874, 554, 77, 33, 888, 789 };
-				QuickSort(tttt, tttt[0], tttt.Length);
-				for (int i = 0; i <tttt.Length-1; i++)
-				{
-					Console.WriteLine(tttt[i]);
-				}*/
 
 
 
 
 
-			/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-		完成“猜数字”游戏，方法名GuessMe()：*/
-			/*int[] sam = { 77, 88, 99, 78, 79, 80 };
-			float num=0;
-			GetAverage(sam, num);*/
-
-			/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-			//完成“猜数字”游戏，方法名GuessMe()：*/
-
-			/// <summary>
-			/// 源栈同学成绩
-			/// </summary>
-			/// <param name="a">一个包含源栈同学成绩的数组</param>
-			/// <param name="b">用来装总成绩</param>
-			/// <returns></returns>
-			/*static int GetAverage(int[] a, float b)
-			{
-
-				for (int i = 0; i < a.Length - 1; i++)
-				{
-					b = a[i] + b;
-
-				}
-
-				Console.WriteLine(Math.Round(b / a.Length, 2));
-				return -1;
-			}*/
-
-
-			/*随机生成一个大于0小于1000的整数
-			用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
-			没猜中可以继续猜，但最多不能超过10次
-				如果5次之内猜中，输出：你真牛逼！
-				如果8次之内猜中，输出：不错嘛！
-				10次还没猜中，输出：(～￣(OO)￣)ブ*/
-			/// <summary>
-			/// 用户可以自定义查找的次数
-			/// </summary>
-			/// <param name="sam">取值范围</param>
-			/// <param name="a">定义输入次数</param>
-			/// <returns>返回</returns>
-			/*static int GuessMe(int sam, int a)
-			{
-				for (int i = 0; i < a; i++)
-				{
-
-					int num =int.Parse(Console.ReadLine());
-					if (num == sam && i < a)
-					{
-						if (i < a - 1 && i > 5)
-						{
-							Console.WriteLine("不错嘛！");
-
-							if (i <= 5)
-							{
-								Console.WriteLine("你真牛逼！");
-								break;
-							}
-							break;
-						}
-						//else 
-					}
-					else if (i == a - 1)
-					{
-						Console.WriteLine("(～￣(OO)￣)ブ");
-					}
-					else if (num >= sam)
-					{
-						Console.WriteLine($"大了,还剩{a - 1 - i}次");
-					}
-					else if (num <= sam)
-					{
-						Console.WriteLine($"小了,还剩{a - 1 - i}次");
-					}
-				}
-				return -1;
-			}*/
-			//平均数
-			/*int[] sam = { 77, 88, 99, 78, 79, 80 };
-			int num = 0;
-			for (int i = 0; i < sam.Length - 1; i++)
-			{
-				num = sam[i] + num;
-			}
-			Console.WriteLine(num / sam.Length);*/
-
-			//递归
-			/*static void getFibonacci(int a,int b) 
-			{
-				int sam = a + b;
-				Console.WriteLine(b);
-				getFibonacci(b, sam);
-
-			}*/
-			///
-			//快速排序
-			/*static void QuickSort(int[] nums,int left,int right)
-				{
-					if (left < right)
-					{
-						int i = left;
-						int j = right - 1;
-						int middle = nums[(left + right) / 2];
-						while (true)
-						{
-							while (i < right && nums[i] < middle)
-							{
-								i++;
-							}
-							while (j > 0 && nums[j] > middle)
-							{
-								j--;
-							}
-							if (i==j)
-							{
-								break;
-							}
-							nums[i] = nums[i] + nums[j];
-							nums[i] = nums[i] + nums[j];
-							nums[j] = nums[i] - nums[j];
-							nums[i] = nums[i] - nums[j];
-						}
-
-					}
-				}*/
-
-			/*定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。利用可选参数控制：
-			最小值min（默认为1）
-			相邻两个元素之间的最大差值gap（默认为5）
-			元素个数length（默认为10个）*/
-			//调用
-			int[] max = new int[1];
-
-			Console.WriteLine(GetArray(max, min:4,length: 15));
-
-			/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
-				传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
-				如果找到，返回该元素所在的下标，否则，返回-1*/
-			/*int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
-			Console.WriteLine(BinarySeek(array, 1));*/
 
 		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////
 
-		/*
-				static void quickSort(int[] array)
+		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+完成“猜数字”游戏，方法名GuessMe()：*/
+		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
+		float num=0;
+		GetAverage(sam, num);*/
+
+		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+		//完成“猜数字”游戏，方法名GuessMe()：*/
+
+		/// <summary>
+		/// 源栈同学成绩
+		/// </summary>
+		/// <param name="a">一个包含源栈同学成绩的数组</param>
+		/// <param name="b">用来装总成绩</param>
+		/// <returns></returns>
+		/*static int GetAverage(int[] a, float b)
+		{
+
+			for (int i = 0; i < a.Length - 1; i++)
+			{
+				b = a[i] + b;
+
+			}
+
+			Console.WriteLine(Math.Round(b / a.Length, 2));
+			return -1;
+		}*/
+
+
+		/*随机生成一个大于0小于1000的整数
+		用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
+		没猜中可以继续猜，但最多不能超过10次
+			如果5次之内猜中，输出：你真牛逼！
+			如果8次之内猜中，输出：不错嘛！
+			10次还没猜中，输出：(～￣(OO)￣)ブ*/
+		/// <summary>
+		/// 用户可以自定义查找的次数
+		/// </summary>
+		/// <param name="sam">取值范围</param>
+		/// <param name="a">定义输入次数</param>
+		/// <returns>返回</returns>
+		/*static int GuessMe(int sam, int a)
+		{
+			for (int i = 0; i < a; i++)
+			{
+
+				int num =int.Parse(Console.ReadLine());
+				if (num == sam && i < a)
 				{
-					int left = array[0];
-					int right = array.Length - 1;
-					while (array[right] > left)
+					if (i < a - 1 && i > 5)
 					{
-						right--;
-						while (right <right-1||right==array.Length/2)
+						Console.WriteLine("不错嘛！");
+
+						if (i <= 5)
 						{
-							swep(left, array[right], array[left]);
+							Console.WriteLine("你真牛逼！");
+							break;
 						}
-
+						break;
 					}
+					//else 
 				}
-
-				private static void swep(int left, int right, int typm)
+				else if (i == a - 1)
 				{
-					typm = right - 1;
-					right= left-1;
-					left = right;
+					Console.WriteLine("(～￣(OO)￣)ブ");
+				}
+				else if (num >= sam)
+				{
+					Console.WriteLine($"大了,还剩{a - 1 - i}次");
+				}
+				else if (num <= sam)
+				{
+					Console.WriteLine($"小了,还剩{a - 1 - i}次");
+				}
+			}
+			return -1;
+		}*/
+		//平均数
+		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
+		int num = 0;
+		for (int i = 0; i < sam.Length - 1; i++)
+		{
+			num = sam[i] + num;
+		}
+		Console.WriteLine(num / sam.Length);*/
 
-				}*/
+		//递归
+		/*static void getFibonacci(int a,int b) 
+		{
+			int sam = a + b;
+			Console.WriteLine(b);
+			getFibonacci(b, sam);
+
+		}*/
+		///
+		//快速排序
+		/*static void QuickSort(int[] nums,int left,int right)
+			{
+				if (left < right)
+				{
+					int i = left;
+					int j = right - 1;
+					int middle = nums[(left + right) / 2];
+					while (true)
+					{
+						while (i < right && nums[i] < middle)
+						{
+							i++;
+						}
+						while (j > 0 && nums[j] > middle)
+						{
+							j--;
+						}
+						if (i==j)
+						{
+							break;
+						}
+						nums[i] = nums[i] + nums[j];
+						nums[i] = nums[i] + nums[j];
+						nums[j] = nums[i] - nums[j];
+						nums[i] = nums[i] - nums[j];
+					}
+
+				}
+			}*/
+
+		/*定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。利用可选参数控制：
+		最小值min（默认为1）
+		相邻两个元素之间的最大差值gap（默认为5）
+		元素个数length（默认为10个）*/
+		//调用
+		/*int[] max = new int[1];
+
+		Console.WriteLine(GetArray(max, min:4,length: 15));*/
+
+		/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
+			传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
+			如果找到，返回该元素所在的下标，否则，返回-1*/
+		/*int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
+		Console.WriteLine(BinarySeek(array, 1));*/
 
 
 
@@ -542,7 +521,7 @@ string，表示登陆失败的原因*/
 		/// /// <param name="length">数组长度默认10</param>
 		/// <returns>返回这个数组</returns>
 
-		static int[] GetArray(int[] max, int min = 1, int gap = 5, int length = 10)
+		/*static int[] GetArray(int[] max, int min = 1, int gap = 5, int length = 10)
 		{
 			int sam;
 			//min = 1;
@@ -556,7 +535,7 @@ string，表示登陆失败的原因*/
 				Console.WriteLine(max[i]);
 			}
 			return max;
-		}
+		}*/
 
 		/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
 			传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
@@ -592,5 +571,7 @@ string，表示登陆失败的原因*/
 			}
 			return -1;
 		}*/
+
+
 	}
 }

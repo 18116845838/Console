@@ -108,14 +108,14 @@ namespace ConsoleApp1
 			Console.WriteLine(number);*/
 
 
-			/*小数之间的和……
-			 * float num = 3.5f;
-			float sam = 1.9f;
-			float number =num * sam;
-			Console.WriteLine(number);*/
+			//小数之间的和……
+			// float num = 3.5f;
+			////float sam = 1.9f;
+			//float number = num * sam;
+			//Console.WriteLine(number);
 
-			/*float sam= ((23 + 7)*12 - 8)/6;
-			Console.WriteLine(sam);*/
+			//float sam = ((23 + 7) * 12 - 8) / 6;
+			//Console.WriteLine(Math.Round(sam,2));
 
 
 			/*int a = 10;
@@ -132,7 +132,7 @@ namespace ConsoleApp1
 			PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。*/
 
 			/*	Console.WriteLine("请输入验证码qwer");
-				string num = Convert.ToString(Console.ReadLine());
+				string num = Console.ReadLine();
 				if (num != "qwer")
 				{
 					Console.WriteLine("*验证码错误");
@@ -140,7 +140,7 @@ namespace ConsoleApp1
 				else
 				{
 					Console.WriteLine("请输入用户名羊生");
-					string sam = Convert.ToString(Console.ReadLine());
+					string sam = Console.ReadLine();
 					if (sam != "羊生")
 					{
 						Console.WriteLine("用户名不存在");
@@ -150,7 +150,7 @@ namespace ConsoleApp1
 					{
 
 						Console.WriteLine("请输入密码123456");
-						string number = Convert.ToString(Console.ReadLine());
+						string number = Console.ReadLine();
 						if (number != "123456")
 						{
 							Console.WriteLine("用户名或者密码错误");
@@ -286,21 +286,21 @@ namespace ConsoleApp1
 
 			//创建一个二维数组
 
-			/*	int[,] number=new int[2,3];
-				number[0, 0] = 0; number[0, 1] = 1; number[0, 2] = 1;
-				number[1, 0] = 2; number[1, 1] = 2; number[1, 2] = 3;
-				int sam;
+			//int[,] number = new int[2, 3];
+			//number[0, 0] = 0; number[0, 1] = 1; number[0, 2] = 1;
+			//number[1, 0] = 2; number[1, 1] = 2; number[1, 2] = 3;
+			//int sam;
 
-				for (int i = 0; i < 2; i++)
-				{
-					for (int j = 0; j < 3; j++)
-					{
-						sam = number[i, j];
-						Console.Write(sam);
-						Console.Write("\t");
-					}
-					Console.Write("\n");
-				}*/
+			//for (int i = 0; i < number.GetLength(0); i++)
+			//{
+			//	for (int j = 0; j <number.GetLength(1); j++)
+			//	{
+			//		sam = number[i, j];
+			//		Console.Write(sam);
+			//		Console.Write("\t");
+			//	}
+			//	Console.Write("\n");
+			//}
 
 			//二分查找
 			/*int[] sam =new int[1000];

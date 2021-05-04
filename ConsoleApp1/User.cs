@@ -22,6 +22,7 @@ namespace ConsoleApp1
 		//}
 
 
+
 		/// //////////////////////////////////////////////////////////////////
 
 
@@ -37,7 +38,29 @@ namespace ConsoleApp1
 		//如果user.Name为“admin”，输入时修改为“系统管理员”
 
 		//problem.Reward不能为负数
+		//////////////////////////////////////////////////////////////////////////////////////////////
 
+		
+
+
+		///2：调用这些类的有参/无参构造函数，生成这些类的对象，调用他们的方法 
+		//无参函数
+		public User()
+		{
+
+		}
+		public User(string name)
+		{
+			Name = name;
+		}
+		//每一个User对象一定有Name和Password赋值
+		public User(string name,string password)
+		{
+			Name = name;
+			Password =password;
+			
+
+		}
 		private string _name;
 		public string Name
 		{
@@ -45,7 +68,8 @@ namespace ConsoleApp1
 			set {
 				if (value=="admin")
 				{
-					_name = "系统管理员";
+					 value  = "系统管理员";
+
 				}
 				_name = value; }
 		}
@@ -54,29 +78,78 @@ namespace ConsoleApp1
 		private string _password;
 		public string Password
 		{
+			//get { return _password; }
 			set { _password = value; }
 		}
 
 		private User _invitrdBy;
-		public User InvitrdBy
-		{
-			get { return _invitrdBy; }
-			set { _invitrdBy = value; }
-		}
+		public User InvitrdBy{get;set;}
 
-
+		private string _invitationCode;//邀请码
+		public string InvitationCode { get; set; }
 
 
 
 
 		/// //////////////////////////////////////////////////////////////////////////////////////////////
-		public void Register()
+		public /*static*/ void Register(User user, string InvitationCode)
 		{
+			Console.WriteLine("请输入邀请人！");
+			user.InvitrdBy.Name = Console.ReadLine();
+			if (user.InvitrdBy.Name != "yefei")
+			{
+				Console.WriteLine("没有该邀请人！");
+				return;
+			}
+			else
+			{
+				Console.WriteLine($"请输入邀请码：{InvitationCode}");
+
+				while (true)
+				{
+					string invitationCode = Console.ReadLine();
+					if (InvitationCode != invitationCode)
+					{
+						Console.WriteLine("验证码错误！请重新输入");
+
+					}
+					else
+					{
+						break;
+					}
+				}
+				Console.WriteLine("请输入用户名！");
+				user.Name = Console.ReadLine();
+				Console.WriteLine("请输入密码！");
+				user.Password = Console.ReadLine();
+				Console.WriteLine($"恭喜你注册成功!\n用户名为{user.Name}\n");
+
+			}
 
 		}
-		public void Login()
+		public void Login(User user )
 		{
-
+			string Password;
+			Console.WriteLine("请输入用户名！");
+			user.Name = Console.ReadLine();
+			Console.WriteLine("请输入密码！");
+			Password = Console.ReadLine();
+			if (user.Name!= "系统管理员" && Password!="123456")
+			{
+				Console.WriteLine("用户名或者密码错误！");
+			}
+			else if (user.Name== "系统管理员" && Password!="123456")
+			{
+				Console.WriteLine("用户名或者密码错误！");
+			}
+			else if (Password=="123456"&&user.Name!= "系统管理员")
+			{
+				Console.WriteLine("用户名或者密码错误！");
+			}
+			else
+			{
+					Console.WriteLine("登录成功！");	
+			}
 		}
 
 

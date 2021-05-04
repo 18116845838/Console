@@ -9,8 +9,22 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			//用户方法调用
+			User zs = new User("admin", "123456");
+			zs.InvitrdBy = new User();
+			string InvitationCode = "1357";
 
+			zs.Register(zs, InvitationCode);
+			zs.Login(zs);
 
+			//帮帮币
+			HelpMoney ls = new HelpMoney(0,0);
+
+			//求助板块索引器
+
+			Problem we = new Problem(10);
+			we[1] = "C#";
+			Console.WriteLine(we[1]);
 
 
 

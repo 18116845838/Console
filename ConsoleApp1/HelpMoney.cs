@@ -9,49 +9,66 @@ namespace ConsoleApp1
 	///为这些类的字段和方法设置合适的访问修饰符。 
 	///
 
+
 	public class HelpMoney
 	{
-		private DateTime _time;
-		public DateTime TIme
+		public HelpMoney()
 		{
-			get { return _time; }
-			set { _time = value; }
-		}
-		private int _usable;
-		public int Usable
-		{
-			get { return _usable; }
-			set { _usable = value; }
-		}
-		private bool _freeze;
-		public bool Freeze
-		{
-			get { return _freeze; }
-			set { _freeze = value; }
-
-		}
-
-		private string _kind;
-		public string Kind
-		{
-			get { return _kind; }
-			set { _kind = value; }
-
-		}
-
-		private int _change;
-		public int Change
-		{
-			get { return _change; }
-			set { _change = value; }
 		
 		}
-		private string _comment;
-		public string Comment
+	
+		/// <summary>
+		/// 帮帮币内的属性
+		/// </summary>
+		/// <param name="usable">可用数量</param>
+		/// <param name="change">变动</param>
+		/// <param name="comment">备注</param>
+		/// <param name="kind">种类</param>
+		/// <param name="freeze">冻结</param>
+		/// 
+
+		public HelpMoney(int usable,int change ,string comment="打赏",string kind="交易",bool freeze=true)
 		{
-			get { return _comment; }
-			set { _comment = value; }
+			Usable = usable;
+			Change = change;
+			Comment = comment;
+			Kind = kind;
+			Freeze = freeze;
 		}
+		//时间
+		private DateTime _time;
+		public DateTime Time { get; set; }
+
+		//可用 
+		private int _usable;
+		public int Usable { get; set; }
+		//冻结
+		private bool _freeze;
+		public bool Freeze{get;set;}
+
+		//种类
+		private string _kind;
+		public string Kind { get; set; }
+
+		//变化
+		private int _change;
+		public int Change { get; set; }
+
+		//备注
+		private string _comment;
+		public string Comment { get; set; }
+
+		/*private*/public int gain (int num)
+		{
+
+			return 0;
+		}
+		public void freeze()
+		{ 
+		
+		}
+
+
 
 	}
 }

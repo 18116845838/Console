@@ -12,8 +12,10 @@ namespace ConsoleApp1
 		//
 		//求助板块索引器
 
-		private string[] help;
 		
+
+		private string[] help;
+
 		public string this[int index]
 		{
 			get { return help[index - 1]; }
@@ -51,7 +53,7 @@ namespace ConsoleApp1
 				{
 					Console.WriteLine("悬赏不可以为负数");
 					return _reward = 0;
-				}
+				}//else 
 
 				return _reward;
 			}
@@ -65,9 +67,31 @@ namespace ConsoleApp1
 
 		//private 私有的
 		//internal 内部的，只能再项目内部进行访问
-		public void Publish(User user)
+		public static void Publish(User user)
 		{
 
 		}
+
+
+
+		//考虑求助（Problem）的以下方法/属性，哪些适合实例，哪些适合静态，然后添加到类中：
+
+		//    Publish()：发布一篇求助，并将其保存到数据库
+		//	Load(int Id)：根据Id从数据库获取一条求助
+		//	Delete(int Id)：根据Id删除某个求助
+		//	repoistory：可用于在底层实现上述方法和数据库的连接操作等
+		public static void Load(int Id)
+		{ 
+		
+		}
+		
+		public void Delete(int Id)//适合实例，可以根据对象的实例进行删除
+		{
+		}
+		public static void repoistory()
+		{ 
+		
+		}
+
 	}
 }

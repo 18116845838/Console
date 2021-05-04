@@ -70,7 +70,7 @@ namespace ConsoleApp1
 				{
 					 value  = "系统管理员";
 
-				}
+				}//else
 				_name = value; }
 		}
 

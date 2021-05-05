@@ -24,6 +24,7 @@ namespace ConsoleApp1
 		{
 			if (top<=mimicStack.Length-1)
 			{
+				mimicStack[top] = date;
 				top++;
 			}
 			else

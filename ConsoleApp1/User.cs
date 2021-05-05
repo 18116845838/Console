@@ -4,8 +4,11 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	public class User
+	sealed class User
 	{
+		//作业 
+		//让user类无法被继承
+		
 		////构造函数不需要返回/必须和类名相同/ctor快捷
 		//public User()
 		//{

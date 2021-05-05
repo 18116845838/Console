@@ -4,8 +4,9 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	class MimicStack
+	internal class MimicStack/*:User*/
 	{
+		
 		//自己实现一个模拟栈（MimicStack)类，入栈和出栈数据类型为int类型，包含如下功能：
 		//1出栈Pop（），弹出栈顶数据
 		//2入栈Push()，可以一次性压入多个数据出/

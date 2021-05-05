@@ -9,6 +9,24 @@ namespace Test
 	{
 		static void Main(string[] args)
 		{
+			User niu = new Student();
+			//is的用法
+			if (niu is Student)
+			{
+				((Student)niu).age = 20;
+			}
+			//as的用法
+			Student converted =niu as Student;
+			if (converted!=null)
+			{
+				Console.WriteLine(converted.age);
+			}
+			
+			Console.WriteLine(((Student)niu).age);
+
+
+			//new Student(21, 22);
+			//Console.WriteLine(new Student(21, 22));
 
 			/// <summary>
 			/// 
@@ -52,12 +70,11 @@ namespace Test
 
 			//PS：验证码/用户名/密码直接预设在源代码中，输入由Console.ReadLine() 完成。
 			//Student zs = new Student("张三");*/
-			Student.enroll(new Student("zzss"));
+			//Student.enroll(new Student("zzss"));
+			////Student ls = new Student("李四");
+			//Student.enroll(new Student("llss"));
 
 
-			//Student ls = new Student("李四");
-			Student.enroll(new Student("llss"));
-			
 		}
 	}
 }

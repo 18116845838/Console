@@ -16,7 +16,9 @@ namespace ConsoleApp1
 		{
 		
 		}
-	
+
+
+
 		/// <summary>
 		/// 帮帮币内的属性
 		/// </summary>

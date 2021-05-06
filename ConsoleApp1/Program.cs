@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ConsoleApp1
 {
-	class Program
+	class Program:Content
 	{
 	
 
@@ -9,7 +9,8 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
-		
+			
+			
 			Content bbv = new Content();
 			Console.WriteLine(bbv);
 			//调用单列方法

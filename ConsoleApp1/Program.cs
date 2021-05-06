@@ -9,10 +9,21 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+
+			//5实例化文章和意见建议，调用他们：
+
+			// .1继承自父类的属性和方法
+			// .2自己的属性和方法
+			//Article  zzm = new Article();
+			//zzm.age = 18;//继承父类的属性
+			//zzm.publish();//继承父类的方法
+			//zzm.List = "列表";//自己的属性
+			//Suggest mmz = new Suggest();
+			//mmz.Message = "留言";
+
 			
-			
-			Content bbv = new Content();
-			Console.WriteLine(bbv);
+
+
 			//调用单列方法
 			FactoryContext.Singleton();
 			

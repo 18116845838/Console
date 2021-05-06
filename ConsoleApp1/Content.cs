@@ -48,6 +48,11 @@ namespace ConsoleApp1
 		{
 			_kind = Kind;
 		}
+		public void publish()
+		{ 
 		
+		}
+
+
 	}
 }

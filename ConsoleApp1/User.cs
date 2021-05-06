@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	/*sealed*/ class User
+	sealed class User: Entity
 	{
 		//作业 
 		//让user类无法被继承

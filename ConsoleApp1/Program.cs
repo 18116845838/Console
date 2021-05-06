@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ConsoleApp1
 {
-	class Program:Content
+	class Program
 	{
 	
 
@@ -21,7 +21,7 @@ namespace ConsoleApp1
 			//Suggest mmz = new Suggest();
 			//mmz.Message = "留言";
 
-			
+
 
 
 			//调用单列方法

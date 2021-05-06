@@ -7,5 +7,7 @@ namespace ConsoleApp1
 	//文章
 	class Article:Content
 	{
+			
+	
 	}
 }

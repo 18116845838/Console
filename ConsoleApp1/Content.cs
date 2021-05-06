@@ -28,10 +28,11 @@ namespace ConsoleApp1
 			//set { }
 		}
 
-		public string  Kind//kind不能为空值
-		{   get
+		protected string Kind//kind不能为空值,只能让子类使用
+		{
+			get
 			{
-				if (_kind==null)
+				if (_kind == null)
 				{
 					_kind = "";
 				}//else 

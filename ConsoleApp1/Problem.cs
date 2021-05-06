@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	public class Problem
+	class Problem:Content
 	{
 		/*求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、
 		发布时间（PublishDateTime）和作者（Author），和方法Publish()*/
@@ -62,15 +62,15 @@ namespace ConsoleApp1
 		private DateTime _publishDateTime;
 		public DateTime PublishDateTime { get; set; }
 
-		private User _author;
-		public User Author { get; set; }
+		//private User _author;
+		//public User Author { get; set; }
 
-		//private 私有的
-		//internal 内部的，只能再项目内部进行访问
-		public static void Publish(User user)
-		{
+		////private 私有的
+		////internal 内部的，只能再项目内部进行访问
+		//public static void Publish(User user)
+		//{
 
-		}
+		//}
 
 
 

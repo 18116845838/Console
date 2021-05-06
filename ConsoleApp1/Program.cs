@@ -9,6 +9,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			Content bbv = new Content();
 
 			//调用单列方法
 			FactoryContext.Singleton();

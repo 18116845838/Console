@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	public class Repoistory
+	 class Repoistory
 	{
 		//作业：
 

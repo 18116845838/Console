@@ -21,7 +21,7 @@ namespace ConsoleApp1
 		}
 		int top = 0;
 	
-		private int Pop(int date)
+		public int Pop(int date)
 		{
 			if (top<=mimicStack.Length-1)
 			{
@@ -34,7 +34,7 @@ namespace ConsoleApp1
 			}
 			return -1;
 		}
-		private int Push()
+		public int Push()
 		{
 			if (top!=mimicStack.Length-1)
 			{

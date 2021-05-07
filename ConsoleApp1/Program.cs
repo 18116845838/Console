@@ -9,6 +9,15 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			//多态作业调用
+			ContentService lv = new Problem(10);
+			lv.Publish();
+			lv = new Suggest();
+			lv.Publish();
+			lv = new Article();
+			lv.Publish();
+
+
 
 			//5实例化文章和意见建议，调用他们：
 
@@ -256,22 +265,22 @@ namespace ConsoleApp1
 
 			/*找到100以内的所有质数（只能被1和它自己整除的数）*/
 			//遍历一到一百之间的数字
-			for (int i = 2; i <= 100; i++)
-			{
-				bool isPrme = true;//定义一个bool值
-				for (int j = 2; j < i; j++)
-				{
-					if (i % j == 0)
-					{
-						isPrme = false;
-						break;
-					}//else continue;
-				}
-				if (isPrme)
-				{
-					Console.WriteLine(i);
-				}//else continue;
-			}
+			//for (int i = 2; i <= 100; i++)
+			//{
+			//	bool isPrme = true;//定义一个bool值
+			//	for (int j = 2; j < i; j++)
+			//	{
+			//		if (i % j == 0)
+			//		{
+			//			isPrme = false;
+			//			break;
+			//		}//else continue;
+			//	}
+			//	if (isPrme)
+			//	{
+			//		Console.WriteLine(i);
+			//	}//else continue;
+			//}
 
 
 

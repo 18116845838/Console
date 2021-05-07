@@ -4,15 +4,30 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	class Problem:Content
+	class Problem:ContentService
 	{
+		/// <summary>
+		/// 多态作业
+		/// </summary>
+		public override void Publish()
+		{
+			Console.WriteLine($"消耗了{_reward}枚帮帮币");
+			base.Publish();	
+		}
+		public Problem(int num)
+		{
+			Reward = num;	
+		}
+
+
+
 		/*求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、
 		发布时间（PublishDateTime）和作者（Author），和方法Publish()*/
 		//一起帮的求助可以有多个（最多10个）关键字，请为其设置索引器，以便于我们通过其整数下标进行读写。
 		//
 		//求助板块索引器
 
-	
+
 
 
 		//一起帮的求助可以有多个（最多10个）关键字，请为其设置索引器，以便于我们通过其整数下标进行读写。
@@ -27,10 +42,10 @@ namespace ConsoleApp1
 		/// 设置索引器长度
 		/// </summary>
 		/// <param name="lenth">索引器的长度</param>
-		public Problem(int lenth)
-		{
-			help = new string[lenth];
-		}
+		//public Problem(int lenth)
+		//{
+		//	help = new string[lenth];
+		//}
 		//	设计一种方式，保证：
 
 		//   每一个Problem对象一定有Body赋值
@@ -83,7 +98,7 @@ namespace ConsoleApp1
 		//	Delete(int Id)：根据Id删除某个求助
 		//	repoistory：可用于在底层实现上述方法和数据库的连接操作等
 		private DateTime _publish;
-		public DateTime Publish { get; set; }
+		public DateTime PubLish { get; set; }
 
 		public static void Load(int Id)
 		{ 
@@ -98,6 +113,7 @@ namespace ConsoleApp1
 		
 		}
 
+
 		//列表字段
 		private string _list;
 		public string List { get; set; }
@@ -105,5 +121,8 @@ namespace ConsoleApp1
 		//疑问
 		private string _question;
 		public string Question { get; set; }
+
+
+		
 	}
 }

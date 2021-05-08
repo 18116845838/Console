@@ -9,17 +9,23 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			//ISendMessage接口方法调用
+			//用Console.WriteLine() 实现Send()。
+			ISendMessage zs = new DBMessage();
+			zs.Send();
+			zs = new EmailMessage();
+			zs.Send();
 
 			//将ContentService抽象类进行调用
-			ContentService lh = new Problem();
-			lh.Agree();
-			lh.Disagree();
-			lh = new Suggest();
-			lh.Agree();
-			lh.Disagree();
-			lh = new Article();
-			lh.Agree();
-			lh.Disagree();
+			//ContentService lh = new Problem();
+			//lh.Agree();
+			//lh.Disagree();
+			//lh = new Suggest();
+			//lh.Agree();
+			//lh.Disagree();
+			//lh = new Article();
+			//lh.Agree();
+			//lh.Disagree();
 			
 
 			//多态作业调用

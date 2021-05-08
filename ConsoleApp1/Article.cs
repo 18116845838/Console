@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
 	//文章
-	class Article:ContentService
+	class Article:Content
 	{
 
 		public override void Agree()

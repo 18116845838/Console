@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
 	/*abstract*/
- 	abstract class Content
+	abstract class Content
 	{
 		//作业：
 
@@ -22,6 +22,11 @@ namespace ConsoleApp1
 		//  一起帮还可以在好友间发私信，所有又有了IChat接口，其中也有一个Send()方法声明。
 		//  假设User类同时继承了ISendMessage和IChat，如何处理？
 
+		//点赞作者增加帮帮点，用户减少
+		public abstract void Agree();
+
+		//点踩作者减少帮帮点，用户增加
+		public abstract void Disagree();
 
 
 
@@ -34,6 +39,13 @@ namespace ConsoleApp1
 		//	2确保每个Content对象都有kind的非空值
 		//	3Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
 		//	4其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
+
+		public virtual void Publish()
+		{
+			
+		}
+
+
 
 		//5实例化文章和意见建议，调用他们：
 
@@ -75,7 +87,7 @@ namespace ConsoleApp1
 		{
 			_kind = Kind;
 		}
-		public abstract void publish();
+		//public abstract void publish();
 
 
 

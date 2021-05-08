@@ -9,6 +9,28 @@ namespace Test
 	{
 		static void Main(string[] args)
 		{
+			string num = "2383.12.21"
+			if (DateTime.TryParse(num, out DateTime date))
+			{
+				date = date.AddYears(12);
+				Console.WriteLine(date.Year);
+			}
+			else
+			{
+				Console.WriteLine("转换失败");
+			}
+			
+
+
+			//Bed num;
+			//num._name = "qua ";
+			//Console.WriteLine(num._name);
+			//Bed sam = new Bed("");
+			//Console.WriteLine(sam._name);
+
+			//Console.WriteLine(DateTime.Now.Hour);
+
+
 			//调用接口实现多态
 			I3 ll = new Max(); //new Max();
 			ll.m1();

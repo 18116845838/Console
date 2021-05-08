@@ -7,20 +7,24 @@ namespace SelfStudy
 	/*public*/
 	class User
 	{
-		private static User _name;
-		/*private*/public User()
-		{
 
-		}
-		public static  User sam()
-		{
-			if (_name==null)
-			{
-				_name = new User();
 
-			}
-			return _name;
-		}
+
+
+		//private static User _name;
+		///*private*/public User()
+		//{
+
+		//}
+		//public static  User sam()
+		//{
+		//	if (_name==null)
+		//	{
+		//		_name = new User();
+
+		//	}
+		//	return _name;
+		//}
 
 		//public User()
 		//{
@@ -42,5 +46,16 @@ namespace SelfStudy
 		
 		//}
 
+	}
+	struct Bed
+	{
+		public string _name;
+		public const int _sam=0;
+		
+		public Bed(string  num)
+		{
+			_name = num;
+		}
+	
 	}
 }

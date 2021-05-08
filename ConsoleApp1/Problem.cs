@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	class Problem:ContentService
+	  class Problem:Content
 	{
 
 		public override void Agree()

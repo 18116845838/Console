@@ -4,11 +4,22 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	sealed class User: Entity
+	sealed class User: Entity, IChat, ISendMessage
 	{
+		//User类同时继承，将Ichat接口显示实现
+		void IChat.Send()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Send()
+		{
+			throw new NotImplementedException();
+		}
+
 		//作业 
 		//让user类无法被继承
-		
+
 		////构造函数不需要返回/必须和类名相同/ctor快捷
 		//public User()
 		//{
@@ -43,7 +54,7 @@ namespace ConsoleApp1
 		//problem.Reward不能为负数
 		//////////////////////////////////////////////////////////////////////////////////////////////
 
-		
+
 
 
 		///2：调用这些类的有参/无参构造函数，生成这些类的对象，调用他们的方法 

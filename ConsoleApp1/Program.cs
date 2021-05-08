@@ -9,12 +9,14 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+
+
 			//ISendMessage接口方法调用
 			//用Console.WriteLine() 实现Send()。
-			ISendMessage zs = new DBMessage();
-			zs.Send();
-			zs = new EmailMessage();
-			zs.Send();
+			//ISendMessage zs = new DBMessage();
+			//zs.Send();
+			//zs = new EmailMessage();
+			//zs.Send();
 
 			//将ContentService抽象类进行调用
 			//ContentService lh = new Problem();

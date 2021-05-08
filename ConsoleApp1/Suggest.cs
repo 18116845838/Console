@@ -7,16 +7,30 @@ namespace ConsoleApp1
 	//意见建议
 	class Suggest:ContentService
 	{
-		//多态作业
-		public override void Publish()
+
+		public override void Agree()
 		{
-			base.Publish();
+			Console.WriteLine("对意见建议点赞，增加了帮帮点，作者增加了帮帮点");
 		}
 
-		public Suggest()
+		public override void Disagree()
 		{
-			Console.WriteLine("不消耗帮帮币");
+			Console.WriteLine("对意见建议点踩，增加了帮帮点，作者减少了帮帮点");
 		}
+
+		//多态作业
+		//public override void Publish()
+		//{
+		//	base.Publish();
+		//}
+
+
+
+		//public Suggest()
+		//{
+		//	Console.WriteLine("不消耗帮帮币");
+		//}
+
 		//留言字段
 		private string _message;
 		public string Message { get; set; }

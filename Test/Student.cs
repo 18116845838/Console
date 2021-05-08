@@ -4,19 +4,27 @@ using System.Text;
 
 namespace SelfStudy
 {
-	class Student:User
+	class Student : User
 	{
-		public int age;
-		public Student():base()
-		{
-			
-
-		}
-		User ll = new Student();
-		//Student kk = new User("",2,5);
-		User lv = new User();
 
 		
+		
+		
+
+
+
+
+		//public int age;
+		//public Student():base()
+		//{
+
+
+		//}
+		//User ll = new Student();
+		////Student kk = new User("",2,5);
+		//User lv = new User();
+
+
 
 		//访问修饰符
 		//private 
@@ -55,6 +63,74 @@ namespace SelfStudy
 		//	return -1;
 		//}
 	}
+
+	public interface I1
+	{
+		void m1();
+
+	}
+	public interface I2
+	{
+		void m1();
+
+	}
+	public interface I3
+	{
+		void m1();
+
+	}
+
+	public interface I4 : I1, I2, I3
+	{
+
+	}
+
+
+	class Max : I1, I2, I3// I4
+	{
+		void I1.m1()
+		{
+			Console.WriteLine("这是接口一的方法");
+		}
+
+		void I3.m1()
+		{
+			Console.WriteLine("这是接口二的方法");
+		}
+
+		void I2.m1()
+		{
+			Console.WriteLine("这是接口三的方法");
+		}
+	}
+	//internal
+	//interface
+
+	//protected
+	//protected
+	//protected
+	//protected
+	//protected
+	//protected
+	//protected
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+	//virtual 
+	//virtual
+	//override
+	//override
+	//override
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+	//virtual
+
 
 
 }

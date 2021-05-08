@@ -9,14 +9,32 @@ namespace Test
 	{
 		static void Main(string[] args)
 		{
+			//调用接口实现多态
+			I3 ll = new Max(); //new Max();
+			ll.m1();
+
+
+			//Computr oo = new YP();
+
+			//my ll = new my();
+			//ll.Ms = oo;
+			//ll.Nide();
+			//ll.MOde();
+			//Console.WriteLine();
+			//Computr ll = new YP();
+			//Computr nn = new Mp3();
+			//Computr loo= new Sj();
+			//my pp = new my();
+			//pp.MOde(ll);
+			//pp.Nide(nn);
 
 			//调用抽象类
-			Animal mm = new Dog();
-			Animal dd = new Cat();
-			dd.Back();
-			
-			mm.Back();
-			Console.WriteLine();
+			//Animal mm = new Dog();
+			//Animal dd = new Cat();
+			//dd.Back();
+
+			//mm.Back();
+			//Console.WriteLine();
 
 			//抽象类 狗汪汪的叫，猫咪喵喵的叫
 

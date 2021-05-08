@@ -9,13 +9,26 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+
+			//将ContentService抽象类进行调用
+			ContentService lh = new Problem();
+			lh.Agree();
+			lh.Disagree();
+			lh = new Suggest();
+			lh.Agree();
+			lh.Disagree();
+			lh = new Article();
+			lh.Agree();
+			lh.Disagree();
+			
+
 			//多态作业调用
-			ContentService lv = new Problem(10);
-			lv.Publish();
-			lv = new Suggest();
-			lv.Publish();
-			lv = new Article();
-			lv.Publish();
+			//ContentService lv = new Problem(10);
+			//lv.Publish();
+			//lv = new Suggest();
+			//lv.Publish();
+			//lv = new Article();
+			//lv.Publish();
 
 
 

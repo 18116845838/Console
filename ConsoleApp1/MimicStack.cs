@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	internal class MimicStack/*:User*/
+	internal class MimicStack
 	{
 		
 		//自己实现一个模拟栈（MimicStack)类，入栈和出栈数据类型为int类型，包含如下功能：
@@ -46,5 +46,6 @@ namespace ConsoleApp1
 			}
 			return -1;
 		}
+
 	}
 }

@@ -9,7 +9,17 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+
+			//用代码演示struct的类型给是值类型
+			//值类型可以直接赋值,无需new出
+			//int num = 32;
 			
+			//引用类应需要new出来才能使用
+			//Program c = new Program();
+
+
+			 
+
 
 
 

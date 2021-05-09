@@ -7,9 +7,25 @@ namespace SelfStudy
 	class Student : User
 	{
 
-		
-		
-		
+	  public int  age;
+
+		public static bool operator <(Student a, Student b)
+		{
+			return a.age > b.age;
+		}
+		public static bool operator >(Student a, Student b)
+		{
+			return a.age < b.age;
+		}
+		public static explicit operator YP(Student student)
+		{
+			return new YP();
+		} 
+		public static implicit operator Student(YP yP)
+		{
+			return new Student();
+		}
+
 
 
 
@@ -130,6 +146,7 @@ namespace SelfStudy
 	//virtual
 	//virtual
 	//virtual
+
 
 
 

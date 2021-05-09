@@ -9,16 +9,38 @@ namespace Test
 	{
 		static void Main(string[] args)
 		{
-			string num = "2383.12.21"
-			if (DateTime.TryParse(num, out DateTime date))
-			{
-				date = date.AddYears(12);
-				Console.WriteLine(date.Year);
-			}
-			else
-			{
-				Console.WriteLine("转换失败");
-			}
+			//string tim = Console.ReadLine();
+			
+			string time = DateTime.Now.ToString();
+
+
+
+			int year = Console.Read();
+			DateTime xz = new DateTime(year,01,01);
+			
+
+			//Student aa = new Student{ age = 28 };
+			//Student bb = new Student{ age = 29 };
+			//Console.WriteLine(aa.age>bb.age);
+			//TimeSpan cc = new TimeSpan(1,56,44);
+			//Console.WriteLine(cc);
+
+			/*string */
+
+
+			//Console.WriteLine(DateTime.Now.ToString(tim));
+			//Console.WriteLine(DateTime.Now.Equals(DateTime.Now));
+
+			//string num = "2383.12.21";
+			//if (DateTime.TryParse(num, out DateTime date))
+			//{
+			//	date = date.AddYears(12);
+			//	Console.WriteLine(date.Year);
+			//}
+			//else
+			//{
+			//	Console.WriteLine("转换失败");
+			//}
 			
 
 
@@ -32,8 +54,8 @@ namespace Test
 
 
 			//调用接口实现多态
-			I3 ll = new Max(); //new Max();
-			ll.m1();
+			//I3 ll = new Max(); //new Max();
+			//ll.m1();
 
 
 			//Computr oo = new YP();
@@ -196,6 +218,21 @@ namespace Test
 
 
 		}
+		//用户输入一个日期,计算与当前日期相差的天数,年月日
+		//之后的日期,用户输入之前的日期提示用户从新输入
+		//方法用户要传的参数是一个完整的日期,可以是数字必须可以转换为完整的日期
+
+
+
+
+	 	static  DateTime GetDate(DateTime dateTime, DateTime time)
+		{
+			string pp = Console.ReadLine();
+			string input = Convert.ToDateTime(Console.ReadLine());
+
+
+			return dateTime;
+		}
 	}
 
 	class  MyClass
@@ -280,5 +317,6 @@ namespace Test
 			Console.WriteLine("喵咪喵喵的叫");
 		}
 	}
+
 }
 	

@@ -63,27 +63,27 @@ namespace ConsoleApp1
 			//set { }
 		}
 
-		protected internal string Kind//kind不能为空值,只能让子类使用
-		{
-			get
-			{
-				if (_kind == null)
-				{
-					_kind = "";
-				}//else 
-				return _kind;
-			}
-			set
-			{
-				_kind = value;
-			}
-		}
-		//protected internal string Kind
+		//protected internal string Kind//kind不能为空值,只能让子类使用
 		//{
-		//	get { return _kind; }
-		//	set { _kind = value; }
+		//	get
+		//	{
+		//		if (_kind == null)
+		//		{
+		//			_kind = "";
+		//		}//else 
+		//		return _kind;
+		//	}
+		//	set
+		//	{
+		//		_kind = value;
+		//	}
 		//}
-		public Content()
+		protected internal string Kind
+		{
+			get { return _kind; }
+			set { _kind = value; }
+		}
+		public Content(string Kind)//kind不能为非空值，只能被子类调用
 		{
 			_kind = Kind;
 		}

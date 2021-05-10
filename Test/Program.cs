@@ -6,9 +6,9 @@ namespace Test
 	#region 时间作业枚举
 	enum Case
 	{
-		yrar=1,
-		mouth=2,
-		day=3
+		yrar = 1,
+		mouth = 2,
+		day = 3
 	}
 	#endregion
 
@@ -16,13 +16,13 @@ namespace Test
 	class Program
 	{
 
-	static void Main(string[] args)
+		static void Main(string[] args)
 		{
 			//string a = Console.ReadLine();
-			
-			
+
+
 			//Console.WriteLine(result);
-			
+
 			Console.WriteLine("请输入一个数字：1代表月份，2代表周，3代表日");
 			#region MyRegion
 			//string tim = Console.ReadLine();
@@ -240,46 +240,41 @@ namespace Test
 
 
 			#endregion
-			Case date=Case.day;
+			Case date = Case.day;
 			//nukm = Convert.ToInt32(Console.ReadLine());
 			bool a = int.TryParse(Console.ReadLine(), out int nukm);
 			DateTime da = new DateTime(2021, 12, 12);
-			da = GetDate(da,date,nukm);
+			da = GetDate(da, date, nukm);
 			Console.WriteLine("请输入要查看的日期间隔");
-			
+
 			//int result = Convert.ToInt32(Console.ReadLine());	
 			bool b = int.TryParse(Console.ReadLine(), out int result);
-
-
-			if (true)
+			switch (date)
 			{
+				case Case.yrar:
+					//Year(put);
+					Console.WriteLine($"日期是{ da = da.AddMonths(result)}");
+					break;
+				case Case.mouth:
+					//Mouth(put);
+					Console.WriteLine($"日期是{da = da.AddDays(result * 7)}");
+					break;
+				case Case.day:
+					//Days(put);
+					Console.WriteLine($"日期是{da = da.AddDays(result)}");
+					break;
+				default:
+					Console.WriteLine("请输入正确的数字");
 
-			} switch (date)
-				{
-					case Case.yrar:
-						//Year(put);
-						Console.WriteLine($"日期是{ da = da.AddMonths(result)}");
-						break;
-					case Case.mouth:
-						//Mouth(put);
-						Console.WriteLine($"日期是{da = da.AddDays(result * 7)}");
-						break;
-					case Case.day:
-						//Days(put);
-						Console.WriteLine($"日期是{da = da.AddDays(result)}");
-						break;
-					default:
-						Console.WriteLine("请输入正确的数字");
-
-						break;
-				}
+					break;
+			}
 
 
 		}
 
 
 
-		
+
 		//static void Mouth(int put)
 		//{
 		//	DateTime da = new DateTime(2021, 12, 12);
@@ -318,7 +313,7 @@ namespace Test
 		//	return date;
 		//}
 		#endregion
-		static DateTime GetDate(DateTime dateTime, Case date, int nukm) 
+		static DateTime GetDate(DateTime dateTime, Case date, int nukm)
 		{
 
 			switch (nukm)
@@ -339,11 +334,11 @@ namespace Test
 			return dateTime;
 
 		}
-		
+
 
 	}
 
-	class  MyClass
+	class MyClass
 	{
 		private string _name;
 		public string Name { get; set; }
@@ -392,9 +387,9 @@ namespace Test
 		}
 
 	}
-	class niu:MyClass
+	class niu : MyClass
 	{
-		public niu(string name):base(name)
+		public niu(string name) : base(name)
 		{
 
 		}
@@ -406,25 +401,27 @@ namespace Test
 	}
 
 	//抽象类
-	 abstract class Animal
+	abstract class Animal
 	{
 		public abstract void Back();
 	}
 
-	class Dog:Animal
+	class Dog : Animal
 	{
-		public override void Back() {
+		public override void Back()
+		{
 			Console.WriteLine("狗子汪汪的叫");
 		}
 
 	}
-	class Cat:Animal
+	class Cat : Animal
 	{
 
-		public override  void Back() {
+		public override void Back()
+		{
 			Console.WriteLine("喵咪喵喵的叫");
 		}
 	}
 
 }
-	
+

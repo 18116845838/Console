@@ -3,10 +3,14 @@ namespace ConsoleApp1
 {
 	class Program
 	{
-
-
-
-
+		#region 作业时间结构枚举变量
+		enum FromDate
+		{
+			Days=1,
+			week=2,
+			mouths=3
+		}
+		#endregion
 		static void Main(string[] args)
 		{
 
@@ -19,12 +23,23 @@ namespace ConsoleApp1
 
 			//用代码证明struct定义的类型是值类型
 			//源栈的学费是按周计费的，所以请实现这两个功能：
+			#region GetDate计算日期
 			//函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
+			FromDate fromdate = FromDate.Days;
+			Console.WriteLine("请输入日/周/月1：日2：周3：月");
+			bool times = int.TryParse(Console.ReadLine(), out int number);
+			GetDate(fromdate, number);
+			Console.WriteLine("请输入间隔的日期");
+			times = int.TryParse(Console.ReadLine(), out int num);
+			DateTime datetime = new DateTime(2020, 1, 1);
+			GetDate(datetime, num, fromdate);
+			#endregion
 
-			
+
+
 
 			//给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-		
+
 
 
 
@@ -425,12 +440,50 @@ namespace ConsoleApp1
 			Console.WriteLine(msg + b);*/
 			#endregion
 		}
-		static DateTime GetDate(DateTime dateTime, int num,string kind)
+			#region GetDate计算日期
+		static FromDate GetDate(FromDate fromDate, int number)
 		{
-			
-			
+
+			switch (number)
+			{
+				case 1:
+					fromDate = FromDate.Days;
+
+					break;
+				case 2:
+					fromDate = FromDate.week;
+					break;
+				case 3:
+					fromDate = FromDate.mouths;
+					break;
+				default:
+					Console.WriteLine("请输入正确的选项");
+					break;
+			}
+			return fromDate;
+		}
+		static DateTime GetDate(DateTime dateTime, int num, FromDate fromdate)
+		{
+			switch (fromdate)
+			{
+				case FromDate.Days:
+					dateTime = dateTime.AddDays(num);
+					break;
+				case FromDate.week:
+					dateTime = dateTime.AddDays(num * 7);
+					break;
+				case FromDate.mouths:
+					dateTime = dateTime.AddMonths(num);
+					break;
+				default:
+					Console.WriteLine("请输入正确的数字");
+					break;
+			}
+
 			return dateTime;
 		}
+		#endregion
+
 
 		//static DateTime GetTime(DateTime date,int year)
 		//{

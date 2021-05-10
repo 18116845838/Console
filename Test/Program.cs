@@ -3,21 +3,37 @@ using SelfStudy;
 
 namespace Test
 {
+	#region 时间作业枚举
+	enum Case
+	{
+		yrar=1,
+		mouth=2,
+		day=3
+	}
+	#endregion
 
 
 	class Program
 	{
-		static void Main(string[] args)
+
+	static void Main(string[] args)
 		{
+			//string a = Console.ReadLine();
+			
+			
+			//Console.WriteLine(result);
+			
+			Console.WriteLine("请输入一个数字：1代表月份，2代表周，3代表日");
+			#region MyRegion
 			//string tim = Console.ReadLine();
-			
-			string time = DateTime.Now.ToString();
+
+			//string time = DateTime.Now.ToString();
 
 
 
-			int year = Console.Read();
-			DateTime xz = new DateTime(year,01,01);
-			
+			//int year = Console.Read();
+			//DateTime xz = new DateTime(year, 01, 01);
+
 
 			//Student aa = new Student{ age = 28 };
 			//Student bb = new Student{ age = 29 };
@@ -41,7 +57,7 @@ namespace Test
 			//{
 			//	Console.WriteLine("转换失败");
 			//}
-			
+
 
 
 			//Bed num;
@@ -217,22 +233,114 @@ namespace Test
 			//Student.enroll(new Student("llss"));
 
 
+
+			//用户输入一个日期,计算与当前日期相差的天数,年月日
+			//之后的日期,用户输入之前的日期提示用户从新输入
+			//方法用户要传的参数是一个完整的日期,可以是数字必须可以转换为完整的日期
+
+
+			#endregion
+			Case date=Case.day;
+			//nukm = Convert.ToInt32(Console.ReadLine());
+			bool a = int.TryParse(Console.ReadLine(), out int nukm);
+			DateTime da = new DateTime(2021, 12, 12);
+			da = GetDate(da,date,nukm);
+			Console.WriteLine("请输入要查看的日期间隔");
+			
+			//int result = Convert.ToInt32(Console.ReadLine());	
+			bool b = int.TryParse(Console.ReadLine(), out int result);
+
+
+			if (true)
+			{
+
+			} switch (date)
+				{
+					case Case.yrar:
+						//Year(put);
+						Console.WriteLine($"日期是{ da = da.AddMonths(result)}");
+						break;
+					case Case.mouth:
+						//Mouth(put);
+						Console.WriteLine($"日期是{da = da.AddDays(result * 7)}");
+						break;
+					case Case.day:
+						//Days(put);
+						Console.WriteLine($"日期是{da = da.AddDays(result)}");
+						break;
+					default:
+						Console.WriteLine("请输入正确的数字");
+
+						break;
+				}
+
+
 		}
-		//用户输入一个日期,计算与当前日期相差的天数,年月日
-		//之后的日期,用户输入之前的日期提示用户从新输入
-		//方法用户要传的参数是一个完整的日期,可以是数字必须可以转换为完整的日期
 
 
 
+		
+		//static void Mouth(int put)
+		//{
+		//	DateTime da = new DateTime(2021, 12, 12);
 
-	 	static  DateTime GetDate(DateTime dateTime, DateTime time)
+		//	Console.WriteLine($"月份是{ da = da.AddMonths(put)}");
+		//}
+		//static void Days(int put)
+		//{
+		//	DateTime da = new DateTime(2021, 12, 12);
+
+		//	Console.WriteLine($"周是{da = da.AddDays(put * 7)}");
+		//}
+		//static void Year(int put)
+		//{
+		//	DateTime da = new DateTime(2021, 12, 12);
+		//	Console.WriteLine($"日期是{da = da.AddDays(put)}");
+		//}
+		#region 选择日期的方法
+		//static Case log(Case date,int nukm)
+		//{
+		//	switch (nukm)
+		//	{
+		//		case 0:
+		//			date = Case.yrar;
+		//			break;
+		//		case 1:
+		//			date = Case.mouth;
+		//			break;
+		//		case 2:
+		//			date = Case.day;
+		//			break;
+		//		default:
+		//			Console.WriteLine("请输入正确的日期");
+		//			break;
+		//	}
+		//	return date;
+		//}
+		#endregion
+		static DateTime GetDate(DateTime dateTime, Case date, int nukm) 
 		{
-			string pp = Console.ReadLine();
-			string input = Convert.ToDateTime(Console.ReadLine());
 
-
+			switch (nukm)
+			{
+				case 0:
+					date = Case.yrar;
+					break;
+				case 1:
+					date = Case.mouth;
+					break;
+				case 2:
+					date = Case.day;
+					break;
+				default:
+					Console.WriteLine("请输入正确的日期");
+					break;
+			}
 			return dateTime;
+
 		}
+		
+
 	}
 
 	class  MyClass

@@ -3,7 +3,7 @@ namespace ConsoleApp1
 {
 	class Program
 	{
-	
+
 
 
 
@@ -13,12 +13,19 @@ namespace ConsoleApp1
 			//用代码演示struct的类型给是值类型
 			//值类型可以直接赋值,无需new出
 			//int num = 32;
-			
+
 			//引用类应需要new出来才能使用
 			//Program c = new Program();
 
+			//用代码证明struct定义的类型是值类型
+			//源栈的学费是按周计费的，所以请实现这两个功能：
+			//函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
 
-			 
+			
+
+			//给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+		
+
 
 
 
@@ -27,20 +34,21 @@ namespace ConsoleApp1
 			Content cs = new Suggest();
 			ContentService cf = new ContentService();
 			cf.Publish(cs);
-			
 
 
 
-			
 
-			//ISendMessage接口方法调用
+
+
+
+			#region //ISendMessage接口方法调用
 			//用Console.WriteLine() 实现Send()。
 			//ISendMessage zs = new DBMessage();
 			//zs.Send();
 			//zs = new EmailMessage();
 			//zs.Send();
-
-			//将ContentService抽象类进行调用
+			#endregion
+			#region //将ContentService抽象类进行调用
 			//ContentService lh = new Problem();
 			//lh.Agree();
 			//lh.Disagree();
@@ -50,20 +58,16 @@ namespace ConsoleApp1
 			//lh = new Article();
 			//lh.Agree();
 			//lh.Disagree();
-			
-
-			//多态作业调用
+			#endregion
+			#region //多态作业调用
 			//ContentService lv = new Problem(10);
 			//lv.Publish();
 			//lv = new Suggest();
 			//lv.Publish();
 			//lv = new Article();
 			//lv.Publish();
-
-
-
-			//5实例化文章和意见建议，调用他们：
-
+			#endregion
+			#region //5实例化文章和意见建议，调用他们：
 			// .1继承自父类的属性和方法
 			// .2自己的属性和方法
 			//Article  zzm = new Article();
@@ -72,13 +76,14 @@ namespace ConsoleApp1
 			//zzm.List = "列表";//自己的属性
 			//Suggest mmz = new Suggest();
 			//mmz.Message = "留言";
+			#endregion
 
 
-
-
-			//调用单列方法
+			#region //调用单列方法
 			FactoryContext.Singleton();
-			
+			#endregion
+
+
 			//用户方法调用
 			/*User zs = new User("admin", "123456");
 			zs.InvitrdBy = new User();
@@ -90,17 +95,15 @@ namespace ConsoleApp1
 			//帮帮币
 			//HelpMoney ls = new HelpMoney(0,0);
 
-			//求助板块索引器
 
+			#region //求助板块索引器
 			//Problem we = new Problem(10);
 			//we[1] = "C#";
 			//we[2]="sql";
 			//we[3]="w3c";
 			//Console.WriteLine(we[1]);
-
-
-
-			//用代码和调试过程演示：
+			#endregion
+			#region //用代码和调试过程演示：
 
 			// 值类型参数的值传递
 			//int a = 1;
@@ -143,36 +146,27 @@ namespace ConsoleApp1
 			//	user.age++;
 			//	return user;			
 			//}
-
-
-
-
-
-
-
-
-
-			/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			#endregion
+			#region 面向过程作业
 			/*			输出两个整数 / 小数的和 / 差 / 积 / 商
-		电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
-		想一想以下语句输出的结果：
-			int i = 15;
-					Console.WriteLine(i++);  15
-					i -= 5;
-					Console.WriteLine(i);   11
-					Console.WriteLine(i >= 10);   ture
+	电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
+	想一想以下语句输出的结果：
+		int i = 15;
+				Console.WriteLine(i++);  15
+				i -= 5;
+				Console.WriteLine(i);   11
+				Console.WriteLine(i >= 10);   ture
 
-					Console.WriteLine("i值的最终结果为：" + i);
+				Console.WriteLine("i值的最终结果为：" + i);
 
-					int j = 20;
-					Console.WriteLine($"{i}+{j}={i + j}");  11+20=31
-					想一想如下代码的结果是什么，并说明原因：
-			int a = 10;
-					Console.WriteLine(a > 9 && (!(a < 11) || a > 10));  false
-					当a为何值时，结果为true？  当a>11时，结果为true
-		bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;  true
-		*/
+				int j = 20;
+				Console.WriteLine($"{i}+{j}={i + j}");  11+20=31
+				想一想如下代码的结果是什么，并说明原因：
+		int a = 10;
+				Console.WriteLine(a > 9 && (!(a < 11) || a > 10));  false
+				当a为何值时，结果为true？  当a>11时，结果为true
+	bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;  true
+	*/
 			/*整数之间的和，……
 			 * int num = 4;
 			int sam = 2;
@@ -326,10 +320,6 @@ namespace ConsoleApp1
 			//}
 
 
-
-
-
-
 			/*生成一个元素（值随机）从小到大排列的数组*/
 			/*int[] number = { 1,3,6,2,8,6,9,13,24,5,14,55};
 			
@@ -433,28 +423,38 @@ namespace ConsoleApp1
 			string msg;
 			bool b = logOn(name, psw, out msg);
 			Console.WriteLine(msg + b);*/
-
-
-
-
-
-
-
+			#endregion
 		}
-		/////////////////////////////////////////////////////////////////////////////////////////////////
-		/////////////////////////////////////////////////////////////////////////////////////////////////
-		/////////////////////////////////////////////////////////////////////////////////////////////////
-		/////////////////////////////////////////////////////////////////////////////////////////////////
+		static DateTime GetDate(DateTime dateTime, int num,string kind)
+		{
+			
+			
+			return dateTime;
+		}
+
+		//static DateTime GetTime(DateTime date,int year)
+		//{
+		//	if (year%4==0&&year%100!=0)
+		//	{
+		//		for (int i = 0; i <; i++)
+		//		{
+
+		//		}
+		//	}
+		//	else
+		//	{
+
+		//	}
+		//	return date;
+		//}
 
 		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
 	完成“猜数字”游戏，方法名GuessMe()：*/
 		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
 		float num=0;
 		GetAverage(sam, num);*/
-
 		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
 		//完成“猜数字”游戏，方法名GuessMe()：*/
-
 		/// <summary>
 		/// 源栈同学成绩
 		/// </summary>
@@ -473,8 +473,6 @@ namespace ConsoleApp1
 			Console.WriteLine(Math.Round(b / a.Length, 2));
 			return -1;
 		}*/
-
-
 		/*随机生成一个大于0小于1000的整数
 		用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
 		没猜中可以继续猜，但最多不能超过10次
@@ -531,7 +529,6 @@ namespace ConsoleApp1
 			num = sam[i] + num;
 		}
 		Console.WriteLine(num / sam.Length);*/
-
 		//递归
 		/*static void getFibonacci(int a,int b) 
 		{
@@ -540,7 +537,6 @@ namespace ConsoleApp1
 			getFibonacci(b, sam);
 
 		}*/
-		///
 		//快速排序
 		/*static void QuickSort(int[] nums,int left,int right)
 			{
@@ -586,11 +582,7 @@ namespace ConsoleApp1
 			如果找到，返回该元素所在的下标，否则，返回-1*/
 		/*int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
 		Console.WriteLine(BinarySeek(array, 1));*/
-
-
-
 		/*利用ref调用Swap()方法交换两个同学的床位号*/
-
 		/*static void berth(ref int a, ref int b)
 		{
 			int tepm = 0;
@@ -603,8 +595,6 @@ namespace ConsoleApp1
 			a = b;
 			b = tepm;
 		}*/
-
-
 		/*将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
 	true/false，表示登陆是否成功
 	string，表示登陆失败的原因*/
@@ -640,8 +630,6 @@ namespace ConsoleApp1
 			}
 
 		}*/
-
-
 
 		/*定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。利用可选参数控制：
 

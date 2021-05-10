@@ -83,10 +83,10 @@ namespace ConsoleApp1
 			get { return _kind; }
 			set { _kind = value; }
 		}
-		public Content(string Kind)//kind不能为非空值，只能被子类调用
-		{
-			_kind = Kind;
-		}
+		//public Content(string Kind)//kind不能为非空值，只能被子类调用
+		//{
+		//	_kind = Kind;
+		//}
 		//public abstract void publish();
 
 

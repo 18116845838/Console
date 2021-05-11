@@ -13,6 +13,12 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
+			Token kk = Token.Newbie;
+			User ll = new User();
+			kk = kk | Token.Admin;
+			ll.Tokens.Has(Token.Admin);
+			
+			Console.WriteLine(kk);
 			#region //用代码演示struct的类型给是值类型
 			//值类型可以直接赋值,无需new出
 			//int num = 32;
@@ -433,6 +439,7 @@ namespace ConsoleApp1
 			Console.WriteLine(msg + b);*/
 			#endregion
 		}
+
 		#region GetDate计算日期
 		//static FromDate GetDate(FromDate fromDate, int number)
 		//{

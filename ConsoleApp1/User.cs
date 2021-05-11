@@ -4,9 +4,14 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	sealed class User: Entity, IChat, ISendMessage
+	sealed class User : Entity, IChat, ISendMessage
 	{
-		//User类同时继承，将Ichat接口显示实现
+
+		#region ////User类中添加一个Tokens属性，类型为TokenManage
+		public TokenManager Tokens { get; set; }
+		#endregion
+
+		#region //User类同时继承，将Ichat接口显示实现
 		void IChat.Send()
 		{
 			throw new NotImplementedException();
@@ -16,6 +21,7 @@ namespace ConsoleApp1
 		{
 			throw new NotImplementedException();
 		}
+		#endregion
 
 		//作业 
 		//让user类无法被继承
@@ -67,25 +73,28 @@ namespace ConsoleApp1
 		{
 			Name = name;
 		}
-		//每一个User对象一定有Name和Password赋值
-		public User(string name,string password)
+
+		#region //每一个User对象一定有Name和Password赋值
+		public User(string name, string password)
 		{
 			Name = name;
-			Password =password;
-			
-
+			Password = password;
 		}
+		#endregion
+
 		private string _name;
 		public string Name
 		{
 			get { return _name; }
-			set {
-				if (value=="admin")
+			set
+			{
+				if (value == "admin")
 				{
-					 value  = "系统管理员";
+					value = "系统管理员";
 
 				}//else
-				_name = value; }
+				_name = value;
+			}
 		}
 
 
@@ -97,15 +106,13 @@ namespace ConsoleApp1
 		}
 
 		private User _invitrdBy;
-		public User InvitrdBy{get;set;}
+		public User InvitrdBy { get; set; }
 
 		private string _invitationCode;//邀请码
 		public string InvitationCode { get; set; }
 
 
-
-
-		/// //////////////////////////////////////////////////////////////////////////////////////////////
+		#region 一些方法
 		public /*static*/ void Register(User user, string InvitationCode)
 		{
 			Console.WriteLine("请输入邀请人！");
@@ -141,30 +148,33 @@ namespace ConsoleApp1
 			}
 
 		}
-		public void Login(User user )
+		public void Login(User user)
 		{
 			string Password;
 			Console.WriteLine("请输入用户名！");
 			user.Name = Console.ReadLine();
 			Console.WriteLine("请输入密码！");
 			Password = Console.ReadLine();
-			if (user.Name!= "系统管理员" && Password!="123456")
+			if (user.Name != "系统管理员" && Password != "123456")
 			{
 				Console.WriteLine("用户名或者密码错误！");
 			}
-			else if (user.Name== "系统管理员" && Password!="123456")
+			else if (user.Name == "系统管理员" && Password != "123456")
 			{
 				Console.WriteLine("用户名或者密码错误！");
 			}
-			else if (Password=="123456"&&user.Name!= "系统管理员")
+			else if (Password == "123456" && user.Name != "系统管理员")
 			{
 				Console.WriteLine("用户名或者密码错误！");
 			}
 			else
 			{
-					Console.WriteLine("登录成功！");	
+				Console.WriteLine("登录成功！");
 			}
 		}
+		#endregion
+
+
 
 
 	}

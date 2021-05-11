@@ -6,15 +6,14 @@ namespace ConsoleApp1
 		#region 作业时间结构枚举变量
 		enum FromDate
 		{
-			Days=1,
-			week=2,
-			mouths=3
+			Days = 1,
+			week = 2,
+			mouths = 3
 		}
 		#endregion
 		static void Main(string[] args)
 		{
-
-			//用代码演示struct的类型给是值类型
+			#region //用代码演示struct的类型给是值类型
 			//值类型可以直接赋值,无需new出
 			//int num = 32;
 
@@ -23,38 +22,33 @@ namespace ConsoleApp1
 
 			//用代码证明struct定义的类型是值类型
 			//源栈的学费是按周计费的，所以请实现这两个功能：
-			#region GetDate计算日期
-			//函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
-			FromDate fromdate = FromDate.Days;
-			Console.WriteLine("请输入日/周/月1：日2：周3：月");
-			bool times = int.TryParse(Console.ReadLine(), out int number);
-			GetDate(fromdate, number);
-			Console.WriteLine("请输入间隔的日期");
-			times = int.TryParse(Console.ReadLine(), out int num);
-			DateTime datetime = new DateTime(2020, 1, 1);
-			GetDate(datetime, num, fromdate);
 			#endregion
 
+			#region GetDate计算日期
+			////函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
+			//FromDate fromdate = FromDate.Days;
+			//Console.WriteLine("请输入日/周/月1：日2：周3：月");
+			//bool times = int.TryParse(Console.ReadLine(), out int number);
+			//GetDate(fromdate, number);
+			//Console.WriteLine("请输入间隔的日期");
+			//times = int.TryParse(Console.ReadLine(), out int num);
+			//DateTime datetime = new DateTime(2020, 1, 1);
+			//GetDate(datetime, num, fromdate);
+			#endregion
 
+			#region //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+			Console.WriteLine("请输入要选择的年份");
+			bool b = int.TryParse(Console.ReadLine(), out int year);
+			DateTime dateTime = new DateTime(year, 1, 1);
+			GetDates(dateTime, year);
+			GetDates(GetDates(dateTime, year));
+			#endregion
 
-
-			//给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-
-
-
-
-
-
-			//错误，修改之前作业Content
+			#region //错误，修改之前作业Content
 			Content cs = new Suggest();
 			ContentService cf = new ContentService();
 			cf.Publish(cs);
-
-
-
-
-
-
+			#endregion
 
 			#region //ISendMessage接口方法调用
 			//用Console.WriteLine() 实现Send()。
@@ -98,8 +92,7 @@ namespace ConsoleApp1
 			FactoryContext.Singleton();
 			#endregion
 
-
-			//用户方法调用
+			#region //用户方法调用
 			/*User zs = new User("admin", "123456");
 			zs.InvitrdBy = new User();
 			string InvitationCode = "1357";
@@ -109,7 +102,7 @@ namespace ConsoleApp1
 
 			//帮帮币
 			//HelpMoney ls = new HelpMoney(0,0);
-
+			#endregion
 
 			#region //求助板块索引器
 			//Problem we = new Problem(10);
@@ -440,69 +433,82 @@ namespace ConsoleApp1
 			Console.WriteLine(msg + b);*/
 			#endregion
 		}
-			#region GetDate计算日期
-		static FromDate GetDate(FromDate fromDate, int number)
+		#region GetDate计算日期
+		//static FromDate GetDate(FromDate fromDate, int number)
+		//{
+
+		//	switch (number)
+		//	{
+		//		case 1:
+		//			fromDate = FromDate.Days;
+
+		//			break;
+		//		case 2:
+		//			fromDate = FromDate.week;
+		//			break;
+		//		case 3:
+		//			fromDate = FromDate.mouths;
+		//			break;
+		//		default:
+		//			Console.WriteLine("请输入正确的选项");
+		//			break;
+		//	}
+		//	return fromDate;
+		//}
+		//static DateTime GetDate(DateTime dateTime, int num, FromDate fromdate)
+		//{
+		//	switch (fromdate)
+		//	{
+		//		case FromDate.Days:
+		//			dateTime = dateTime.AddDays(num);
+		//			break;
+		//		case FromDate.week:
+		//			dateTime = dateTime.AddDays(num * 7);
+		//			break;
+		//		case FromDate.mouths:
+		//			dateTime = dateTime.AddMonths(num);
+		//			break;
+		//		default:
+		//			Console.WriteLine("请输入正确的数字");
+		//			break;
+		//	}
+
+		//	return dateTime;
+		//}
+		#endregion
+
+		#region 结构日期计算排列每周起始日期
+		static DateTime GetDates(DateTime dateTime, int year)
 		{
-
-			switch (number)
+			for (int i = 0; i < 6; i++)
 			{
-				case 1:
-					fromDate = FromDate.Days;
+				if (dateTime.DayOfWeek == DayOfWeek.Sunday)
+				{
 
-					break;
-				case 2:
-					fromDate = FromDate.week;
-					break;
-				case 3:
-					fromDate = FromDate.mouths;
-					break;
-				default:
-					Console.WriteLine("请输入正确的选项");
-					break;
+					dateTime.AddDays(i);
+					return dateTime;
+				}
+				else
+				{
+					dateTime = new DateTime(year, 1, 1);
+					dateTime = dateTime.AddDays(i);
+				}
 			}
-			return fromDate;
+			return dateTime;
 		}
-		static DateTime GetDate(DateTime dateTime, int num, FromDate fromdate)
+		static DateTime GetDates(DateTime dateTime)
 		{
-			switch (fromdate)
+			for (int i = 0; i < 365 / 7; i++)
 			{
-				case FromDate.Days:
-					dateTime = dateTime.AddDays(num);
-					break;
-				case FromDate.week:
-					dateTime = dateTime.AddDays(num * 7);
-					break;
-				case FromDate.mouths:
-					dateTime = dateTime.AddMonths(num);
-					break;
-				default:
-					Console.WriteLine("请输入正确的数字");
-					break;
+				Console.WriteLine($"第{i + 1}周：{dateTime.ToString("yyyy年MM月dd日")}--{dateTime.AddDays(6).ToString("yyyy年MM月dd日")}");
+				dateTime = dateTime.AddDays(7);
 			}
-
 			return dateTime;
 		}
 		#endregion
 
+		#region 	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()完成“猜数字”游戏，方法名GuessMe()：
 
-		//static DateTime GetTime(DateTime date,int year)
-		//{
-		//	if (year%4==0&&year%100!=0)
-		//	{
-		//		for (int i = 0; i <; i++)
-		//		{
-
-		//		}
-		//	}
-		//	else
-		//	{
-
-		//	}
-		//	return date;
-		//}
-
-		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-	完成“猜数字”游戏，方法名GuessMe()：*/
 		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
 		float num=0;
 		GetAverage(sam, num);*/
@@ -574,7 +580,9 @@ namespace ConsoleApp1
 			}
 			return -1;
 		}*/
-		//平均数
+		#endregion
+
+		#region //平均数
 		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
 		int num = 0;
 		for (int i = 0; i < sam.Length - 1; i++)
@@ -620,16 +628,18 @@ namespace ConsoleApp1
 
 				}
 			}*/
-
-		/*定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。利用可选参数控制：
-		最小值min（默认为1）
-		相邻两个元素之间的最大差值gap（默认为5）
-		元素个数length（默认为10个）*/
+		#endregion
+		#region /*定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列。利用可选参数控制：
+		//最小值min（默认为1）
+		//相邻两个元素之间的最大差值gap（默认为5）
+		//元素个数length（默认为10个）*/
 		//调用
 		/*int[] max = new int[1];
 
 		Console.WriteLine(GetArray(max, min:4,length: 15));*/
+		#endregion
 
+		#region 面向过程剩余作业
 		/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
 			传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
 			如果找到，返回该元素所在的下标，否则，返回-1*/
@@ -689,16 +699,15 @@ namespace ConsoleApp1
 	最小值min（默认为1）
 	相邻两个元素之间的最大差值gap（默认为5）
 	元素个数length（默认为10个）*/
+		#endregion
+		#region /// 定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列
 
-		/// <summary>
-		/// 定义一个生成数组的方法：int[] GetArray()，其元素随机生成从小到大排列
 		/// </summary>
 		/// <param name="max">传入的数组名称</param>
 		/// <param name="min">传入z最小值默认1</param>
 		/// <param name="gap">定义两个元素的最大差值默认为5</param>
 		/// /// <param name="length">数组长度默认10</param>
 		/// <returns>返回这个数组</returns>
-
 		/*static int[] GetArray(int[] max, int min = 1, int gap = 5, int length = 10)
 		{
 			int sam;
@@ -714,10 +723,10 @@ namespace ConsoleApp1
 			}
 			return max;
 		}*/
-
-		/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
-			传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
-			如果找到，返回该元素所在的下标，否则，返回-1*/
+		#endregion
+		#region /*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
+		//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
+		//如果找到，返回该元素所在的下标，否则，返回-1*/
 		/// <summary>
 		/// 实现二分查找，方法名BinarySeek
 		/// </summary>
@@ -725,31 +734,31 @@ namespace ConsoleApp1
 		/// <param name="target">要查找的元素</param>
 		/// <returns>返回-1</returns>
 		/*static int BinarySeek(int[] numbers, int target)
+{
+
+	int left = 0;
+	int right = numbers.Length - 1;
+	int middle;
+	while (left<=right)
+	{
+		middle = (left + right) / 2;
+		if (numbers[middle] > target)
 		{
-
-			int left = 0;
-			int right = numbers.Length - 1;
-			int middle;
-			while (left<=right)
-			{
-				middle = (left + right) / 2;
-				if (numbers[middle] > target)
-				{
-					right = middle-1;
-				}
-				else if (numbers[middle] < target)
-				{
-					left = middle+1;
-				}
-				else
-				{
-					return middle;  //返回元素所在下标
-				}
-				//else continue
-			}
-			return -1;
-		}*/
-
+			right = middle-1;
+		}
+		else if (numbers[middle] < target)
+		{
+			left = middle+1;
+		}
+		else
+		{
+			return middle;  //返回元素所在下标
+		}
+		//else continue
+	}
+	return -1;
+}*/
+		#endregion
 
 	}
 }

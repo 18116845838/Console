@@ -28,7 +28,7 @@ namespace ConsoleApp1
 		}
 		public Token Remove(Token token)
 		{
-			if (Has(token)==true)
+			if (Has(token))
 			{
 				return _tokens = _tokens ^ token;
 			}

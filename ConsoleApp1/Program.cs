@@ -13,12 +13,19 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
-			Token kk = Token.Newbie;
-			User ll = new User();
-			kk = kk | Token.Admin;
-			ll.Tokens.Has(Token.Admin);
-			
-			Console.WriteLine(kk);
+
+
+			#region //思考dynamic和var的区别，并用代码予以演示
+			//var是一种推导类型，是根据变量的内容来决定变量的类型
+			//dynamic是一种动态类型，当代码错误是，他逃避了编译时的检查，但在运行时代码就会报错
+			var num = 15;
+			var sam = "shiwu";
+			dynamic nums = 27;
+			dynamic sams = "ershiqi";
+			//Console.WriteLine(1-sam);//编译时就会报错
+			Console.WriteLine(21 - sams);//编译时不会报错，运行时报错
+			#endregion
+
 			#region //用代码演示struct的类型给是值类型
 			//值类型可以直接赋值,无需new出
 			//int num = 32;
@@ -43,11 +50,11 @@ namespace ConsoleApp1
 			#endregion
 
 			#region //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-			Console.WriteLine("请输入要选择的年份");
-			bool b = int.TryParse(Console.ReadLine(), out int year);
-			DateTime dateTime = new DateTime(year, 1, 1);
-			GetDates(dateTime, year);
-			GetDates(GetDates(dateTime, year));
+			//Console.WriteLine("请输入要选择的年份");
+			//bool b = int.TryParse(Console.ReadLine(), out int year);
+			//DateTime dateTime = new DateTime(year, 1, 1);
+			//GetDates(dateTime, year);
+			//GetDates(GetDates(dateTime, year));
 			#endregion
 
 			#region //错误，修改之前作业Content

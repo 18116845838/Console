@@ -13,7 +13,11 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
-
+			#region //构造一个能装任何数据的数组，并完成数据的读写
+			//object[] arrays = { 1, 17.9, "变量", DateTime.Now };
+			//arrays = new object[17];
+			//Console.WriteLine(arrays[1]);	
+			#endregion
 
 			#region //思考dynamic和var的区别，并用代码予以演示
 			//var是一种推导类型，是根据变量的内容来决定变量的类型
@@ -23,7 +27,7 @@ namespace ConsoleApp1
 			dynamic nums = 27;
 			dynamic sams = "ershiqi";
 			//Console.WriteLine(1-sam);//编译时就会报错
-			Console.WriteLine(21 - sams);//编译时不会报错，运行时报错
+			//Console.WriteLine(21 - sams);//编译时不会报错，运行时报错
 			#endregion
 
 			#region //用代码演示struct的类型给是值类型

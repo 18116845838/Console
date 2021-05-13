@@ -14,38 +14,39 @@ namespace ConsoleApp1
 		//3入栈检查，
 		//如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
 		//	如果已弹出所有数据，提示“栈已空”
-		private int[] mimicStack;
+		private /*int*/object[] mimicStack;
 		/*private MimicStack */
 		public MimicStack(int lenth)
 		{
-			mimicStack = new int[lenth];
+			mimicStack = new object[lenth];
 		}
-		int top = 0;
+		public int top = 0;
 
-		public int Pop(int date)
+		public void Push(object data)
 		{
 			if (top <= mimicStack.Length - 1)
 			{
-				mimicStack[top] = date;
+				mimicStack[top] = data;
 				top++;
 			}
 			else
 			{
 				Console.WriteLine("栈溢出");
 			}
-			return -1;
+
 		}
-		public int Push()
+		public object Pop()
 		{
-			if (top != mimicStack.Length - 1)
+			if (top >0)
 			{
 				top--;
+				Console.WriteLine(mimicStack[top]);
 			}
 			else
 			{
 				Console.WriteLine("栈已空");
 			}
-			return -1;
+			return mimicStack[top];
 		}
 		#endregion
 

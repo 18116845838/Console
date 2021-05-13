@@ -10,7 +10,8 @@ namespace ConsoleApp1
 		//  用Console.WriteLine() 实现Send()。
 		public void Send()
 		{
-			Console.WriteLine("存储到数据库");
+			Console.WriteLine("发送邮件成功");
 		}
+
 	}
 }

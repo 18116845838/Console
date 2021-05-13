@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ConsoleApp1
 {
 	class DBMessage : ISendMessage
@@ -10,7 +11,8 @@ namespace ConsoleApp1
 		//  用Console.WriteLine() 实现Send()。
 		public void Send()
 		{
-			Console.WriteLine("发送邮件成功");
+			Console.WriteLine("存储到数据库");
+
 		}
 	}
 }

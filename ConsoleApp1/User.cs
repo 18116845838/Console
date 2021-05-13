@@ -14,12 +14,20 @@ namespace ConsoleApp1
 		#region //User类同时继承，将Ichat接口显示实现
 		void IChat.Send()
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("IChar接口");
 		}
-
 		public void Send()
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("ISendMessage接口");
+		}
+
+		public void Send(EmailMessage emailMessage)
+		{
+			emailMessage.Send();
+		}
+		public void Send(DBMessage dBMessageq)
+		{
+			dBMessageq.Send();
 		}
 		#endregion
 

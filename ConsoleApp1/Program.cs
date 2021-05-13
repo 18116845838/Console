@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+
 namespace ConsoleApp1
 {
 	class Program
@@ -13,6 +15,13 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
+			//之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
+			//想一想他们应该在哪里赋值比较好，并完成相应代码
+			//反射_createTime字段
+
+
+
+
 			#region //构造一个能装任何数据的数组，并完成数据的读写
 			//object[] arrays = { 1, 17.9, "变量", DateTime.Now };
 			//arrays = new object[17];
@@ -22,10 +31,10 @@ namespace ConsoleApp1
 			#region //思考dynamic和var的区别，并用代码予以演示
 			//var是一种推导类型，是根据变量的内容来决定变量的类型
 			//dynamic是一种动态类型，当代码错误是，他逃避了编译时的检查，但在运行时代码就会报错
-			var num = 15;
-			var sam = "shiwu";
-			dynamic nums = 27;
-			dynamic sams = "ershiqi";
+			//var num = 15;
+			//var sam = "shiwu";
+			//dynamic nums = 27;
+			//dynamic sams = "ershiqi";
 			//Console.WriteLine(1-sam);//编译时就会报错
 			//Console.WriteLine(21 - sams);//编译时不会报错，运行时报错
 			#endregion
@@ -62,17 +71,32 @@ namespace ConsoleApp1
 			#endregion
 
 			#region //错误，修改之前作业Content
-			Content cs = new Suggest();
-			ContentService cf = new ContentService();
-			cf.Publish(cs);
+			//Content cs = new Suggest();
+			//ContentService cf = new ContentService();
+			//cf.Publish(cs);
 			#endregion
 
 			#region //ISendMessage接口方法调用
 			//用Console.WriteLine() 实现Send()。
-			//ISendMessage zs = new DBMessage();
-			//zs.Send();
-			//zs = new EmailMessage();
-			//zs.Send();
+			ISendMessage zs = new DBMessage();
+			zs.Send();
+			zs = new EmailMessage();
+			zs.Send();
+			//user调用
+			User users = new User();
+			EmailMessage emailMessage = new EmailMessage();
+			DBMessage dBMessage = new DBMessage();
+			users.Send(emailMessage);
+			users.Send(dBMessage);
+
+
+			User user = new User();
+			user.Send();
+			ISendMessage sendMessage = new User();
+			IChat chat = new User();
+			chat.Send();
+			user.Send();
+
 			#endregion
 			#region //将ContentService抽象类进行调用
 			//ContentService lh = new Problem();
@@ -106,7 +130,7 @@ namespace ConsoleApp1
 
 
 			#region //调用单列方法
-			FactoryContext.Singleton();
+			//FactoryContext.Singleton();
 			#endregion
 
 			#region //用户方法调用

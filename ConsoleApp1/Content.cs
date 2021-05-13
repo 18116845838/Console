@@ -5,10 +5,13 @@ using System.Text;
 namespace ConsoleApp1
 {
 	/*abstract*/
-	abstract class Content
+	/*abstract*/ class Content
 	{
-		//作业：
+		//之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
+		//想一想他们应该在哪里赋值比较好，并完成相应代码
 
+
+		//作业：
 		//  思考之前的Content类，该将其抽象成抽象类还是接口？为什么？并按你的想法实现。
 		//应该使用抽象类，因为接口中无法写字段，而content中存储的有字段
 
@@ -23,10 +26,10 @@ namespace ConsoleApp1
 		//  假设User类同时继承了ISendMessage和IChat，如何处理？
 
 		//点赞作者增加帮帮点，用户减少
-		public abstract void Agree();
+		//public abstract void Agree();
 
-		//点踩作者减少帮帮点，用户增加
-		public abstract void Disagree();
+		////点踩作者减少帮帮点，用户增加
+		//public abstract void Disagree();
 
 
 
@@ -40,10 +43,10 @@ namespace ConsoleApp1
 		//	3Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
 		//	4其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
 
-		public virtual void Publish()
-		{
+		//public virtual void Publish()
+		//{
 			
-		}
+		//}
 
 
 
@@ -53,13 +56,18 @@ namespace ConsoleApp1
 		// .2自己的属性和方法
 
 		//6再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？ 
+		//public Content(DateTime dateTime,DateTime publishTime)
+		//{
+		//	_createTime = dateTime;
+		//	publishTime = PublishTime;
 
+		//}
 		private string _kind;
 		public int age;
 		private DateTime _createTime;
 		public DateTime PublishTime
 		{
-			get { return _createTime; }
+			get { return PublishTime; }
 			//set { }
 		}
 
@@ -78,11 +86,11 @@ namespace ConsoleApp1
 		//		_kind = value;
 		//	}
 		//}
-		protected internal string Kind
-		{
-			get { return _kind; }
-			set { _kind = value; }
-		}
+		//protected internal string Kind
+		//{
+		//	get { return _kind; }
+		//	set { _kind = value; }
+		//}
 		//public Content(string Kind)//kind不能为非空值，只能被子类调用
 		//{
 		//	_kind = Kind;

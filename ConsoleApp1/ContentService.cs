@@ -13,11 +13,11 @@ namespace ConsoleApp1
 		//如果发布Suggest，不需要消耗帮帮币
 
 		//最后将内容存到数据库中，三个类存数据库的方法是完全一样的，现在用Console.WriteLine() 代替。根据我们学习的继承和多态知识，实现上述功能。 
-		public  void Publish(Content content)
-		{
-			content.Publish();
-			Console.WriteLine("save into db");
-		}
+		//public  void Publish(Content content)
+		//{
+		//	content.Publish();
+		//	Console.WriteLine("save into db");
+		//}
 
 
 

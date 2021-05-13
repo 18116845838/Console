@@ -7,34 +7,34 @@ namespace ConsoleApp1
 	  class Problem:Content
 	{
 
-		public override void Agree()
-		{
-			Console.WriteLine("对求助点赞，减少了帮帮点，作者增加了棒棒点");
-		}
+		//public override void Agree()
+		//{
+		//	Console.WriteLine("对求助点赞，减少了帮帮点，作者增加了棒棒点");
+		//}
 
-		public override void Disagree()
-		{
-			Console.WriteLine("对求助点踩，增加了帮帮点，作者增加了帮帮点");
-		}
+		//public override void Disagree()
+		//{
+		//	Console.WriteLine("对求助点踩，增加了帮帮点，作者增加了帮帮点");
+		//}
 
 
 
 		/// <summary>
 		/// 多态作业
 		/// </summary>
-		public override void Publish()
-		{
-			Console.WriteLine($"消耗了{_reward}枚帮帮币");
-			base.Publish();	
-		}
-		public Problem(int num)
-		{
-			Reward = num;	
-		}
-		public Problem()
-		{
+		//public override void Publish()
+		//{
+		//	Console.WriteLine($"消耗了{_reward}枚帮帮币");
+		//	base.Publish();	
+		//}
+		//public Problem(int num)
+		//{
+		//	Reward = num;	
+		//}
+		//public Problem()
+		//{
 
-		}
+		//}
 
 
 		/*求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、

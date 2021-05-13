@@ -4,13 +4,21 @@ using System.Text;
 
 namespace SelfStudy
 {
-	/*public*/
+
+	//internal class OnlineAttribute : Attribute
+	//{
+	//	public int Vertual { get; set; } 
+	//}
+	//[Online (Vertual=3)]
 	class User
 	{
 
 
-
-
+		private DateTime shijian=DateTime.Now;
+		public void Greet(string name)
+		{
+			Console.WriteLine($"你好啊我叫{name}");	
+		}
 		//private static User _name;
 		///*private*/public User()
 		//{
@@ -58,4 +66,5 @@ namespace SelfStudy
 		}
 	
 	}
+
 }

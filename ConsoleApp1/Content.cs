@@ -7,8 +7,6 @@ namespace ConsoleApp1
 	/*abstract*/
 	/*abstract*/ class Content
 	{
-		//之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
-		//想一想他们应该在哪里赋值比较好，并完成相应代码
 
 
 		//作业：
@@ -45,7 +43,7 @@ namespace ConsoleApp1
 
 		//public virtual void Publish()
 		//{
-			
+
 		//}
 
 
@@ -56,20 +54,33 @@ namespace ConsoleApp1
 		// .2自己的属性和方法
 
 		//6再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？ 
-		//public Content(DateTime dateTime,DateTime publishTime)
+		//public Content(DateTime dateTime, DateTime publishTime)
 		//{
 		//	_createTime = dateTime;
 		//	publishTime = PublishTime;
 
 		//}
+		#region 字段
 		private string _kind;
-		public int age;
-		private DateTime _createTime;
+		private DateTime _publishTime;
+
+		private int age = 16;
+		private DateTime _createTime=DateTime.Now;
+		#endregion
+
+		#region 属性
+		public DateTime CreateTime
+		{
+			get { return _createTime; }
+			private set { _createTime = value; }
+		}
 		public DateTime PublishTime
 		{
-			get { return PublishTime; }
-			//set { }
+
+			get { return _publishTime; }
+			private set { _publishTime = value; }
 		}
+		#endregion
 
 		//protected internal string Kind//kind不能为空值,只能让子类使用
 		//{

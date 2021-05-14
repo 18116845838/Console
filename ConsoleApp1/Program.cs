@@ -13,12 +13,19 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
+
 		static void Main(string[] args)
 		{
-		
+			#region 调用CreateTime,和PublishTime方法
+			//之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
+			//想一想他们应该在哪里赋值比较好，并完成相应代码
+			//反射_createTime字段
 
-
-
+			Content content = new Content();
+			DateTime date = new DateTime(2020, 1, 1);
+			Invoke.HWMethod.AlterCreationtime(content, date);
+			Invoke.HWMethod.AlterpubllishTime(content, date);
+			#endregion
 
 			#region //构造一个能装任何数据的数组，并完成数据的读写
 			//object[] arrays = { 1, 17.9, "变量", DateTime.Now };
@@ -76,24 +83,24 @@ namespace ConsoleApp1
 
 			#region //ISendMessage接口方法调用
 			//用Console.WriteLine() 实现Send()。
-			ISendMessage zs = new DBMessage();
-			zs.Send();
-			zs = new EmailMessage();
-			zs.Send();
-			//user调用
-			User users = new User();
-			EmailMessage emailMessage = new EmailMessage();
-			DBMessage dBMessage = new DBMessage();
-			users.Send(emailMessage);
-			users.Send(dBMessage);
+			//ISendMessage zs = new DBMessage();
+			//zs.Send();
+			//zs = new EmailMessage();
+			//zs.Send();
+			////user调用
+			//User users = new User();
+			//EmailMessage emailMessage = new EmailMessage();
+			//DBMessage dBMessage = new DBMessage();
+			//users.Send(emailMessage);
+			//users.Send(dBMessage);
 
 
-			User user = new User();
-			user.Send();
-			ISendMessage sendMessage = new User();
-			IChat chat = new User();
-			chat.Send();
-			user.Send();
+			//User user = new User();
+			//user.Send();
+			//ISendMessage sendMessage = new User();
+			//IChat chat = new User();
+			//chat.Send();
+			//user.Send();
 
 			#endregion
 			#region //将ContentService抽象类进行调用
@@ -540,7 +547,8 @@ namespace ConsoleApp1
 		{
 			for (int i = 0; i < 365 / 7; i++)
 			{
-				Console.WriteLine($"第{i + 1}周：{dateTime.ToString("yyyy年MM月dd日")}--{dateTime.AddDays(6).ToString("yyyy年MM月dd日")}");
+				Console.WriteLine($"第{i + 1}周：" +
+					$"{dateTime.ToString("yyyy年MM月dd日")}--{dateTime.AddDays(6).ToString("yyyy年MM月dd日")}");
 				dateTime = dateTime.AddDays(7);
 			}
 			return dateTime;

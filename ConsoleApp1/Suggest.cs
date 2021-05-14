@@ -19,10 +19,11 @@ namespace ConsoleApp1
 		//}
 
 		//多态作业
-		//public override void Publish()
-		//{
-		//	base.Publish();
-		//}
+
+		public override void Publish()
+		{
+			base.Publish();
+		}
 
 
 

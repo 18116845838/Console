@@ -22,19 +22,20 @@ namespace ConsoleApp1
 		/// <summary>
 		/// 多态作业
 		/// </summary>
-		//public override void Publish()
-		//{
-		//	Console.WriteLine($"消耗了{_reward}枚帮帮币");
-		//	base.Publish();	
-		//}
-		//public Problem(int num)
-		//{
-		//	Reward = num;	
-		//}
-		//public Problem()
-		//{
+	
+		public override void Publish()
+		{
+			Console.WriteLine($"消耗了{_reward}枚帮帮币");
+			base.Publish();
+		}
+		public Problem(int num)
+		{
+			Reward = num;
+		}
+		public Problem()
+		{
 
-		//}
+		}
 
 
 		/*求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、

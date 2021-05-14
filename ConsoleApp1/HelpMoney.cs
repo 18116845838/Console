@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ConsoleApp1
 {
 	///帮帮币版块，定义一个类HelpMoney，表示一行帮帮币交易数据，包含你认为应该包含的字段和方法
@@ -9,13 +10,20 @@ namespace ConsoleApp1
 	///为这些类的字段和方法设置合适的访问修饰符。 
 	///
 
-
-	class HelpMoney: Entity
+	
+	class HelpMoney : Entity
 	{
+
 		public HelpMoney()
 		{
-		
+
 		}
+		private DateTime _time;
+		private int _usable;
+		private bool _freeze;
+		private string _kind;
+		private int _change;
+		private string _comment;
 
 
 
@@ -29,7 +37,7 @@ namespace ConsoleApp1
 		/// <param name="freeze">冻结</param>
 		/// 
 
-		public HelpMoney(int usable,int change ,string comment="打赏",string kind="交易",bool freeze=true)
+		public HelpMoney(int usable, int change, string comment = "打赏", string kind = "交易", bool freeze = true)
 		{
 			Usable = usable;
 			Change = change;
@@ -38,36 +46,30 @@ namespace ConsoleApp1
 			Freeze = freeze;
 		}
 		//时间
-		private DateTime _time;
 		public DateTime Time { get; set; }
 
 		//可用 
-		private int _usable;
 		public int Usable { get; set; }
 		//冻结
-		private bool _freeze;
-		public bool Freeze{get;set;}
+		public bool Freeze { get; set; }
 
 		//种类
-		private string _kind;
 		public string Kind { get; set; }
 
 		//变化
-		private int _change;
 		public int Change { get; set; }
 
 		//备注
-		private string _comment;
 		public string Comment { get; set; }
-
-		/*private*/public int gain (int num)
+	
+		public int gain(int num)
 		{
 
 			return 0;
 		}
 		public void freeze()
-		{ 
-		
+		{
+
 		}
 
 

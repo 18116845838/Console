@@ -5,7 +5,9 @@ using System.Text;
 namespace ConsoleApp1
 {
 	/*abstract*/
-	/*abstract*/ class Content
+	
+	/*abstract*/
+	class Content
 	{
 
 
@@ -40,11 +42,11 @@ namespace ConsoleApp1
 		//	2确保每个Content对象都有kind的非空值
 		//	3Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
 		//	4其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
+		[HelpMoneyChanged(Message = "message")]
+		public virtual void Publish()
+		{
 
-		//public virtual void Publish()
-		//{
-
-		//}
+		}
 
 
 

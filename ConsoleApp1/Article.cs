@@ -19,14 +19,14 @@ namespace ConsoleApp1
 
 
 		//多态作业
-		//public override void Publish()
-		//{
-		//	base.Publish();
-		//}
+		public override void Publish()
+		{
+			base.Publish();
+		}
 
 		//public Article(int num=1)
 		//{
-			
+
 		//	Console.WriteLine($"消耗{num}枚帮帮币");
 		//}
 		//public Article()

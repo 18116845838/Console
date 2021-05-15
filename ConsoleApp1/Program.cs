@@ -18,6 +18,7 @@ namespace ConsoleApp1
 		{
 			#region 调用获取特性
 			HelpMoneyChangedAttribute.FeatureInformation();
+			
 			#endregion
 
 

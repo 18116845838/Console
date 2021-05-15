@@ -19,21 +19,23 @@ namespace Test
 
 		static void Main(string[] args)
 		{
-			
-			//Attribute attribute = Attribute.GetCustomAttribute(typeof(User), typeof(OnlineAttribute));
-			//Console.WriteLine(((OnlineAttribute)attribute).Vertual);
+			int a = 18;
+			int b = 19;
+			int c = a + b;
+			Console.WriteLine(c);
 
-			User xx = new User();
-			typeof(User).GetMethod("Greet").Invoke(xx, new object[] { "tiantian" });
-			//利用gettype获取私有字段的值
-			User shijian = new User();
-			DateTime dateTime = (DateTime)shijian.GetType().
-			GetField("shijian", BindingFlags.NonPublic | BindingFlags.Instance)
-				.GetValue(shijian);
-			Console.WriteLine(dateTime);
+			#region 瞎写的
+			////Attribute attribute = Attribute.GetCustomAttribute(typeof(User), typeof(OnlineAttribute));
+			////Console.WriteLine(((OnlineAttribute)attribute).Vertual);
 
-
-
+			//User xx = new User();
+			//typeof(User).GetMethod("Greet").Invoke(xx, new object[] { "tiantian" });
+			////利用gettype获取私有字段的值
+			//User shijian = new User();
+			//DateTime dateTime = (DateTime)shijian.GetType().
+			//GetField("shijian", BindingFlags.NonPublic | BindingFlags.Instance)
+			//	.GetValue(shijian);
+			//Console.WriteLine(dateTime);
 
 			//string a = Console.ReadLine();
 			//Console.WriteLine(result);
@@ -43,7 +45,6 @@ namespace Test
 			//	//string tim = Console.ReadLine();
 
 			//	//string time = DateTime.Now.ToString();
-
 
 
 			//	//int year = Console.Read();
@@ -349,6 +350,8 @@ namespace Test
 			return dateTime;
 
 		}
+
+		#endregion
 
 
 	}

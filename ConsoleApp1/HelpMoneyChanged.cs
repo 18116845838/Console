@@ -15,7 +15,7 @@ namespace ConsoleApp1
 			//{
 
 		//}
-		public HelpMoneyChangedAttribute()
+		public HelpMoneyChangedAttribute(int amount)
 		{
 
 		}

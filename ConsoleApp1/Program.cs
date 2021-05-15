@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace ConsoleApp1
 {
-	class Program
+	public class Program
 	{
 		#region 作业时间结构枚举变量
 		enum FromDate
@@ -18,7 +18,6 @@ namespace ConsoleApp1
 		{
 			#region 调用获取特性
 			HelpMoneyChangedAttribute.FeatureInformation();
-			
 			#endregion
 
 
@@ -27,10 +26,10 @@ namespace ConsoleApp1
 			//想一想他们应该在哪里赋值比较好，并完成相应代码
 			//反射_createTime字段
 
-			Content content = new Content();
-			DateTime date = new DateTime(2020, 1, 1);
-			Invoke.HWMethod.AlterCreationtime(content, date);
-			Invoke.HWMethod.AlterpubllishTime(content, date);
+			//Content content = new Content();
+			//DateTime date = new DateTime(2020, 1, 1);
+			//Invoke.HWMethod.AlterCreationtime(content, date);
+			//Invoke.HWMethod.AlterpubllishTime(content, date);
 			#endregion
 
 			#region //构造一个能装任何数据的数组，并完成数据的读写
@@ -360,48 +359,31 @@ namespace ConsoleApp1
 							}
 						}*/
 
-			/*找到100以内的所有质数（只能被1和它自己整除的数）*/
-			//遍历一到一百之间的数字
-			//for (int i = 2; i <= 100; i++)
-			//{
-			//	bool isPrme = true;//定义一个bool值
-			//	for (int j = 2; j < i; j++)
-			//	{
-			//		if (i % j == 0)
-			//		{
-			//			isPrme = false;
-			//			break;
-			//		}//else continue;
-			//	}
-			//	if (isPrme)
-			//	{
-			//		Console.WriteLine(i);
-			//	}//else continue;
-			//}
-
+			
 
 			/*生成一个元素（值随机）从小到大排列的数组*/
-			/*int[] number = { 1,3,6,2,8,6,9,13,24,5,14,55};
-			
-			for (int i = 0; i <number.Length; i++)
-			{
-				for (int j = 0; j < number.Length-1; j++)
-				{
-					if (number[j] > number[j + 1])
-					{
-						 int sam = number[j];
-						number[j] = number[j + 1];
-						number[j + 1] = sam;
-						
-					}//else continue
-					
-				}
-				
-			}
-			for (int i = 0; i < number.Length; i++)
-			{
-				Console.WriteLine(number[i]);
-			}*/
+			//int[] number = { 1, 3, 6, 2, 8, 6, 9, 13, 24, 5, 14, 55 };
+
+			//for (int i = 0; i < number.Length; i++)
+			//{
+			//	for (int j = 0; j < number.Length - 1; j++)
+			//	{
+			//		if (number[j] > number[j + 1])
+			//		{
+			//			int sam = number[j];
+			//			number[j] = number[j + 1];
+			//			number[j + 1] = sam;
+
+			//		}//else continue
+
+			//	}
+
+			//}
+			//for (int i = 0; i < number.Length; i++)
+			//{
+			//	Console.WriteLine(number[i]);
+			//}
+
 
 
 			//设立并显示一个多维数组的值，元素值等于下标之和。Console.Write()
@@ -762,7 +744,7 @@ namespace ConsoleApp1
 		/// <param name="gap">定义两个元素的最大差值默认为5</param>
 		/// /// <param name="length">数组长度默认10</param>
 		/// <returns>返回这个数组</returns>
-		/*static int[] GetArray(int[] max, int min = 1, int gap = 5, int length = 10)
+		public static int GetArray(int[] max, int min = 1, int gap = 5, int length = 10)
 		{
 			int sam;
 			//min = 1;
@@ -774,9 +756,10 @@ namespace ConsoleApp1
 				sam = new Random().Next(1, gap);
 				min += gap;
 				Console.WriteLine(max[i]);
+				return max[i];
 			}
-			return max;
-		}*/
+			return -1;
+		}
 		#endregion
 		#region /*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
 		//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素

@@ -17,7 +17,7 @@ namespace TestProject1
 		[SetUp]
 		public void Setup()
 		{
-			
+
 		}
 
 		[Test]
@@ -27,7 +27,7 @@ namespace TestProject1
 			Assert.AreEqual(12112, HWMethod.Max(new int[] { 1117, 23, 4, 5, 65, 787, 9, 32, 12, 12112 }));
 			Assert.AreEqual(1117, HWMethod.Max(new int[] { 1117, 23, 4, 5, 65, 787, 9, 32, 12, 12 }));
 			Assert.AreEqual(787, HWMethod.Max(new int[] { 7, 23, 4, 5, 65, 787, 9, 32, 12, 12 }));
-		
+
 		}
 
 		[Test]
@@ -35,10 +35,10 @@ namespace TestProject1
 		{
 			//找到一百以内的质数
 			//检查个数是否相同
-			int[] number=new int[HWMethod.PrimeNumber()];
+			int[] number = new int[HWMethod.PrimeNumber()];
 
 			//number = HWMethod.PrimeNumber();
-			Assert.AreEqual(25,number.Length);
+			Assert.AreEqual(25, number.Length);
 
 			//检查是不是质数
 			Assert.IsTrue(HWMethod.ISPrimeNumber(5));
@@ -46,8 +46,24 @@ namespace TestProject1
 			Assert.IsTrue(HWMethod.ISPrimeNumber(19));
 			Assert.IsTrue(HWMethod.ISPrimeNumber(3));
 		}
-		[Test]
+		[Test]//猜数字游戏
 		public void Test3()
+		{
+
+		}
+		[Test]//二分查找
+		public void Test4()
+		{
+			int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+			Assert.AreEqual(2, HWMethod.BinarySeek(num, 3));
+			Assert.AreEqual(0, HWMethod.BinarySeek(num, 1));
+			Assert.AreEqual(2, HWMethod.BinarySeek(num, 3));
+			Assert.AreEqual(3, HWMethod.BinarySeek(num, 4));
+			Assert.AreEqual(-1, HWMethod.BinarySeek(num, 11));
+		}
+		[Test]//栈的压入弹出
+		public void Test5()
 		{
 
 		}

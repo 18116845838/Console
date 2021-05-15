@@ -13,7 +13,6 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
-
 		static void Main(string[] args)
 		{
 			#region 调用获取特性
@@ -359,7 +358,7 @@ namespace ConsoleApp1
 							}
 						}*/
 
-			
+
 
 			/*生成一个元素（值随机）从小到大排列的数组*/
 			//int[] number = { 1, 3, 6, 2, 8, 6, 9, 13, 24, 5, 14, 55 };
@@ -466,6 +465,14 @@ namespace ConsoleApp1
 			bool b = logOn(name, psw, out msg);
 			Console.WriteLine(msg + b);*/
 			#endregion
+			#region 二分查找
+			//实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
+			//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
+			//如果找到，返回该元素所在的下标，否则，返回-1*///
+			//int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
+			//Console.WriteLine(BinarySeek(array, 1));
+
+			#endregion
 		}
 
 		#region GetDate计算日期
@@ -543,79 +550,30 @@ namespace ConsoleApp1
 		}
 		#endregion
 
-		#region 	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()完成“猜数字”游戏，方法名GuessMe()：
-
-		/*int[] sam = { 77, 88, 99, 78, 79, 80 };
-		float num=0;
-		GetAverage(sam, num);*/
-		/*	计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-		//完成“猜数字”游戏，方法名GuessMe()：*/
+		#region 计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+		//int[] sam = { 77, 88, 99, 78, 79, 80 };
+		//float num = 0;
+		//GetAverage(sam, num);
+		//计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+		//完成“猜数字”游戏，方法名GuessMe()：
 		/// <summary>
 		/// 源栈同学成绩
 		/// </summary>
 		/// <param name="a">一个包含源栈同学成绩的数组</param>
 		/// <param name="b">用来装总成绩</param>
 		/// <returns></returns>
-		/*static int GetAverage(int[] a, float b)
-		{
+		//static int GetAverage(int[] a, float b)
+		//{
 
-			for (int i = 0; i < a.Length - 1; i++)
-			{
-				b = a[i] + b;
+		//	for (int i = 0; i < a.Length - 1; i++)
+		//	{
+		//		b = a[i] + b;
 
-			}
+		//	}
 
-			Console.WriteLine(Math.Round(b / a.Length, 2));
-			return -1;
-		}*/
-		/*随机生成一个大于0小于1000的整数
-		用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
-		没猜中可以继续猜，但最多不能超过10次
-			如果5次之内猜中，输出：你真牛逼！
-			如果8次之内猜中，输出：不错嘛！
-			10次还没猜中，输出：(～￣(OO)￣)ブ*/
-		/// <summary>
-		/// 用户可以自定义查找的次数
-		/// </summary>
-		/// <param name="sam">取值范围</param>
-		/// <param name="a">定义输入次数</param>
-		/// <returns>返回</returns>
-		/*static int GuessMe(int sam, int a)
-		{
-			for (int i = 0; i < a; i++)
-			{
-
-				int num =int.Parse(Console.ReadLine());
-				if (num == sam && i < a)
-				{
-					if (i < a - 1 && i > 5)
-					{
-						Console.WriteLine("不错嘛！");
-
-						if (i <= 5)
-						{
-							Console.WriteLine("你真牛逼！");
-							break;
-						}
-						break;
-					}
-					//else 
-				}
-				else if (i == a - 1)
-				{
-					Console.WriteLine("(～￣(OO)￣)ブ");
-				}
-				else if (num >= sam)
-				{
-					Console.WriteLine($"大了,还剩{a - 1 - i}次");
-				}
-				else if (num <= sam)
-				{
-					Console.WriteLine($"小了,还剩{a - 1 - i}次");
-				}
-			}
-			return -1;
-		}*/
+		//	Console.WriteLine(Math.Round(b / a.Length, 2));
+		//	return -1;
+		//}
 		#endregion
 
 		#region //平均数
@@ -676,24 +634,19 @@ namespace ConsoleApp1
 		#endregion
 
 		#region 面向过程剩余作业
-		/*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
-			传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
-			如果找到，返回该元素所在的下标，否则，返回-1*/
-		/*int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
-		Console.WriteLine(BinarySeek(array, 1));*/
-		/*利用ref调用Swap()方法交换两个同学的床位号*/
-		/*static void berth(ref int a, ref int b)
-		{
-			int tepm = 0;
-			swap(ref a , ref b,ref tepm);
-		}
+		//利用ref调用Swap()方法交换两个同学的床位号
+		//static void berth(ref int a, ref int b)
+		//{
+		//	int tepm = 0;
+		//	swap(ref a, ref b, ref tepm);
+		//}
 
-		private static void swap(ref int a, ref int b, ref int tepm)
-		{
-			tepm = a;
-			a = b;
-			b = tepm;
-		}*/
+		//private static void swap(ref int a, ref int b, ref int tepm)
+		//{
+		//	tepm = a;
+		//	a = b;
+		//	b = tepm;
+		//}
 		/*将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
 	true/false，表示登陆是否成功
 	string，表示登陆失败的原因*/
@@ -761,41 +714,7 @@ namespace ConsoleApp1
 			return -1;
 		}
 		#endregion
-		#region /*实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
-		//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
-		//如果找到，返回该元素所在的下标，否则，返回-1*/
-		/// <summary>
-		/// 实现二分查找，方法名BinarySeek
-		/// </summary>
-		/// <param name="numbers">传入一个有序的数组</param>
-		/// <param name="target">要查找的元素</param>
-		/// <returns>返回-1</returns>
-		/*static int BinarySeek(int[] numbers, int target)
-{
-
-	int left = 0;
-	int right = numbers.Length - 1;
-	int middle;
-	while (left<=right)
-	{
-		middle = (left + right) / 2;
-		if (numbers[middle] > target)
-		{
-			right = middle-1;
-		}
-		else if (numbers[middle] < target)
-		{
-			left = middle+1;
-		}
-		else
-		{
-			return middle;  //返回元素所在下标
-		}
-		//else continue
-	}
-	return -1;
-}*/
-		#endregion
+		
 
 	}
 }

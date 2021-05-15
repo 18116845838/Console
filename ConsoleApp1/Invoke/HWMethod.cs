@@ -90,5 +90,91 @@ namespace ConsoleApp1.Invoke
 			return false;
 		}
 		#endregion
+		#region 单元测试完成“猜数字”游戏，方法名GuessMe()：
+		
+
+		//随机生成一个大于0小于1000的整数
+		//用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
+		//没猜中可以继续猜，但最多不能超过10次
+		//	如果5次之内猜中，输出：你真牛逼！
+		//	如果8次之内猜中，输出：不错嘛！
+		//	10次还没猜中，输出：(～￣(OO)￣)ブ
+		/// <summary>
+		/// 用户可以自定义查找的次数
+		/// </summary>
+		/// <param name="sam">取值范围</param>
+		/// <param name="a">定义输入次数</param>
+		/// <returns>返回</returns>
+		public static int GuessMe(int sam)
+		{
+			for (int i = 1; i <= 10; i++)
+			{
+				int num = int.Parse(Console.ReadLine());
+				if (num == sam && i < 10)
+				{
+					if (i < 10 - 1 && i > 5)
+					{
+						Console.WriteLine("不错嘛！");
+
+						if (i <= 5)
+						{
+							Console.WriteLine("你真牛逼！");
+							break;
+						}
+						break;
+					}
+					//else 
+				}
+				else if (i == 10 - 1)
+				{
+					Console.WriteLine("(～￣(OO)￣)ブ");
+				}
+				else if (num >= sam)
+				{
+					Console.WriteLine($"大了,还剩{10 - i}次");
+				}
+				else if (num <= sam)
+				{
+					Console.WriteLine($"小了,还剩{10 - i}次");
+				}
+			}
+			return -1;
+		}
+		#endregion
+		#region  单元测试实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
+		//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
+		//如果找到，返回该元素所在的下标，否则，返回-1*/
+		/// <summary>
+		/// 实现二分查找，方法名BinarySeek
+		/// </summary>
+		/// <param name="numbers">传入一个有序的数组</param>
+		/// <param name="target">要查找的元素</param>
+		/// <returns>返回-1</returns>
+		public static int BinarySeek(int[] numbers, int target)
+		{
+
+			int left = 0;
+			int right = numbers.Length - 1;
+			int middle;
+			while (left <= right)
+			{
+				middle = (left + right) / 2;
+				if (numbers[middle] > target)
+				{
+					right = middle - 1;
+				}
+				else if (numbers[middle] < target)
+				{
+					left = middle + 1;
+				}
+				else
+				{
+					return middle;  //返回元素所在下标
+				}
+				//else continue
+			}
+			return -1;
+		}
+		#endregion
 	}
 }

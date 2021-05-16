@@ -16,6 +16,11 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
+			#region 设计一种模式确保user不能有敏感字符
+			//User user = new User();
+			//user.Name = "admin";
+			//Console.WriteLine(user.Name);
+			#endregion
 
 			#region 测试Article不能为空值
 			Article article = new Article();

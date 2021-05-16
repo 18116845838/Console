@@ -34,44 +34,13 @@ namespace ConsoleApp1
 		//作业 
 		//让user类无法被继承
 
-		////构造函数不需要返回/必须和类名相同/ctor快捷
-		//public User()
-		//{
-
-		//}
-		//public User(string name)
-		//{
-
-		//}
-		//public User(string name,int age)
-		//	:this(name)//调用上面构造函数，复制方法必须和上面函数有相同的参数
-		//{
-		//	this.age = age;
-		//}
-
-
-
-		/// //////////////////////////////////////////////////////////////////
-
-
 		/*观察“一起帮”的：
 		注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy），
 		和方法：Register()、Login()*/
 
-
-		///////////////////////////////////////////////////////////////////////////////////////
-		//1:将之前User/Problem/HelpMoney类的字段封装成属性，其中：
-
-		//user.Password在类的外部只能改不能读
-		//如果user.Name为“admin”，输入时修改为“系统管理员”
-
-		//problem.Reward不能为负数
 		//////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-		///2：调用这些类的有参/无参构造函数，生成这些类的对象，调用他们的方法 
+		#region ///2：调用这些类的有参/无参构造函数，生成这些类的对象，调用他们的方法 
 		//无参函数
 		public User()
 		{
@@ -81,7 +50,7 @@ namespace ConsoleApp1
 		{
 			Name = name;
 		}
-
+		#endregion
 		#region //每一个User对象一定有Name和Password赋值
 		public User(string name, string password)
 		{
@@ -89,13 +58,22 @@ namespace ConsoleApp1
 			Password = password;
 		}
 		#endregion
-
+		#region 设计一个适用的机制，能确保用户（User）的昵称（Name）不能含有admin、17bang、管理员等敏感词。 
+		#region /1:将之前User/Problem/HelpMoney类的字段封装成属性，其中：
+		//user.Password在类的外部只能改不能读
+		//如果user.Name为“admin”，输入时修改为“系统管理员”
+		//problem.Reward不能为负数
 		private string _name;
 		public string Name
 		{
 			get { return _name; }
 			set
 			{
+				if (value.Contains("admin") || value.Contains("17bang") || value.Contains("管理员"))
+				{
+					Console.WriteLine("用户名不能包含敏感字符");
+					return;
+				}//else
 				if (value == "admin")
 				{
 					value = "系统管理员";
@@ -104,24 +82,25 @@ namespace ConsoleApp1
 				_name = value;
 			}
 		}
+		#endregion
+		#endregion
 
-
+		#region 字段
 		private string _password;
+		private User _invitrdBy;
+		private string _invitationCode;//邀请码
+		#endregion
+		#region 属性
 		public string Password
 		{
 			//get { return _password; }
 			set { _password = value; }
 		}
-
-		private User _invitrdBy;
 		public User InvitrdBy { get; set; }
-
-		private string _invitationCode;//邀请码
 		public string InvitationCode { get; set; }
-
-
+		#endregion
 		#region 一些方法
-		public /*static*/ void Register(User user, string InvitationCode)
+		public void Register(User user, string InvitationCode)
 		{
 			Console.WriteLine("请输入邀请人！");
 			user.InvitrdBy.Name = Console.ReadLine();
@@ -181,7 +160,7 @@ namespace ConsoleApp1
 			}
 		}
 		#endregion
-
+		
 
 
 

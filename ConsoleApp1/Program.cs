@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Text; 
 
 namespace ConsoleApp1
 {
@@ -15,6 +16,12 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
+
+			#region 测试Article不能为空值
+			Article article = new Article();
+			article.Head = "    ";
+			Console.WriteLine(article.Head);
+			#endregion
 
 			#region 调用获取特性
 			HelpMoneyChangedAttribute.FeatureInformation();

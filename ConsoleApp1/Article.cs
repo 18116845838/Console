@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
 	//文章
-	class Article:Content
+	 class Article:Content
 	{
 
 		//public override void Agree()
@@ -47,5 +47,30 @@ namespace ConsoleApp1
 		//	dan.Kind = "";
 		//	Console.WriteLine();
 		//}
+		#region 确保文章（Article）的标题不能为null值，也不能为一个或多个空字符组成的字符串，
+		//而且如果标题前后有空格，也予以删除
+		private string _head;//标题
+		public string Head
+		{
+			get
+			{
+				return _head;
+			}
+
+			set 
+			{
+				
+				if (string.IsNullOrWhiteSpace(value))
+				{
+					Console.WriteLine("标题不能为空或含有空字符");
+					return;
+				}
+				//else
+				_head = value.Trim();
+			}
+		}
+
+		#endregion
+
 	}
 }

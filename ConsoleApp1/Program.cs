@@ -15,10 +15,10 @@ namespace ConsoleApp1
 		#endregion
 		static void Main(string[] args)
 		{
+
 			#region 调用获取特性
 			HelpMoneyChangedAttribute.FeatureInformation();
 			#endregion
-
 
 			#region 调用CreateTime,和PublishTime方法
 			//之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，

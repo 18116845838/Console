@@ -17,7 +17,13 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
+			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 
+			Console.WriteLine(Invoke.HWMethod.MimicJoin('?', new string[] { "ss", "dd", "cc" }));
+			#endregion
+			#region 实现GetCount(string container, string target)方法，可以统计出container中有多少个target
 			Console.WriteLine(Invoke.HWMethod.GetCount("12121212121212121212", "121"));
+			#endregion
 			#region 通过控制台读取用户输入，比如：3月，12周，100天，利用之前作业的GetDate()方法，输出指定时间段后的日期
 			Console.WriteLine(Invoke.HWMethod.GetDate(DateTime.Now, "123天"));
 			#endregion

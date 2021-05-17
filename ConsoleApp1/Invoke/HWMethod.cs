@@ -186,7 +186,7 @@ namespace ConsoleApp1.Invoke
 			}
 			else if (input.Contains("周"))
 			{
-				dateTime = dateTime.AddDays(int.Parse(input.Remove(input.IndexOf("周")))*7);
+				dateTime = dateTime.AddDays(int.Parse(input.Remove(input.IndexOf("周"))) * 7);
 			}
 			else if (input.Contains("月"))
 			{
@@ -205,18 +205,28 @@ namespace ConsoleApp1.Invoke
 		public static int GetCount(string container, string target)
 		{
 			int i = 0;
-			while (true)
+			while (container.Contains(target))
 			{
-				if (container.IndexOf(target)!=-1)
+				container = container.Remove(0, container.IndexOf(target) + 1);
+				i++;
+			}
+			return i;
+		}
+		#endregion
+		#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，
+		//比如：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 
+		public static string MimicJoin(char addChar, string[] value)
+		{
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < value.Length; i++)
+			{
+				sb.Append(value[i]);
+				if (i!=value.Length-1)
 				{
-					container = container.Remove( container.IndexOf(target),1);
-					i++;
-				}
-				else
-				{
-					return i;
+					sb.Append(addChar);
 				}
 			}
+			return sb.ToString();
 		}
 		#endregion
 

@@ -23,6 +23,7 @@ namespace Test
 			int b = 19;
 			int c = a + b;
 			Console.WriteLine(c);
+		
 
 			#region 瞎写的
 			////Attribute attribute = Attribute.GetCustomAttribute(typeof(User), typeof(OnlineAttribute));
@@ -285,8 +286,8 @@ namespace Test
 			//			break;
 			//	}
 
-
-		}
+	
+		
 
 
 
@@ -351,8 +352,25 @@ namespace Test
 
 		}
 
-		#endregion
+			#endregion
+			#region sting 和stringbuilder
+			string ad = "1234";
+			Console.WriteLine(ad.Length);
+			Console.WriteLine(ad.Remove(2));
+			Console.WriteLine(ad.Insert(2, "@"));
+			Console.WriteLine(ad.Replace('2', '1'));
+			Console.WriteLine(ad.Substring(1, 2));
+			string ab = "1234";
+			Console.WriteLine(string.Concat(ad, ab));
+			string.Join('0', ad, ab).Split('@', StringSplitOptions.None);
+			Console.WriteLine(ad);
+			ad.ToUpper();
+			StringBuilder sd = new StringBuilder("fieshu");
+			sd.Append("kuaisu").Append("dadan").Append("YOuli");
+			Console.WriteLine(sd);
+			#endregion
 
+		}
 
 	}
 

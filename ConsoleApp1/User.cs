@@ -4,6 +4,10 @@ using System.Text;
 
 namespace ConsoleApp1
 {
+	enum PassWordEnum
+	{
+
+	}
 	sealed class User : Entity, IChat, ISendMessage
 	{
 
@@ -91,11 +95,34 @@ namespace ConsoleApp1
 		private string _invitationCode;//邀请码
 		#endregion
 		#region 属性
+		//确保用户（User）的密码（Password）：
+		// 长度不低于6
+		//必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成
+
 		public string Password
 		{
 			//get { return _password; }
-			set { _password = value; }
+			set
+			{
+				if (value.Length <= 6)
+				{
+					Console.WriteLine("密码不能小于六位数");
+					return;
+				}
+				else
+				{
+					if (!PassWordHasTrue(value))
+					{
+						Console.WriteLine("密码太简单");
+						return;
+					}
+					//else
+				}
+				Console.WriteLine(value);
+				_password = value;
+			}
 		}
+
 		public User InvitrdBy { get; set; }
 		public string InvitationCode { get; set; }
 		#endregion
@@ -159,10 +186,31 @@ namespace ConsoleApp1
 				Console.WriteLine("登录成功！");
 			}
 		}
-		#endregion
-		
-
-
-
+		//必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成的方法
+		public bool PassWordFormatIsTrue(string password, string passwordFormat)
+		{
+			for (int i = 0; i < password.Length; i++)
+			{
+				if (passwordFormat.Contains(password[i]))
+				{
+					return true;
+				}//else 
+			}
+			return false;
+		}
+		public bool PassWordHasTrue(string password)
+		{
+			return
+				PassWordFormatIsTrue(password, "~!@#$%^&*()_+") &&
+				PassWordFormatIsTrue(password, "QWERTYUIOPASDFGHJKLZXCVBNM") ||
+				PassWordFormatIsTrue(password, "qwertyuiopasdfghjklzxcvbnm") &&
+				PassWordFormatIsTrue(password, "1234567890");
+		}
 	}
+	#endregion
+
+
+
+
 }
+

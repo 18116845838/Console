@@ -14,8 +14,16 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
+
 		static void Main(string[] args)
 		{
+
+			#region 确保用户（User）的密码（Password）必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成 
+			User user = new User();
+			user.Password = "1@S3345323";
+			Console.WriteLine(user);
+			#endregion
+
 			#region 设计一种模式确保user不能有敏感字符
 			//User user = new User();
 			//user.Name = "admin";

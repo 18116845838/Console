@@ -17,6 +17,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			Console.WriteLine(Invoke.HWMethod.GetCount("12121212121212121212", "121"));
 			#region 通过控制台读取用户输入，比如：3月，12周，100天，利用之前作业的GetDate()方法，输出指定时间段后的日期
 			Console.WriteLine(Invoke.HWMethod.GetDate(DateTime.Now, "123天"));
 			#endregion

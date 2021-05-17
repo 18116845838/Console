@@ -201,6 +201,27 @@ namespace ConsoleApp1.Invoke
 			return dateTime;
 		}
 		#endregion
+		#region 实现GetCount(string container, string target)方法，可以统计出container中有多少个target 
+		public static int GetCount(string container, string target)
+		{
+			int i = 0;
+			while (true)
+			{
+				if (container.IndexOf(target)!=-1)
+				{
+					container = container.Remove( container.IndexOf(target),1);
+					i++;
+				}
+				else
+				{
+					return i;
+				}
+			}
+		}
+		#endregion
+
+
+
 
 	}
 }

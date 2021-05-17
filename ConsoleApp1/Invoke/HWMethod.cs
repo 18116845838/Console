@@ -91,7 +91,7 @@ namespace ConsoleApp1.Invoke
 		}
 		#endregion
 		#region 单元测试完成“猜数字”游戏，方法名GuessMe()：
-		
+
 
 		//随机生成一个大于0小于1000的整数
 		//用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
@@ -176,5 +176,31 @@ namespace ConsoleApp1.Invoke
 			return -1;
 		}
 		#endregion
+		#region 通过控制台读取用户输入，比如：3月，12周，100天，利用之前作业的GetDate()方法，输出指定时间段后的日期
+		public static DateTime GetDate(DateTime dateTime, string input)
+		{
+			string num = string.Empty;
+			if (input.Contains("天"))
+			{
+				dateTime = dateTime.AddDays(int.Parse(input.Remove(input.IndexOf("天"))));
+			}
+			else if (input.Contains("周"))
+			{
+				dateTime = dateTime.AddDays(int.Parse(input.Remove(input.IndexOf("周")))*7);
+			}
+			else if (input.Contains("月"))
+			{
+				dateTime = dateTime.AddMonths(int.Parse(input.Remove(input.IndexOf("月"))));
+			}
+			else
+			{
+				Console.WriteLine("请输入正确的日期");
+			}
+
+
+			return dateTime;
+		}
+		#endregion
+
 	}
 }

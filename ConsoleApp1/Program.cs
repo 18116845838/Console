@@ -17,7 +17,9 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
-
+			#region 通过控制台读取用户输入，比如：3月，12周，100天，利用之前作业的GetDate()方法，输出指定时间段后的日期
+			Console.WriteLine(Invoke.HWMethod.GetDate(DateTime.Now, "123天"));
+			#endregion
 			#region 确保用户（User）的密码（Password）必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成 
 			User user = new User();
 			user.Password = "1@S3345323";

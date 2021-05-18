@@ -8,7 +8,7 @@ namespace ConsoleApp1
 	{
 
 	}
-	sealed class User : Entity, IChat, ISendMessage
+	sealed class User : Entity<User>, IChat, ISendMessage
 	{
 
 		#region ////User类中添加一个Tokens属性，类型为TokenManage

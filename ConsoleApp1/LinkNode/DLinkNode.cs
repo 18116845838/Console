@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	public class DLinkNode
+	public class DLinkNode<T>
 	{
 		//	继续完成双向链表的测试和开发，实现：
 		
@@ -14,10 +14,10 @@ namespace ConsoleApp1
 		//[选] Swap()：交互某两个节点
 		//[选] FindBy()：根据节点值查找到某个节点
 
-		public DLinkNode Next { get; set; }
-		public DLinkNode Previous { get; set; }
-		private DLinkNode temp;
-		public void AddAfter(DLinkNode node)//在后面添加节点
+		public DLinkNode<T> Next { get; set; }
+		public DLinkNode<T> Previous { get; set; }
+		private DLinkNode<T> temp;
+		public void AddAfter(DLinkNode<T> node)//在后面添加节点
 		{
 			if (this.Next != null && this.Previous != null)//插入节点
 			{
@@ -29,7 +29,7 @@ namespace ConsoleApp1
 				node.Previous = this;
 
 		}
-		public void AddBefor(DLinkNode node)//在前面添加节点
+		public void AddBefor(DLinkNode<T> node)//在前面添加节点
 		{
 			if (this.Next != null && this.Previous != null)
 			{
@@ -41,7 +41,7 @@ namespace ConsoleApp1
 		}
 
 
-		public void Delete(DLinkNode node)//删除节点
+		public void Delete(DLinkNode<T> node)//删除节点
 		{
 			if (node.Previous != null && node.Next != null)//删除中间节点
 			{
@@ -61,7 +61,7 @@ namespace ConsoleApp1
 				node.Next = null;
 			}
 		}
-		public void Swap(DLinkNode node)//交换两个节点
+		public void Swap(DLinkNode<T> node)//交换两个节点
 		{
 			if (this.Previous != null && node.Next != null)
 			{
@@ -108,7 +108,7 @@ namespace ConsoleApp1
 
 
 		}
-		public void FindBy(DLinkNode node)//根据节点查找某个节点
+		public void FindBy(DLinkNode<T> node)//根据节点查找某个节点
 		{ 
 		
 		}

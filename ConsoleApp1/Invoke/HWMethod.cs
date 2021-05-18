@@ -150,20 +150,21 @@ namespace ConsoleApp1.Invoke
 		/// <param name="numbers">传入一个有序的数组</param>
 		/// <param name="target">要查找的元素</param>
 		/// <returns>返回-1</returns>
-		public static int BinarySeek(int[] numbers, int target)
+		
+	   
+		public static int BinarySeek<T>(T[] numbers, T target) where T:IComparable
 		{
-
 			int left = 0;
 			int right = numbers.Length - 1;
 			int middle;
 			while (left <= right)
 			{
 				middle = (left + right) / 2;
-				if (numbers[middle] > target)
+				if (numbers[middle].CompareTo (target)>0)
 				{
 					right = middle - 1;
 				}
-				else if (numbers[middle] < target)
+				else if (numbers[middle].CompareTo(target) <0 )
 				{
 					left = middle + 1;
 				}
@@ -228,6 +229,12 @@ namespace ConsoleApp1.Invoke
 			}
 			return sb.ToString();
 		}
+
+		public int CompareTo(object obj)
+		{
+			throw new NotImplementedException();
+		}
+
 		#endregion
 
 

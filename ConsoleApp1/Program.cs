@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Reflection;
 using System.Text; 
 
@@ -17,6 +17,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			Console.WriteLine(default(bool));
 			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
 			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 
 			Console.WriteLine(Invoke.HWMethod.MimicJoin('?', new string[] { "ss", "dd", "cc" }));
@@ -496,10 +497,10 @@ namespace ConsoleApp1
 			#endregion
 			#region 二分查找
 			//实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
-			//传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
-			//如果找到，返回该元素所在的下标，否则，返回-1*///
-			//int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
-			//Console.WriteLine(BinarySeek(array, 1));
+			//传入一个有序（从大到小 / 从小到大）数组和数组中要查找的元素
+			//  如果找到，返回该元素所在的下标，否则，返回 - 1 *///
+		   int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
+			Console.WriteLine(Invoke.HWMethod.BinarySeek(array, 1));
 
 			#endregion
 		}

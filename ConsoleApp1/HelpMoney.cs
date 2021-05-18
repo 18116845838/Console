@@ -11,7 +11,7 @@ namespace ConsoleApp1
 	///
 
 	
-	class HelpMoney : Entity
+	class HelpMoney: Entity<HelpMoney>
 	{
 
 		public HelpMoney()

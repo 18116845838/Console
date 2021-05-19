@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	internal class MimicStack<T>
+	public class MimicStack<T>
 	{
 		//使用object改造数据结构栈（MimicStack），并在出栈时获得出栈元素
 
@@ -55,4 +55,5 @@ namespace ConsoleApp1
 
 
 	}
+
 }

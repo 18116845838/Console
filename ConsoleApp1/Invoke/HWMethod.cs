@@ -237,8 +237,6 @@ namespace ConsoleApp1.Invoke
 
 		#endregion
 
-
-
-
 	}
+
 }

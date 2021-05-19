@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
 	//文章
-	 class Article:Content
+	class Article:Content
 	{
 
 		//public override void Agree()
@@ -73,4 +73,5 @@ namespace ConsoleApp1
 		#endregion
 
 	}
+
 }

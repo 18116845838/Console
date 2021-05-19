@@ -17,6 +17,8 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			string? o = "";
+			Console.WriteLine(o);
 			Console.WriteLine(default(bool));
 			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
 			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 

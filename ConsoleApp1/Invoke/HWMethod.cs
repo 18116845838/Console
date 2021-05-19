@@ -28,13 +28,13 @@ namespace ConsoleApp1.Invoke
 		//	//Console.WriteLine(content);
 		//}
 		#endregion
-		#region 面向对象单元测试数组最大值封装为方法
-		public static int Max(int[] number)
+		#region 面向对象单元测试数组最大值封装为方法+泛型改造
+		public static T Max<T>(T[] number) where T:IComparable
 		{
-			int max = 0;
+			T max = number[0];
 			for (int i = 0; i < number.Length; i++)
 			{
-				if (max < number[i])
+				if (max.CompareTo(number[i]) < 0)
 				{
 					max = number[i];
 				}

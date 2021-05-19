@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleApp1._17bang;
 
 namespace ConsoleApp1
 {
 	//文章
-	class Article:Content
+	public class Article:Content
 	{
+		public List<Comment> comments { get; set; }
+		public Appraise Appraise { get; set; }
+		public List<Keyword> keywords { get; set; }
 
+		#region 点赞点踩
 		//public override void Agree()
 		//{
 		//	Console.WriteLine("对文章点赞，增加了帮帮点，作者减少了帮帮点");
@@ -16,9 +21,8 @@ namespace ConsoleApp1
 		//{
 		//	Console.WriteLine("对文章点踩，增加了帮帮点，作者增加了帮帮点");
 		//}
-
-
-		//多态作业
+		#endregion
+		#region //多态作业
 		public override void Publish()
 		{
 			base.Publish();
@@ -33,20 +37,11 @@ namespace ConsoleApp1
 		//{
 
 		//}
-
-
-		//列表字段
+		#endregion
+		#region //列表字段
 		private string _list;
 		public string List { get; set; }
-
-
-		//测试调用字段kind
-		//Article dan = new Article();
-		//public void _kind()
-		//{
-		//	dan.Kind = "";
-		//	Console.WriteLine();
-		//}
+		#endregion
 		#region 确保文章（Article）的标题不能为null值，也不能为一个或多个空字符组成的字符串，
 		//而且如果标题前后有空格，也予以删除
 		private string _head;//标题
@@ -71,7 +66,6 @@ namespace ConsoleApp1
 		}
 
 		#endregion
-
 	}
 
 }

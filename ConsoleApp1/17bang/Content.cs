@@ -7,7 +7,7 @@ namespace ConsoleApp1
 	/*abstract*/
 	
 	/*abstract*/
-	class Content
+	public class Content
 	{
 
 

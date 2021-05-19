@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using ConsoleApp1._17bang;
 
 namespace ConsoleApp1
 {
@@ -15,7 +17,18 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
-
+			#region 集合关系构建关系调用
+			Article article1 = new Article();
+			Comment comment = new Comment();
+			Comment comment1 = new Comment();
+			Comment comment2 = new Comment();
+			Comment comment3 = new Comment();
+			Keyword keyword = new Keyword();
+			Appraise appraise = new Appraise();
+			article1.comments = new List<Comment>() { comment, comment1, comment2, comment3 };
+			keyword.Articles = new List<Article>() { article1 };
+			Console.WriteLine(keyword.Articles);
+			#endregion
 			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
 			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 
 			Console.WriteLine(Invoke.HWMethod.MimicJoin('?', new string[] { "ss", "dd", "cc" }));

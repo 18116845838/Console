@@ -17,6 +17,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			
 			#region 集合关系构建关系调用
 			Article article1 = new Article();
 			Comment comment = new Comment();

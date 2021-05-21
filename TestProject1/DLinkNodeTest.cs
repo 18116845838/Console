@@ -12,12 +12,12 @@ namespace TestProject1
 		[SetUp]
 		public void SetUp()
 		{
-			node1 = new DLinkNode<int>();
-			node2 = new DLinkNode<int>();
-			node3 = new DLinkNode<int>();
-			node4 = new DLinkNode<int>();
-			node5 = new DLinkNode<int>();
-			node6 = new DLinkNode<int>();
+			node1 = new DLinkNode<int>() { Value = 1 };
+			node2 = new DLinkNode<int>() { Value = 2 };
+			node3 = new DLinkNode<int>() { Value = 3 };
+			node4 = new DLinkNode<int>() { Value = 4 };
+			node5 = new DLinkNode<int>() { Value = 5 };
+			node6 = new DLinkNode<int>() { Value = 6 };
 			node1.Previous = null;
 			node1.Next = node2;
 			node2.Previous = node1;
@@ -115,6 +115,31 @@ namespace TestProject1
 		[Test]
 		public void FindByTest()//根据节点查找某个节点
 		{
+
+		}
+		[Test]
+		public void ForeachTest()//测试foreach实现双向链表
+		{
+			node3.AddAfter(node4);
+			node4.AddAfter(node5);
+			node5.AddAfter(node6);
+
+			List<DLinkNode<int>> nodes = new List<DLinkNode<int>>() /*{ node1,node2,node3,node4,node5,node6}*/;
+			
+			
+			foreach (DLinkNode<int> item in node1)
+			{
+				nodes.Add(item);
+			}
+			// 1 2 3 4 5 6
+			Assert.AreEqual(nodes.Count,6);
+			Assert.AreEqual(node1.Value, nodes[0].Value);
+			Assert.AreEqual(node2.Value, nodes[1].Value);
+			Assert.AreEqual(node3.Value, nodes[2].Value);
+			Assert.AreEqual(node4.Value, nodes[3].Value);
+			Assert.AreEqual(node5.Value, nodes[4].Value);
+			Assert.AreEqual(node6.Value, nodes[5].Value);
+
 
 		}
 	}

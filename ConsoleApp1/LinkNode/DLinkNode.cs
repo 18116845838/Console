@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp1
 {
-	public class DLinkNode<T>
+	public class DLinkNode<T> : IEnumerable<DLinkNode<T>>
 	{
+
+
 		//	继续完成双向链表的测试和开发，实现：
-		
+
 		//   node3.InsertAfter(node1); 场景
 		//InerstBefore()：在某个节点前插入
 		//Delete()：删除某个节点
@@ -16,6 +19,9 @@ namespace ConsoleApp1
 
 		public DLinkNode<T> Next { get; set; }
 		public DLinkNode<T> Previous { get; set; }
+		public T Value { get; set; }
+		public T Head { get; set; }
+
 		private DLinkNode<T> temp;
 		public void AddAfter(DLinkNode<T> node)//在后面添加节点
 		{
@@ -25,8 +31,8 @@ namespace ConsoleApp1
 				this.Next.Previous = node;
 				node.Next = this.Next;
 			}//else
-				this.Next = node;
-				node.Previous = this;
+			this.Next = node;
+			node.Previous = this;
 
 		}
 		public void AddBefor(DLinkNode<T> node)//在前面添加节点
@@ -100,7 +106,7 @@ namespace ConsoleApp1
 				node.Previous = this.Previous;
 				this.Previous = temp;
 			}
-			else if (this.Next==node)
+			else if (this.Next == node)
 			{
 
 			}
@@ -109,8 +115,59 @@ namespace ConsoleApp1
 
 		}
 		public void FindBy(DLinkNode<T> node)//根据节点查找某个节点
-		{ 
-		
+		{
+
+		}
+
+		public IEnumerator<DLinkNode<T>> GetEnumerator()
+		{	
+			return new Enumerator(this);
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
+			
+		}
+		public class Enumerator : IEnumerator<DLinkNode<T>>
+		{
+			private DLinkNode<T> _current;
+			public bool End;
+			public Enumerator(DLinkNode<T> node)
+			{
+				_current = node;
+				
+			}
+			public DLinkNode<T> Current =>_current.Previous;//=_current.Next;
+			object IEnumerator.Current => Current.Previous;
+
+			public bool MoveNext()
+			{
+				if (End)
+				{
+					return false;
+				}
+				if (_current.Next == null)
+				{
+					_current.Next = new DLinkNode<T>
+					{
+						Previous = _current
+					};
+					End = true;
+				}//else
+				
+				_current = _current.Next;
+				return true;
+			}
+
+			public void Reset()
+			{
+			}
+
+			public void Dispose()
+			{
+				Console.WriteLine("异常");
+			}
 		}
 	}
 }

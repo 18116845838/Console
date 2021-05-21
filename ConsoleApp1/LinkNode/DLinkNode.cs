@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConsoleApp1
@@ -168,6 +169,25 @@ namespace ConsoleApp1
 			{
 				Console.WriteLine("异常");
 			}
+		}
+	}
+	public static class Maxnod//扩展方法取链表最大值
+	{
+		public static DLinkNode<int> Maxnode(this DLinkNode<int> source)
+		{
+			var nodes = new List<DLinkNode<int>>();
+			var node = source;
+			DLinkNode<int> nodeMax=new DLinkNode<int>();
+			while (!nodes.Any(n=>n==node)&&node!=null)
+			{
+				nodes.Add(node);
+				if (nodeMax.Value<node.Value)
+				{
+					nodeMax = node;
+				}//else
+				node = node.Next;
+			}
+			return nodeMax;
 		}
 	}
 }

@@ -4,6 +4,7 @@ using ConsoleApp1._17bang;
 
 namespace ConsoleApp1
 {
+	public delegate void Opt(int a, int b);
 	public class Program
 	{
 		#region 作业时间结构枚举变量
@@ -14,10 +15,62 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
-
+		static Func<int> AiCaculate()
+		{
+			int a = 100, b = 50;
+			return () => a * b;
+		}
 		static void Main(string[] args)
 		{
+			AiCaculate();
+			Func<int> func = AiCaculate();
+			Console.WriteLine(func());
+			int re = func();
+			Console.WriteLine(re);
+			//AiCaculate(16, 18, (x, y) => { Console.WriteLine(x%y); });
+
+			//AiCaculate(2, 2, delegate (int a)
+			//  {
+			//	  int b = 10;
+			//	  Console.WriteLine($"{a}*{b}={a * b}");
+			//	  return a * b;
+			//  });
+			//AiCaculate(2, 2, (a) =>
+			//  {
+			//	  int b = 10;
+			//	  Console.WriteLine($"{a}*{b}={a * b}");
+			//	  return a * b;
+			//  });
+			Func<int, int> ss = a => a * a;//lambda表达式
+			Func<int, int> sss = (a) => a * a;//lambda表达式
+										   //Opt opt = null;
+										   //opt = AiCaculate;
+										   //opt(1, 2);
+			#region //调用扩展方法Max()：能够返回之前双向链表中存贮着最大值的节点
+			DLinkNode<int> node1, node2, node3, node4, node5, node6;
+			node1 = new DLinkNode<int>() { Value = 1 };
+			node2 = new DLinkNode<int>() { Value = 2 };
+			node3 = new DLinkNode<int>() { Value = 3 };
+			node4 = new DLinkNode<int>() { Value = 4 };
+			node5 = new DLinkNode<int>() { Value = 5 };
+			node6 = new DLinkNode<int>() { Value = 6 };
+			node1.Previous = null;
+			node1.Next = node2;
+			node2.Previous = node1;
+			node2.Next = node3;
+			node3.Previous = node2;
+
+			node3.Next = node4;
+			node4.Previous = node3;
+			node4.Next = node5;
+			node5.Previous = node4;
+			node5.Next = node6;
+			node6.Previous = node5;
+			node6.Next = null;
+			Console.WriteLine(node1.Maxnode().Value); 
 			
+			#endregion
+
 			#region 集合关系构建关系调用
 			Article article1 = new Article();
 			Comment comment = new Comment();
@@ -28,7 +81,7 @@ namespace ConsoleApp1
 			Appraise appraise = new Appraise();
 			article1.comments = new List<Comment>() { comment, comment1, comment2, comment3 };
 			keyword.Articles = new List<Article>() { article1 };
-			Console.WriteLine(keyword.Articles);
+			Console.WriteLine(keyword.Articles.Count);
 			#endregion
 			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
 			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 

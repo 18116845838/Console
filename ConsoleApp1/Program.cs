@@ -15,37 +15,17 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
-		static Func<int> AiCaculate()
-		{
-			int a = 100, b = 50;
-			return () => a * b;
-		}
+		
 		static void Main(string[] args)
 		{
-			AiCaculate();
-			Func<int> func = AiCaculate();
-			Console.WriteLine(func());
-			int re = func();
-			Console.WriteLine(re);
-			//AiCaculate(16, 18, (x, y) => { Console.WriteLine(x%y); });
+			#region //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
+			ProvideWater provideWater = new ProvideWater(new Person().RtMax);
+			provideWater(new Person());
+			provideWater += delegate (Person person) { return 5; };
+			provideWater += (Person) => 3;
+			Person.GetWater(new Person(), provideWater);
+			#endregion
 
-			//AiCaculate(2, 2, delegate (int a)
-			//  {
-			//	  int b = 10;
-			//	  Console.WriteLine($"{a}*{b}={a * b}");
-			//	  return a * b;
-			//  });
-			//AiCaculate(2, 2, (a) =>
-			//  {
-			//	  int b = 10;
-			//	  Console.WriteLine($"{a}*{b}={a * b}");
-			//	  return a * b;
-			//  });
-			Func<int, int> ss = a => a * a;//lambda表达式
-			Func<int, int> sss = (a) => a * a;//lambda表达式
-										   //Opt opt = null;
-										   //opt = AiCaculate;
-										   //opt(1, 2);
 			#region //调用扩展方法Max()：能够返回之前双向链表中存贮着最大值的节点
 			DLinkNode<int> node1, node2, node3, node4, node5, node6;
 			node1 = new DLinkNode<int>() { Value = 1 };

@@ -19,6 +19,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			
 			#region linQ表达式作业
 			//	在之前“文章/评价/评论/用户/关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
 			//   找出“飞哥”发布的文章
@@ -155,16 +156,22 @@ namespace ConsoleApp1
 			//Console.WriteLine(artic.Name);
 			//找出每个作者评论数最多的文章
 			//用Linq方法实现
-			var artic = articles.GroupBy(a => a.User).
-				Select(a => a.OrderByDescending(b => b.Comments?.Count()).FirstOrDefault());
+			//var artic = articles.GroupBy(a => a.User).
+			//	Select(a => a.OrderByDescending(b => b.Comments?.Count()).FirstOrDefault());
 			//var articl6 = from a in articles
 			//			  group a by a.User into e
 			//			  select e.OrderByDescending(e => e.Comments?.Count()).FirstOrDefault();
-			foreach (var item in artic)
-			{
-				Console.WriteLine($"{item.Name+ item.User.Name}");
-
-			}
+			//foreach (var item in artic)
+			//{
+			//	Console.WriteLine($"{item.Name+ item.User.Name}");
+			//}
+			//找出每个作者最近发布的一篇文章
+			//var artic = articles.GroupBy(a => a.User)
+			//	.Select(a => a.OrderByDescending(b => b.DateTime).FirstOrDefault());
+			//foreach (var item in artic)
+			//{
+			//	Console.WriteLine(item.User.Name+""+item.Name);
+			//}
 			#endregion
 			#region //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
 			ProvideWater provideWater = new ProvideWater(new Person().RtMax);

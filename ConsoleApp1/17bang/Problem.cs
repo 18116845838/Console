@@ -88,6 +88,8 @@ namespace ConsoleApp1
 		private string _list;
 		#endregion
 		#region 属性
+		//为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者/之前有了
+		public User User { set; get; }
 		public string List { get; set; }
 		public string Question { get; set; }
 		public string Title { get; set; }
@@ -95,17 +97,15 @@ namespace ConsoleApp1
 		public string Body { get; set; }
 		public int Reward
 		{
-			get
+			get{	return _reward;}
+			set
 			{
 				if (Reward < 0)
 				{
 					Console.WriteLine("悬赏不可以为负数");
-					return _reward = 0;
+					return ;
 				}//else 
-
-				return _reward;
-			}
-			set { _reward = value; }
+				_reward = value; }
 		}
 		#endregion
 		//public static void Publish(User user)

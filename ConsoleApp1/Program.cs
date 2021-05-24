@@ -19,7 +19,7 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
-			
+
 			#region linQ表达式作业
 			//	在之前“文章/评价/评论/用户/关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
 			//   找出“飞哥”发布的文章
@@ -172,6 +172,20 @@ namespace ConsoleApp1
 			//{
 			//	Console.WriteLine(item.User.Name+""+item.Name);
 			//}
+			#endregion
+			#region linq找出每一篇求助的悬赏都大于5个帮帮币的求助作者
+			//为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
+			Problem problem = new Problem() { Reward = 5, User = fg };
+			Problem problem1 = new Problem() { Reward = 6, User = fg };
+			Problem problem2 = new Problem() { Reward = 7, User = fg };
+			Problem problem3 = new Problem() { Reward = 8, User = xy };
+			IEnumerable<Problem> problems = new List<Problem>() { problem, problem1, problem2, problem3 };
+			var pros = problems.Where(p => p.Reward > 5);
+			foreach (var item in pros)
+			{
+				Console.WriteLine(item.User.Name);
+			}
+
 			#endregion
 			#region //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
 			ProvideWater provideWater = new ProvideWater(new Person().RtMax);

@@ -28,6 +28,7 @@ namespace ConsoleApp1
 			//找出包含关键字“C#”或“.NET”的文章
 			//   找出评论数量最多的文章
 			//找出每个作者评论数最多的文章
+			//将之前作业的Linq查询表达式用Linq方法实现
 			User fg = new User() { Name = "飞哥" };//用户
 			User xy = new User() { Name = "小鱼" };
 
@@ -74,7 +75,7 @@ namespace ConsoleApp1
 				User = xy,
 				DateTime = new DateTime(2025, 4, 4),
 				keywords = new List<Keyword> { kNet },
-				//Comments = new List<Comment>() /*{ comment, comment1 }*/
+				Comments = new List<Comment>() /*{ comment, comment1 }*/
 
 			};
 			Article cSharp = new Article()
@@ -89,6 +90,8 @@ namespace ConsoleApp1
 			IEnumerable<Article> articles = new List<Article>() { cSharp, sql, linq, net };
 
 			////   找出“飞哥”发布的文章
+			//用Linq方法实现
+			//var artic = articles.Where(a => a.User == fg);
 			//var articl = from a in articles
 			//			 where a.User == fg
 			//			 select a;
@@ -96,15 +99,22 @@ namespace ConsoleApp1
 			//{
 			//	Console.WriteLine(item.Name);
 			//}
+
 			////找出2019年1月1日以后“小鱼”发布的文章
+			//用Linq方法实现
+			//var artic = articles.Where(a => a.User == xy && a.DateTime > new DateTime(2019, 1, 1));
 			//var articl1 = from a in articles
 			//			  where a.User == xy && a.DateTime > new DateTime(2019, 1, 1)
 			//			  select a;
-			//foreach (var item in articl1)
+			//foreach (var item in artic)
 			//{
 			//	Console.WriteLine(item.Name);
 			//}
+
 			//按发布时间升序/降序排列显示文章
+			//用Linq方法实现
+			//var artic = articles.OrderByDescending(a => a.DateTime);
+			//var artic1 = articles.OrderBy(a => a.DateTime);
 			//var articl2 = from a in articles
 			//			  orderby a.DateTime descending //降序
 			//			  select a;
@@ -115,36 +125,46 @@ namespace ConsoleApp1
 			//{
 			//	Console.WriteLine(item.Name+" "+item.DateTime);
 			//}
+
 			//统计每个用户各发布了多少篇文章
+			//用Linq方法实现
+			//var artic = articles.GroupBy(a => new { a.User });
 			//var articl3 = articles.GroupBy(a => a.User);
 			//var articl3 = from a in articles
 			//			  group a by a.User;
-			//foreach (var item in articl3)
+			//foreach (var item in artic)
 			//{
-			//	Console.WriteLine(item.Key.Name+" "+item.Count());
+			//	Console.WriteLine(item.Key.User.Name+ " " + item.Count());
 			//}
 			//找出包含关键字“C#”或“.NET”的文章
+			//用Linq方法实现
+			//var artic = articles.Where(a => a.keywords.Any(b => b.Name == "C#" || b.Name == ".net"));
 			//var articl4 = from a in articles
 			//			  where a.keywords.Any(a => a.Name == "C#" || a.Name == ".net")
 			//			  select a;
-			//foreach (var item in articl4)
+			//foreach (var item in artic)
 			//{
 			//	Console.WriteLine(item.Name);
 			//}
 			//找出评论数量最多的文章
+			//用Linq方法实现
+			//var artic = articles.OrderByDescending(a=>a.Comments?.Count()).FirstOrDefault();
 			//var articl5 = from a in articles
 			//		   orderby a.Comments?.Count() descending
 			//		   select a.Name;
-			//Console.WriteLine(articl5.First());
+			//Console.WriteLine(artic.Name);
 			//找出每个作者评论数最多的文章
+			//用Linq方法实现
+			var artic = articles.GroupBy(a => a.User).
+				Select(a => a.OrderByDescending(b => b.Comments?.Count()).FirstOrDefault());
 			//var articl6 = from a in articles
 			//			  group a by a.User into e
 			//			  select e.OrderByDescending(e => e.Comments?.Count()).FirstOrDefault();
-			//foreach (var item in articl6)
-			//{
-			//	Console.WriteLine($"{item.Name+ item.User.Name}");
+			foreach (var item in artic)
+			{
+				Console.WriteLine($"{item.Name+ item.User.Name}");
 
-			//}
+			}
 			#endregion
 			#region //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
 			ProvideWater provideWater = new ProvideWater(new Person().RtMax);

@@ -8,10 +8,14 @@ namespace ConsoleApp1
 	//文章
 	public class Article:Content
 	{
-		public List<Comment> comments { get; set; }
+		#region 属性
+		public string Name { get; set; }
+		public User User { get; set; }
+		public List<Comment> Comments { get; set; }
 		public Appraise Appraise { get; set; }
 		public List<Keyword> keywords { get; set; }
-
+		public DateTime DateTime { get; set; }
+		#endregion
 		#region 点赞点踩
 		//public override void Agree()
 		//{
@@ -64,6 +68,8 @@ namespace ConsoleApp1
 				_head = value.Trim();
 			}
 		}
+
+		public string Author { get; internal set; }
 
 		#endregion
 	}

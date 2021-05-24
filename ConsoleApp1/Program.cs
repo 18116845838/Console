@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ConsoleApp1._17bang;
 
 namespace ConsoleApp1
@@ -15,9 +16,136 @@ namespace ConsoleApp1
 			mouths = 3
 		}
 		#endregion
-		
+
 		static void Main(string[] args)
 		{
+			#region linQ表达式作业
+			//	在之前“文章/评价/评论/用户/关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
+			//   找出“飞哥”发布的文章
+			//找出2019年1月1日以后“小鱼”发布的文章
+			//按发布时间升序/降序排列显示文章
+			//统计每个用户各发布了多少篇文章
+			//找出包含关键字“C#”或“.NET”的文章
+			//   找出评论数量最多的文章
+			//找出每个作者评论数最多的文章
+			User fg = new User() { Name = "飞哥" };//用户
+			User xy = new User() { Name = "小鱼" };
+
+
+			Keyword KCSharp = new Keyword() { Name = "C#" };//关键字
+			Keyword KSql = new Keyword() { Name = "sql" };
+			Keyword Klinq = new Keyword() { Name = "linq" };
+			Keyword kNet = new Keyword() { Name = ".net" };
+
+
+			Comment comment = new Comment() { Name = "评论1" };//评论
+			Comment comment1 = new Comment() { Name = "评论2" };
+			Comment comment2 = new Comment() { Name = "评论3" };
+			Comment comment3 = new Comment() { Name = "评论4" };
+			Comment comment4 = new Comment() { Name = "评论5" };
+			IEnumerable<Comment> comments = new List<Comment>() { comment, comment1, comment2, comment3, comment4, };
+
+			//文章 
+			Article sql = new Article()
+			{
+				Author = "飞哥",
+				Name = "sql基础",
+				User = fg,
+				DateTime = new DateTime(2019, 2, 2)
+				,
+				keywords = new List<Keyword> { KSql },
+				//Comments = new List<Comment>()/* { comment,comment1 }*/
+			};
+			Article linq = new Article()
+			{
+				Author = "飞哥",
+				Name = "linq基础",
+				User = fg,
+				DateTime = new DateTime(2021, 3, 3),
+				keywords = new List<Keyword> { Klinq },
+				//Comments = new List<Comment>() /*{ comment,comment2}*/
+
+			};
+			Article net = new Article()
+			{
+				Author = "小鱼",
+				Name = ".Net基础"
+				,
+				User = xy,
+				DateTime = new DateTime(2025, 4, 4),
+				keywords = new List<Keyword> { kNet },
+				//Comments = new List<Comment>() /*{ comment, comment1 }*/
+
+			};
+			Article cSharp = new Article()
+			{
+				Author = "飞哥",
+				Name = "C#基础",
+				User = fg,
+				DateTime = new DateTime(2020, 1, 1),
+				keywords = new List<Keyword> { KCSharp },
+				//Comments = new List<Comment>() /*{ comment, comment1 ,comment3,comment4}*/
+			};
+			IEnumerable<Article> articles = new List<Article>() { cSharp, sql, linq, net };
+
+			////   找出“飞哥”发布的文章
+			//var articl = from a in articles
+			//			 where a.User == fg
+			//			 select a;
+			//foreach (var item in articl)
+			//{
+			//	Console.WriteLine(item.Name);
+			//}
+			////找出2019年1月1日以后“小鱼”发布的文章
+			//var articl1 = from a in articles
+			//			  where a.User == xy && a.DateTime > new DateTime(2019, 1, 1)
+			//			  select a;
+			//foreach (var item in articl1)
+			//{
+			//	Console.WriteLine(item.Name);
+			//}
+			//按发布时间升序/降序排列显示文章
+			//var articl2 = from a in articles
+			//			  orderby a.DateTime descending //降序
+			//			  select a;
+			//var articl2 = from a in articles
+			//			  orderby a.DateTime ascending 升序
+			//			  select a;
+			//foreach (var item in articl2)
+			//{
+			//	Console.WriteLine(item.Name+" "+item.DateTime);
+			//}
+			//统计每个用户各发布了多少篇文章
+			//var articl3 = articles.GroupBy(a => a.User);
+			//var articl3 = from a in articles
+			//			  group a by a.User;
+			//foreach (var item in articl3)
+			//{
+			//	Console.WriteLine(item.Key.Name+" "+item.Count());
+			//}
+			//找出包含关键字“C#”或“.NET”的文章
+			//var articl4 = from a in articles
+			//			  where a.keywords.Any(a => a.Name == "C#" || a.Name == ".net")
+			//			  select a;
+			//foreach (var item in articl4)
+			//{
+			//	Console.WriteLine(item.Name);
+			//}
+			//找出评论数量最多的文章
+			//var articl5 = from a in articles
+			//		   orderby a.Comments?.Count() descending
+			//		   select a.Name;
+			//Console.WriteLine(articl5.First());
+			//找出每个作者评论数最多的文章
+			//var articl6 = from a in articles
+			//			  group a by a.User into e
+			//			  select e.OrderByDescending(e => e.Comments?.Count()).FirstOrDefault();
+			//foreach (var item in articl6)
+			//{
+			//	Console.WriteLine($"{item.Name+ item.User.Name}");
+
+			//}
+			#endregion
 			#region //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
 			ProvideWater provideWater = new ProvideWater(new Person().RtMax);
 			provideWater(new Person());
@@ -47,21 +175,21 @@ namespace ConsoleApp1
 			node5.Next = node6;
 			node6.Previous = node5;
 			node6.Next = null;
-			Console.WriteLine(node1.Maxnode().Value); 
-			
+			Console.WriteLine(node1.Maxnode().Value);
+
 			#endregion
 
 			#region 集合关系构建关系调用
-			Article article1 = new Article();
-			Comment comment = new Comment();
-			Comment comment1 = new Comment();
-			Comment comment2 = new Comment();
-			Comment comment3 = new Comment();
-			Keyword keyword = new Keyword();
-			Appraise appraise = new Appraise();
-			article1.comments = new List<Comment>() { comment, comment1, comment2, comment3 };
-			keyword.Articles = new List<Article>() { article1 };
-			Console.WriteLine(keyword.Articles.Count);
+			//Article article1 = new Article();
+			//Comment comment = new Comment();
+			//Comment comment1 = new Comment();
+			//Comment comment2 = new Comment();
+			//Comment comment3 = new Comment();
+			//Keyword keyword = new Keyword();
+			//Appraise appraise = new Appraise();
+			//article1.comments = new List<Comment>() { comment, comment1, comment2, comment3 };
+			//keyword.Articles = new List<Article>() { article1 };
+			//Console.WriteLine(keyword.Articles.Count);
 			#endregion
 			#region 不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如
 			//：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d 

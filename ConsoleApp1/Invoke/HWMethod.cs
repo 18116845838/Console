@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using ConsoleApp1._17bang;
 
 namespace ConsoleApp1.Invoke
 {
@@ -29,7 +30,7 @@ namespace ConsoleApp1.Invoke
 		//}
 		#endregion
 		#region 面向对象单元测试数组最大值封装为方法+泛型改造
-		public static T Max<T>(T[] number) where T:IComparable
+		public static T Max<T>(T[] number) where T : IComparable
 		{
 			T max = number[0];
 			for (int i = 0; i < number.Length; i++)
@@ -150,9 +151,9 @@ namespace ConsoleApp1.Invoke
 		/// <param name="numbers">传入一个有序的数组</param>
 		/// <param name="target">要查找的元素</param>
 		/// <returns>返回-1</returns>
-		
-	   
-		public static int BinarySeek<T>(T[] numbers, T target) where T:IComparable
+
+
+		public static int BinarySeek<T>(T[] numbers, T target) where T : IComparable
 		{
 			int left = 0;
 			int right = numbers.Length - 1;
@@ -160,11 +161,11 @@ namespace ConsoleApp1.Invoke
 			while (left <= right)
 			{
 				middle = (left + right) / 2;
-				if (numbers[middle].CompareTo (target)>0)
+				if (numbers[middle].CompareTo(target) > 0)
 				{
 					right = middle - 1;
 				}
-				else if (numbers[middle].CompareTo(target) <0 )
+				else if (numbers[middle].CompareTo(target) < 0)
 				{
 					left = middle + 1;
 				}
@@ -222,7 +223,7 @@ namespace ConsoleApp1.Invoke
 			for (int i = 0; i < value.Length; i++)
 			{
 				sb.Append(value[i]);
-				if (i!=value.Length-1)
+				if (i != value.Length - 1)
 				{
 					sb.Append(addChar);
 				}
@@ -236,6 +237,7 @@ namespace ConsoleApp1.Invoke
 		}
 
 		#endregion
+		
 
 	}
 

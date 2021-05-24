@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	enum Token//	声明一个令牌（Token）枚举
+	public enum Token//	声明一个令牌（Token）枚举
 	{
 		SuperAdmin = 1,
 		Admin = 2,
@@ -12,7 +12,7 @@ namespace ConsoleApp1
 		Newbie = 8,
 		Registered = 16
 	}
-	 class TokenManager
+	public class TokenManager
 	{
 		//	声明一个令牌（Token）枚举，包含值：SuperAdmin、Admin、Blogger、Newbie、Registered。
 		//声明一个令牌管理（TokenManager）类：

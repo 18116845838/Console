@@ -6,6 +6,7 @@ namespace ConsoleApp1._17bang
 {
 	public class Keyword
 	{
-		public IList<Article> Articles { get; set; }
+		
+		public string Name { get; internal set; }
 	}
 }

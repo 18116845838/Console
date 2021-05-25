@@ -19,7 +19,17 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
-
+			#region 在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
+			try
+			{
+				new ContentService().Publish(new Content());
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.ToString());
+			}
+			
+			#endregion
 			#region linQ表达式作业
 			//	在之前“文章/评价/评论/用户/关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
 			//   找出“飞哥”发布的文章

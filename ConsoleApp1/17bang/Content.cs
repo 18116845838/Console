@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
 	/*abstract*/
-	
+
 	/*abstract*/
 	public class Content
 	{
@@ -42,10 +42,20 @@ namespace ConsoleApp1
 		//	2确保每个Content对象都有kind的非空值
 		//	3Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
 		//	4其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
-		[HelpMoneyChanged(10,Message = "message")]
+
+		//	作业：
+
+
+		//内容（Content）发布（Publish）的时候检查其作者（Author）是否为空，如果为空抛出“参数为空”异常
+
+		
+		[HelpMoneyChanged(10, Message = "message")]
 		public virtual void Publish()
 		{
-
+			if (Author ==null)
+			{
+				throw new ArgumentNullException($"{this}的参数'Author'为空");
+			}//esle
 		}
 
 
@@ -65,12 +75,12 @@ namespace ConsoleApp1
 		#region 字段
 		private string _kind;
 		private DateTime _publishTime;
-
 		private int age = 16;
-		private DateTime _createTime=DateTime.Now;
+		private DateTime _createTime = DateTime.Now;
 		#endregion
 
 		#region 属性
+		public User Author { get; set; }
 		public DateTime CreateTime
 		{
 			get { return _createTime; }

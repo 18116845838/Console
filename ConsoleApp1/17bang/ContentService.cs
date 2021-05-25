@@ -2,26 +2,53 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ConsoleApp1
 {
 	 class ContentService
 	{
-		//添加一个新类ContentService，其中有一个发布（Publish()）方法：
+
+		#region //添加一个新类ContentService，其中有一个发布（Publish()）方法：
+
 
 		//如果发布Article，需要消耗一个帮帮币
 		//如果发布Problem，需要消耗其设置悬赏数量的帮帮币
 		//如果发布Suggest，不需要消耗帮帮币
 
 		//最后将内容存到数据库中，三个类存数据库的方法是完全一样的，现在用Console.WriteLine() 代替。根据我们学习的继承和多态知识，实现上述功能。 
-		//public  void Publish(Content content)
-		//{
-		//	content.Publish();
-		//	Console.WriteLine("save into db");
-		//}
 
+		#endregion
 
+		//在ContentService中捕获异常
 
+		//	如果是“参数为空”异常，Console.WriteLine() 输出：内容的作者不能为空，将当前异常封装进新异常的InnerException，再将新异常抛出
+		//	 如果是“”参数越界”异常，Console.WriteLine() 输出：求助的Reward为负数（-XX），不再抛出异常
+		//  ContentService中无论是否捕获异常，均要Console.WriteLine() 输出：XXXX年XX月XX日 XX点XX分XX秒（当前时间），请求发布内容（Id=XXX）
 
+		#region 方法
+		public void Publish(Content content)
+		{
+			try
+			{
+				content.Publish();
+			}
+			catch (ArgumentNullException e)
+			{
+				Console.WriteLine($"{this}的参数'Author'为空", e.ToString());
+				throw new Exception("内容的作者不能为空",e); 
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				Console.WriteLine($"{this}传入的'Reward'参数为负数");
+			}
+			finally 
+			{
+				Console.WriteLine($"{DateTime.Now.ToString("yyyy年MM月dd日 HH时mm分ss秒")} 请求发布内容(id=xxx)");
+			}
+			
 
+			Console.WriteLine("save into db");
+		}
+		#endregion
 	}
 }

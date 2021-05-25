@@ -15,6 +15,7 @@ namespace MyCodeTest
 		}
 		static void Main(string[] args)
 		{
+			throw new Exception
 			#region 拉姆达表达式？
 			//List<Student> students = new List<Student>(); 
 			//{
@@ -30,7 +31,6 @@ namespace MyCodeTest
 			//int re = func();
 			//Console.WriteLine(re);
 			#endregion
-
 			#region 委托
 			//AiCaculate(16, 18, (x, y) => { Console.WriteLine(x%y); });
 
@@ -73,25 +73,25 @@ namespace MyCodeTest
 
 			#endregion
 			#region linq语句查询
-			Teacher fg = new Teacher { Age=19, Name = "大飞哥" };
-			Teacher fish = new Teacher {Age=23, Name = "小鱼" };
-			Teacher dfg = new Teacher {  Age = 39, Name = "大飞哥" };
-			IEnumerable<Teacher> teachers = new List<Teacher> { fg, fish, dfg };
+			//		Teacher fg = new Teacher { Age=19, Name = "大飞哥" };
+			//		Teacher fish = new Teacher {Age=23, Name = "小鱼" };
+			//		Teacher dfg = new Teacher {  Age = 39, Name = "大飞哥" };
+			//		IEnumerable<Teacher> teachers = new List<Teacher> { fg, fish, dfg };
 
-			Major csharp = new Major { Name = "C#", Age = 19, TeacherName= "大飞哥" };
-			Major SQL = new Major { Name = "SQL", Age = 19, TeacherName = "大飞哥" };
-			Major Javascript = new Major { Name = "Javascript", Age = 39, TeacherName = "大飞哥" };
-			Major UI = new Major { Name = "UI", Age = 23, TeacherName = "小鱼" };
-			IEnumerable<Major> majors = new List<Major> { csharp, SQL, Javascript, UI };
+			//		Major csharp = new Major { Name = "C#", Age = 19, TeacherName= "大飞哥" };
+			//		Major SQL = new Major { Name = "SQL", Age = 19, TeacherName = "大飞哥" };
+			//		Major Javascript = new Major { Name = "Javascript", Age = 39, TeacherName = "大飞哥" };
+			//		Major UI = new Major { Name = "UI", Age = 23, TeacherName = "小鱼" };
+			//		IEnumerable<Major> majors = new List<Major> { csharp, SQL, Javascript, UI };
 
-			IList<Student> students = new List<Student>
-	{
-		new Student{Score = 98, Name = "屿", Majors=new List<Major>{csharp,SQL } },
-		new Student{Score = 86, Name = "行人", Majors=new List<Major>{Javascript, csharp, SQL} },
-		new Student{Score = 78, Name = "王平", Majors=new List<Major>{csharp}},
-		new Student{Score = 89, Name = "王枫", Majors=new List<Major>{Javascript, csharp, SQL,UI}},
-		new Student{Score = 98, Name = "蒋宜蒙", Majors=new List<Major>{Javascript, csharp}},
-	};
+			//		IList<Student> students = new List<Student>
+			//{
+			//	new Student{Score = 98, Name = "屿", Majors=new List<Major>{csharp,SQL } },
+			//	new Student{Score = 86, Name = "行人", Majors=new List<Major>{Javascript, csharp, SQL} },
+			//	new Student{Score = 78, Name = "王平", Majors=new List<Major>{csharp}},
+			//	new Student{Score = 89, Name = "王枫", Majors=new List<Major>{Javascript, csharp, SQL,UI}},
+			//	new Student{Score = 98, Name = "蒋宜蒙", Majors=new List<Major>{Javascript, csharp}},
+			//};
 
 			#endregion
 
@@ -151,27 +151,27 @@ namespace MyCodeTest
 			//		let mq = s.Majors
 			//		from sm in mq
 			//		select new { s = s.Name, t = sm.Name };
-			var gg = from s in students
-					where s.Name.StartsWith("王")
-					select s;
-			if (true)
-			{
-				gg = from g in gg.ToList()
-					 where g.Score > 80
-					 select g;
-			}
-			students.Add(new Student() { Score = 98, Name = "王宜蒙", Majors = new List<Major> { Javascript, csharp } });
-			if (true)
-			{
-				gg = from g in gg
-					 where g.Majors.Count()>3
-					 select g;
-			}
-			foreach (var item in gg)
-			{
-				Console.WriteLine(item.Name + item.Score+item.Majors.Count());
-			}
-			Console.ReadKey();
+			//var gg = from s in students
+			//		 where s.Name.StartsWith("王")
+			//		 select s;
+			//if (true)
+			//{
+			//	gg = from g in gg.ToList()
+			//		 where g.Score > 80
+			//		 select g;
+			//}
+			//students.Add(new Student() { Score = 98, Name = "王宜蒙", Majors = new List<Major> { Javascript, csharp } });
+			//if (true)
+			//{
+			//	gg = from g in gg
+			//		 where g.Majors.Count() > 3
+			//		 select g;
+			//}
+			//foreach (var item in gg)
+			//{
+			//	Console.WriteLine(item.Name + item.Score + item.Majors.Count());
+			//}
+			//Console.ReadKey();
 		}
 		//public static IEnumerable<T> Mm<T>(IEnumerable<T> ts,Func<T, bool> func)
 		//{
@@ -199,9 +199,9 @@ namespace MyCodeTest
 
 			}
 		}
-		public static void gg<T>(T a, T b ,Mycomoerble<T> mycomoerble)//自定义实现接口进行比较
+		public static void gg<T>(T a, T b, Mycomoerble<T> mycomoerble)//自定义实现接口进行比较
 		{
-			if (mycomoerble.Comperble(a,b))
+			if (mycomoerble.Comperble(a, b))
 			{
 
 			}

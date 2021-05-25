@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-	  class Problem:Content
+	class Problem : Content
 	{
 
-		
+
 		#region 多态作业
 		public override void Publish()
 		{
@@ -30,6 +30,10 @@ namespace ConsoleApp1
 
 
 		#endregion
+		//	作业：
+
+		
+
 		public Problem()
 		{
 
@@ -89,6 +93,7 @@ namespace ConsoleApp1
 		#endregion
 		#region 属性
 		//为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者/之前有了
+		//   修改之前的属性验证：problem.Reward为负数时直接抛出“参数越界”异常
 		public User User { set; get; }
 		public string List { get; set; }
 		public string Question { get; set; }
@@ -97,15 +102,15 @@ namespace ConsoleApp1
 		public string Body { get; set; }
 		public int Reward
 		{
-			get{	return _reward;}
+			get { return _reward; }
 			set
 			{
 				if (Reward < 0)
 				{
-					Console.WriteLine("悬赏不可以为负数");
-					return ;
+					throw new ArgumentOutOfRangeException($"{this}传入的'Reward'参数{value}为负数");
 				}//else 
-				_reward = value; }
+				_reward = value;
+			}
 		}
 		#endregion
 		//public static void Publish(User user)

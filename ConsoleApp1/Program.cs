@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using ConsoleApp1._17bang;
 
 namespace ConsoleApp1
@@ -19,6 +21,9 @@ namespace ConsoleApp1
 
 		static void Main(string[] args)
 		{
+			
+
+
 			#region 在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
 			try
 			{
@@ -723,8 +728,8 @@ namespace ConsoleApp1
 			//实现二分查找，方法名BinarySeek（int【】 numbers，int target）：
 			//传入一个有序（从大到小 / 从小到大）数组和数组中要查找的元素
 			//  如果找到，返回该元素所在的下标，否则，返回 - 1 *///
-			int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
-			Console.WriteLine(Invoke.HWMethod.BinarySeek(array, 1));
+			//int[] array = new int[] { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 33, 55, 66, 77, 88, 123, 345, 567, 778 };
+			//Console.WriteLine(Invoke.HWMethod.BinarySeek(array, 1));
 
 			#endregion
 		}

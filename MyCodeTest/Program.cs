@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,64 @@ namespace MyCodeTest
 {
 	class Program
 	{
-		public static void AiCaculate(object sender, EventArgs eventArgs)
-		{
-			Console.WriteLine("shijian");
-
-		}
+		//public static void AiCaculate(object sender, EventArgs eventArgs)
+		//{
+		//	Console.WriteLine("shijian");
+		//}
 		static void Main(string[] args)
 		{
-			throw new Exception
+			#region 路径相关
+			//Path.Combine(@"D:\yz\hello", "hallo.jpg");创建文件，必须是没有的文件
+			//Console.WriteLine(Path.GetExtension(@"D:\yz\hello\hallo.jpg"));//拼接文件名
+			//Directory.CreateDirectory(@"D:\yz\Myhello");创建文件夹
+			//Directory.Delete(@"D:\yz\Myhello",true);删除文件夹
+			//Directory.SetCurrentDirectory("");//更改当前文件夹路径
+			//Directory.GetCurrentDirectory();//查找当前文件加路径
+			//Console.WriteLine(Directory.GetFiles(@"D:\yz", "*llo", SearchOption.TopDirectoryOnly));//得到当前文件夹下包含第二个参数的路径
+			//Console.WriteLine(Directory.EnumerateFiles(@"D:\yz"));
+			//File.Create();创建文件
+			//File.WriteAllText(@"D:\yz\hello\debug.log", "可以更改文件中的内容！");//更改文件中的内容
+			//File.AppendAllText(@"D:\yz\hello\debug.log", "在后面添加的内容，原来文本不会消失");//添加文本，原来内容不会消失
+			//File.Delete();删除就不演示了
+			//File.OpenRead();//打开文件读取
+			//File.Decrypt();//文件解密
+			//File.Encrypt();//文件加密
+			//FileStream fileStream = new FileStream(@"D:\yz\hello\debug.log", FileMode.Open);//选择一个文件，选择打开方式
+			//byte[] vs = new byte[100];
+			
+			//while (fileStream.Read(vs, 0, vs.Length)>0)//只要大于零就一直读取
+			//{
+
+			//}
+			//fileStream.Write(new byte[] { 12, 21, 32, 32, 4 }, 0, 10);//只能保存到缓冲区
+			//byte[] arr = Encoding.UTF8.GetBytes("源栈欢迎你啊");//先选择编码格式，传入字符串，返回值为字符数字组格式
+			//fileStream.Write(arr,0,arr.Length);
+			//fileStream.Flush();//保存到文件
+			//fileStream.Dispose();//释放资源，一般放在最后面
+			//try
+			//{
+			//	fileStream = new FileStream(@"D:\yz\hello\debug.log", FileMode.Open);
+			//	byte[] arr = Encoding.UTF8.GetBytes("源栈欢迎你啊");//先选择编码格式，传入字符串，返回值为字符数字组格式
+			//	fileStream.Write(arr, 0, arr.Length);
+			//	fileStream.Flush();//保存到文件
+			//					   //fileStream.Dispose();//释放资源，一般放在最后面
+			//}
+			//catch (Exception)
+			//{
+
+			//	throw;
+			//}
+			//finally {
+			//	fileStream.Dispose();
+			//}
+			//using (fileStream = new FileStream(@"D:\yz\hello\debug.log", FileMode.Open))
+			//{
+			//	byte[] arr = Encoding.UTF8.GetBytes("huanyingliadao ");//定义一个缓冲区，来接收文字
+			//	fileStream.Write(arr, 0, arr.Length);//写入文件
+			//	fileStream.Flush();//保存文件
+			//}
+			#endregion
+			Console.ReadKey();
 			#region 拉姆达表达式？
 			//List<Student> students = new List<Student>(); 
 			//{

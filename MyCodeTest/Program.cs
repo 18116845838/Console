@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyCodeTest
@@ -15,6 +16,48 @@ namespace MyCodeTest
 		//}
 		static void Main(string[] args)
 		{
+			#region 线程相关
+			//Task task = new Task(() => Console.WriteLine("我是Antion"));
+			//task.Start();//开始工作，要运行才能开始
+			//Task<int> task1 = new Task<int>(() => 17);//funk默认一个参数为//返回值最后一个参数
+			//										  //把一个方法给Task，task来运行只有start后才能够运行
+			//task1.Start();
+			//Console.WriteLine(task1.Result);//只有调用Result才能得到返回值，没有圆括号
+			////TaskScheduler 负责专门调度线程池中的线程
+			//for (int i = 0; i < 10; i++)
+			//{
+			//	Task task = new Task(() =>
+			//	{ Console.WriteLine("我是Antion"); 
+			//		Console.WriteLine(Task.CurrentId);
+			//		; Console.WriteLine
+			//		($"当前线程为第{i}ci" + Thread.CurrentThread.ManagedThreadId);
+			//		});
+			//	Thread.Sleep(1000);//等待1秒钟
+			//	task.Start();
+			//}
+			//for (int i = 0; i < 10; i++)
+			//{
+
+			//	Task<int> task = new Task<int>(() => {
+			//		Thread.Sleep(1000);
+			//		Console.WriteLine();
+			//		Console.WriteLine();
+			//		return 19 + i; });
+			//	task.Start();
+			//	int re = task.Result;
+			//	Console.WriteLine(re);
+			//}
+			
+			Thread current = Thread.CurrentThread;
+			Console.WriteLine(Thread.GetDomain().FriendlyName);//获得当前所在进程
+			Console.WriteLine(current.ManagedThreadId);//托管线程Id
+			Console.WriteLine(current.Priority);//优先级
+			Console.WriteLine(current.ThreadState);//线程状态
+			Console.WriteLine(current.IsThreadPoolThread);//是否线程池ID
+		    //Task task = new Task(() => bitmapTast.Save(@"D:\yz\hello\验证码二号.jpg", ImageFormat.Jpeg));
+		    //task.Start();普通Task
+			//Task.Run(() => bitmapTast.Save(@"D:\yz\hello\验证码二号.jpg", ImageFormat.Jpeg));推荐task，可以马上运行
+			#endregion
 			#region 路径相关
 			//Path.Combine(@"D:\yz\hello", "hallo.jpg");创建文件，必须是没有的文件
 			//Console.WriteLine(Path.GetExtension(@"D:\yz\hello\hallo.jpg"));//拼接文件名
@@ -33,7 +76,7 @@ namespace MyCodeTest
 			//File.Encrypt();//文件加密
 			//FileStream fileStream = new FileStream(@"D:\yz\hello\debug.log", FileMode.Open);//选择一个文件，选择打开方式
 			//byte[] vs = new byte[100];
-			
+
 			//while (fileStream.Read(vs, 0, vs.Length)>0)//只要大于零就一直读取
 			//{
 
